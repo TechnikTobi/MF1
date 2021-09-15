@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt,ngerman]{scrreprt}
+
+% Deutsche Einstellungen
+\usepackage[ngerman]{babel}
+
+% Für UTF8
+\usepackage[utf8]{inputenc}
+
+% Abstandsränder
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm,top=10mm}
+
+% Schriftart für den Titel
+\usepackage[T1]{fontenc}
+
+% Schriftarten für Überschriften
+\addtokomafont{chapter}{\rmfamily}
+\addtokomafont{chapterentry}{\rmfamily}
+\addtokomafont{section}{\rmfamily}
+\addtokomafont{subsection}{\rmfamily}
+\addtokomafont{subsubsection}{\rmfamily}
+
+% Definition von Definitionen
+\makeatletter
+\newenvironment{Definition}[1][\relax]
+{
+	\ifx\relax#1\definition\def\@currentlabel{Definition}
+	\else\definition[#1]\def\@currentlabel{\textit{#1}}
+	\fi
+}
+{\enddefinition}
+\makeatother
+
+% Nach einem Absatz nicht einrücken
+\setlength{\parindent}{0pt}
+
+% Sollte als letztes in der Preamble stehen
+\usepackage{subfiles}
+
+\title{Mathematik für 1nf0rmatiker:innen}
+\author{Tobias Prisching}
+\date{ }
+
+\begin{document}
+	
+	\maketitle
+	
+	\newpage
+
+	\tableofcontents
+
+	\newpage
+	\chapter*{Vorwort}\label{kapitel:vorwort}
+	\addcontentsline{toc}{chapter}{Vorwort}	
+	\subfile{Kapitel/Vorwort}
+	
+\end{document}

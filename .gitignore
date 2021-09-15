@@ -4,6 +4,8 @@
 *.gz
 *.log
 *.out
+*.run.xml
+*.toc
 
 # macOS files
 .DS_Store
