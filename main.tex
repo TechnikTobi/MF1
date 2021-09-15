@@ -21,25 +21,29 @@
 \addtokomafont{subsubsection}{\rmfamily}
 
 % Definition von Definitionen
-\makeatletter
-\newenvironment{Definition}[1][\relax]
-{
-	\ifx\relax#1\definition\def\@currentlabel{Definition}
-	\else\definition[#1]\def\@currentlabel{\textit{#1}}
-	\fi
-}
-{\enddefinition}
-\makeatother
+\usepackage{amsthm}
+\usepackage{hyperref}
+\newtheorem{definition}{Definition}[section]
+
+%\makeatletter
+%\newenvironment{Definition}[1][\relax]
+%{
+%	\ifx\relax#1\definition\def\@currentlabel{Definition}
+%	\else\definition[#1]\def\@currentlabel{\textit{#1}}
+%	\fi
+%}
+%{\enddefinition}
+%\makeatother
 
 % Nach einem Absatz nicht einrücken
 \setlength{\parindent}{0pt}
 
-% Sollte als letztes in der Preamble stehen
-\usepackage{subfiles}
-
 \title{Mathematik für 1nf0rmatiker:innen}
 \author{Tobias Prisching}
 \date{ }
+
+% Sollte als letztes in der Preamble stehen
+\usepackage{subfiles}
 
 \begin{document}
 	
@@ -50,8 +54,14 @@
 	\tableofcontents
 
 	\newpage
-	\chapter*{Vorwort}\label{kapitel:vorwort}
+	\chapter*{Vorwort}\label{Vorwort}
 	\addcontentsline{toc}{chapter}{Vorwort}	
 	\subfile{Kapitel/Vorwort}
+	
+	\newpage
+	\chapter{Logik und Mengenlehre}\label{L&M}
+
+		\section{Mengen}\label{L&M:Mengen}
+		\subfile{Kapitel/LogikUndMengenlehre/Mengen}	
 	
 \end{document}
