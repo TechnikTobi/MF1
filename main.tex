@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,ngerman]{scrreprt}
+\documentclass[a4paper,10pt,ngerman]{scrreprt}
 
 % Deutsche Einstellungen
 \usepackage[ngerman]{babel}
@@ -6,12 +6,21 @@
 % Für UTF8
 \usepackage[utf8]{inputenc}
 
-% Abstandsränder
-\usepackage{geometry}
-\geometry{a4paper,left=25mm,right=25mm,top=10mm}
-
 % Schriftart für den Titel
 \usepackage[T1]{fontenc}
+
+% kaobook style font
+\usepackage[p,theoremfont]{newpxtext}
+% Funktioniert nicht (warum auch immer)
+% \RequirePackage[vvarbb,smallerops,bigdelims]{newpxmath}
+
+% Abstandsränder
+\renewcommand*\chapterheadstartvskip{\vspace*{-\topskip}}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm,top=20mm}
+
+% Sidenotes
+\usepackage{sidenotes}
 
 % Schriftarten für Überschriften
 \addtokomafont{chapter}{\rmfamily}
@@ -39,9 +48,17 @@
 % Nach einem Absatz nicht einrücken
 \setlength{\parindent}{0pt}
 
+% Beginnen wir mit Kapitel 0 ;)
+\setcounter{chapter}{-1}
+
+% Metadaten
 \title{Mathematik für 1nf0rmatiker:innen}
 \author{Tobias Prisching}
 \date{ }
+
+% Für Tests...
+\usepackage{blindtext}
+% \usepackage{showframe}
 
 % Sollte als letztes in der Preamble stehen
 \usepackage{subfiles}
@@ -54,15 +71,32 @@
 
 	\tableofcontents
 
+	% Überschreiben der geometry settings da diese
+	% nach dem Inhaltsverzeichnis in der Breite sidenotes
+	% berücksichtigen sollen
+	\newgeometry{
+		a4paper,
+		top=20mm,
+		bottom=20mm,
+		left=20mm,
+		right=20mm,
+		marginparsep=5mm,
+		marginparwidth=30mm,
+		includemp
+	}
+	
+
 	\newpage
 	\chapter*{Vorwort}\label{Vorwort}
 	\addcontentsline{toc}{chapter}{Vorwort}	
 	\subfile{Kapitel/Vorwort}
 	
 	\newpage
-	\chapter{Logik und Mengenlehre}\label{L&M}
-
-		\section{Mengen}\label{L&M:Mengen}
-		\subfile{Kapitel/LogikUndMengenlehre/Mengen}	
+	\chapter{Allgemeines}\label{kapitel:Allgemeines}	
+	\subfile{Kapitel/Allgemeines}	
+	
+	\newpage
+	\chapter{Mengenlehre}\label{kapitel:Mengenlehre}	
+	\subfile{Kapitel/Mengenlehre}
 	
 \end{document}
