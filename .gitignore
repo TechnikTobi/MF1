@@ -1,0 +1,9 @@
+# LaTeX files
+*.aux
+*.dvi
+*.gz
+*.log
+*.out
+
+# macOS files
+.DS_Store
