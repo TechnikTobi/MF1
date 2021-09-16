@@ -4,7 +4,110 @@
 
 	\begin{definition}[Menge]
 		\label{def:Menge}
-		Unter einer \textit{Menge} verstehen wir eine beliebige Zusammenfassung bestimmter, wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens zu einem Ganzen.
+		Unter einer \textbf{Menge} verstehen wir eine beliebige Zusammenfassung bestimmter, wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens zu einem Ganzen. \sidenote{Definiton nach Georg Cantor (1845-1918)}
 	\end{definition}
+
+	\subsection*{Eigenschaften und Regeln}
+	\begin{itemize}
+		\item Mengen enthalten Objekte (= Elemente einer Menge) \textbf{ohne} einer vorgegebenen Reihenfolge
+		\item Mengen selbst sind Objekte und können folglich in Mengen enthalten sein
+		\item Explizite Notation: $M = \{0, 1, \pi, \{i\}\}$
+		\item Implizite Notation: $\mathbb{N} = \{x|x \textrm{ ist eine natürliche Zahl}\}$
+		\item Objekt $x$ ist Element der Menge $M$: $x \in M$
+		\item Ein Objekt innerhalb einer Menge gefasst ist ungleich dem Objekt selbst: $\{0\} \not= 0$
+		\item $M = N \Leftrightarrow$ $M$ und $N$ enthalten die gleichen Elemente 
+		\item Leere Menge: $\emptyset = \{\}$ 
+	\end{itemize}
+
+
+
+	\section{Teilmenge und Obermenge}
+
+	\begin{definition}[Teilmenge]
+		Unter einer \textbf{Teilmenge} der Menge $M$ verstehen wir eine Menge $N$ von der jedes Element in $M$ enthalten ist: $N \subseteq M$.
+	\end{definition}
+
+	Ist $N$ keine Teilmenge von $M$ (d.h., $N$ enthält mindestens ein Objekt $x$ sodass gilt $x \in N$ und $x \not\in M$), so schreiben wir: $N \not \subseteq M$
+
+	\begin{definition}[Echte Teilmenge]
+		Unter einer \textbf{echten Teilmenge} der Menge $M$ verstehen wir eine Menge $N$ von der jedes Element in $M$ enthalten ist \textit{und $N \not= M$ gilt}: $N \subset M$ (auch $N \subsetneq M$ oder $N \subsetneqq M$). 
+	\end{definition}
+
+	\begin{definition}[Obermenge]
+		Analog zur Teilmenge verstehen wir bei der \textbf{Obermenge} von $N$ eine Menge $M$ die jedes Element von $N$ enthält: $M \supseteq N$
+	\end{definition}
+
+	\begin{definition}[Echte Obermenge]
+		Analog zur echten Teilmenge verstehen wir bei der \textbf{echten Obermenge} von $N$ eine Menge $M$ die jedes Element von $N$ enthält \textit{und $N \not= M$ gilt}: $M \supset N$ (auch $M \supsetneq N$ oder $M \supsetneqq N$)
+	\end{definition}
+
+	\subsection*{Eigenschaften und Regeln}
+	\begin{itemize}
+		\item Die leere Menge ist Teilmenge jeder Menge: $\emptyset \subseteq M$
+		\item Die Gleichheit von Mengen lässt sich über Teilmengen ausdrücken: Gilt $N \subseteq M$ und $M \subseteq N$, so folgt $M = N$
+		\item Ist $N$ eine (echte) Teilmenge von $M$ ($N \subseteq M$ bzw. $N \subsetneq M$), so ist $M$ (echte) Obermenge von $N$ ($M \supseteq N$ bzw. $M \supsetneq N$)
+	\end{itemize}
+
+
+
+	\section{Potenzmenge}
+	
+	\begin{definition}[Potenzmenge]
+		Unter der \textbf{Potenzmenge} $\mathcal{P}(M)$ einer Menge $M$ verstehen wir eine Menge welche alle möglichen Teilmengen von $M$ enthält. \sidenote{Für $M=\{0,1\}$ ist die Potenzmenge $\mathcal{P}(M)=\{\emptyset, \{0\}, \{1\}, M \}$} Es gilt: $M \in \mathcal{P}(M)$
+	\end{definition}
+	
+	
+	
+	\section{Operationen mit Mengen}
+
+	\begin{definition}[Durschnitt, Vereinigung, Differenz]
+		Seien $M$ und $N$ Mengen. Wir definieren folgende Operationen: 
+		\begin{itemize}
+			\item \textbf{Durchschnitt}: Alle Elemente die in $M$ \textit{und} $N$ enthalten sind: $$M \cap N = \{x | x \in M \land x \in N\}$$
+			\item \textbf{Vereinigung}: Alle Elemente die in $M$ \textit{oder} $N$ enthalten sind: $$M \cup N = \{x | x \in M \lor x \in N\}$$
+			\item \textbf{Differenz}: Alle Elemente die in $M$ aber nicht in $N$ enthalten sind: $$M \setminus N = \{x | x \in M \land x \not \in N\}$$
+			\item \textbf{Komplement}: Ist $N \subseteq M$, so ist $M \setminus N$ das Komplement von $N$ in $M$: $\overline{N}^M$ Ist bekannt innerhalb welcher Menge das Komplement gebildet wird kann auch $\overline{N}$ oder $N^\mathrm{C}$ geschrieben werden.
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Unendlicher Durchschnitt, Unendliche Vereinigung]
+		Sei $I$ eine unendliche Menge von Indizes, sodass es für jedes $i \in I$ eine Menge $M_i$ gibt. Wir definieren folgende Operationen:
+		\begin{itemize}
+			\item \textbf{Unendlicher Durchschnitt}: Alle Elemente die in jeder Menge $M_i$ enthalten sind: $$\bigcup_{i \in I}M_i = \{x | x \in M_i \forall i \in I\}$$
+			\item \textbf{Unendliche Vereinigung}: Alle Elemente die in mindestens einer Menge $M_i$ enthalten sind: $$\bigcup_{i \in I}M_i = \{x | \exists i \in I | x \in M_i\}$$
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Kartesische Produkt]
+		Unter dem \textbf{kartesischen Produkt} zweier Mengen $M$ und $N$ verstehen wir eine Menge alle \textit{geordneter Paare} \sidenote{Die Reihenfolge der Elemente des Paars spielt (im Gegensatz zu wie es bei Mengen der Fall ist) eine Rolle: $(0,1) \not=(1,0)$ \\ \textbf{Aber}: $\{0,1\} = \{1,0\}$ $\rightarrow$ Paare sind keine Mengen} $(m, n)$ mit $m \in M$ und $n \in N$: $$M \times N = \{(m,n) | m \in M, n \in N \}$$
+	\end{definition}
+
+	\subsection*{Eigenschaften und Regeln}
+	\begin{itemize}
+		\item Die Differenzmenge einer Menge $M$ mit der leeren Menge ist die Menge selbst: $M \setminus \emptyset = M$
+		\item Kommutativgesetze: $$M \cup N = N \cup M$$ $$M \cap N = N \cap M$$
+		\item Assoziativgesetze: $$(M \cup N) \cup O = M \cup (N \cup O)$$ $$(M \cap N) \cap O = M \cap (N \cap O)$$
+		\item Distributivgesetze: $$M \cap (N \cup O) = (M \cap N) \cup (M \cap O)$$ $$M \cup (N \cap O) = (M \cup N) \cap (M \cup O)$$
+		\item Rechenregeln der Komplementbildung:
+		\begin{itemize}
+			\item $\overline{\overline{M}} = M$
+			\item $M \subseteq N \Rightarrow \overline{N} \subseteq \overline{M}$
+			\item $M \setminus N = M \cap \overline{N}$
+			\item $\overline{M \cup N} = \overline{M} \cap \overline{N}$
+			\item $\overline{M \cap N} = \overline{M} \cup \overline{N}$
+		\end{itemize}
+		\item Im Allgemeinen gilt $M \times N = N \times M$ \textbf{nicht}
+		\item $M \times \emptyset = \emptyset$
+	\end{itemize}
+
+	\section{Mächtigkeit}
+	
+	\begin{definition}[Mächtigkeit, Kardinalität]
+		Unter der \textbf{Mächtigkeit} (auch \textbf{Kardinalität}) einer Menge $M$ verstehen wir die Anzahl der in $M$ enthaltenen Elemente und wird als $|M|$ notiert. 
+	\end{definition}
+
+	Gilt $|M| = |N|$, so nennen wir die beiden Mengen $M$ und $N$ gleichmächtig. 
+	
+	
 
 \end{document}
