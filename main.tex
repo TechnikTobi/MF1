@@ -24,12 +24,17 @@
 	left=20mm,
 	right=20mm,
 	marginparsep=5mm,
-	marginparwidth=30mm,
+	marginparwidth=35mm,
 	includemp
 }
 
 % Sidenotes
 \usepackage{sidenotes}
+
+% Für mathematische Notationen
+\usepackage{amssymb}
+
+\usepackage{longtable, array, booktabs}
 
 % Schriftarten für Überschriften
 \addtokomafont{part}{\rmfamily}
@@ -81,6 +86,12 @@
 	\chapter*{Vorwort}\label{Vorwort}
 	\addcontentsline{toc}{chapter}{Vorwort}	
 	\subfile{Kapitel/Vorwort}
+	
+	\newpage
+	\chapter*{Symbole}\label{Symbole}
+	\addcontentsline{toc}{chapter}{Symbole}	
+	\subfile{Kapitel/Symbole}
+	
 	
 	\newpage
 	\addpart{Allgemeines}
