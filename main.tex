@@ -17,12 +17,22 @@
 % Abstandsränder
 \renewcommand*\chapterheadstartvskip{\vspace*{-\topskip}}
 \usepackage{geometry}
-\geometry{a4paper,left=20mm,right=20mm,top=20mm}
+\geometry{
+	a4paper,
+	top=20mm,
+	bottom=20mm,
+	left=20mm,
+	right=20mm,
+	marginparsep=5mm,
+	marginparwidth=30mm,
+	includemp
+}
 
 % Sidenotes
 \usepackage{sidenotes}
 
 % Schriftarten für Überschriften
+\addtokomafont{part}{\rmfamily}
 \addtokomafont{chapter}{\rmfamily}
 \addtokomafont{chapterentry}{\rmfamily}
 \addtokomafont{section}{\rmfamily}
@@ -34,16 +44,6 @@
 \usepackage{hyperref}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-
-%\makeatletter
-%\newenvironment{Definition}[1][\relax]
-%{
-%	\ifx\relax#1\definition\def\@currentlabel{Definition}
-%	\else\definition[#1]\def\@currentlabel{\textit{#1}}
-%	\fi
-%}
-%{\enddefinition}
-%\makeatother
 
 % Nach einem Absatz nicht einrücken
 \setlength{\parindent}{0pt}
@@ -65,26 +65,17 @@
 
 \begin{document}
 	
+	\newgeometry{a4paper,left=20mm,right=20mm,top=20mm}
+	
 	\maketitle
 	
 	\newpage
 
 	\tableofcontents
-
-	% Überschreiben der geometry settings da diese
-	% nach dem Inhaltsverzeichnis in der Breite sidenotes
-	% berücksichtigen sollen
-	\newgeometry{
-		a4paper,
-		top=20mm,
-		bottom=20mm,
-		left=20mm,
-		right=20mm,
-		marginparsep=5mm,
-		marginparwidth=30mm,
-		includemp
-	}
 	
+	% Alte geometry wiederherstellen
+	\clearpage
+	\restoregeometry
 
 	\newpage
 	\chapter*{Vorwort}\label{Vorwort}
@@ -92,6 +83,7 @@
 	\subfile{Kapitel/Vorwort}
 	
 	\newpage
+	\addpart{Allgemeines}
 	\chapter{Allgemeines}\label{kapitel:Allgemeines}	
 	\subfile{Kapitel/Allgemeines}	
 	

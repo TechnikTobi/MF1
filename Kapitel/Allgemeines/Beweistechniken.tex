@@ -4,7 +4,31 @@
 	
 	\begin{definition}[Mathematische Aussage]
 		\label{def:MathematischeAussage}
-		Unter einer \textit{mathematischen Aussage} (auch \textit{Satz} genannt) verstehen wir im Normalfall ein Konstrukt der Form $v \Rightarrow f$, bestehend aus einer Voraussetzung $v$ und einer Folgerung $f$.
+		Unter einer \textbf{mathematischen Aussage} (auch \textbf{Satz} genannt) verstehen wir im Normalfall ein Konstrukt der Form $v \Rightarrow f$, bestehend aus einer Voraussetzung $v$ und einer Folgerung $f$, welche beide ebenfalls wiederum mathematische Aussagen sein können.
+	\end{definition}
+
+	\begin{definition}[Mathematischer Beweis]
+		\label{def:MathematischerBeweis}
+		Unter einem \textbf{mathematischen Beweis} (meist auch nur \textbf{Beweis}) verstehen wir den Nachweis dass der zu einem mathematischen Satz korrespondierende logische Ausdruck immer wahr ist, d.h. eine Tautologie ist.
+	\end{definition}
+
+	\subsection{Arten von Beweisen}
+	\begin{definition}[Direkter Beweis]
+		Beim \textbf{direkten Beweis} nehmen wir an, dass die Voraussetzung $v$ wahr ist und wir versuchen, durch Vereinigung von wahren Implikationen zur Aussage \dq$f$ ist wahr\dq zu kommen.
+		$$((v \Rightarrow v_1) \land (v_1 \Rightarrow v_2) \land ... (v_n \Rightarrow f)) \Rightarrow (v \Rightarrow f)$$
+	\end{definition}
+
+	\begin{definition}[Beweis durch Kontradiktion]
+		Beim \textbf{Beweis durch Kontradiktion} nehmen wir an, dass die Folgerung $f$ falsch ist und versuchen dann zu dem Schluss zu kommen, dass dies nur der Fall sein kann wenn die Voraussetzung $v$ falsch ist. \sidenote{Dies entspricht einem direkten Beweis mit Voraussetzung $\lnot f$ und Folgerung $\lnot v$}
+		$$(v \Rightarrow f) \Leftrightarrow (\lnot f \Rightarrow \lnot v)$$
+	\end{definition}
+
+	\begin{definition}[Indirekter Beweis]
+		Beim \textbf{indirekten Beweis} (auch \textbf{Beweis durch Widerspruch}) nehmen wir an, dass die Voraussetzung $v$ wahr, aber dier Folgerung $f$ falsch ist. Nun versuchen wir zu zeigen, dass es sich dabei um einen (logischen) Widerspruch handelt, wodurch der einzige Fall in dem $v \Rightarrow f$ falsch ist ausgeschlossen werden kann und die (logische) Aussage zur Tautologie wird.
+	\end{definition}
+
+	\begin{definition}[Vollständige Induktion]
+		Bei der \textbf{vollständigen Induktion}
 	\end{definition}
 
 \end{document}
