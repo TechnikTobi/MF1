@@ -1,0 +1,89 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+	%Das Gebiet der Logik (in unserem Fall genauer das Gebiet der \textit{formalen} oder auch \textbf{mathematischen} Logik) beschäftigt sich mit Prinzipien des korrekten Schließens von vorhandenem Wissen auf neue Fakten. Es geht um das Ziehen von Schlussfolgerungen, die Gültigkeit von Begründungen und die Widerspruchsfreiheit zwischen Aussagen. Der eigentliche Wahrheitsgehalt von Aussagen spielt dabei \textit{keine} Rolle, es geht viel mehr um die Regeln um as wahren Aussagen richtige Schlüsse zu ziehen.
+
+	%\subsection{Grundlagen der Aussagenlogik}
+	
+	\begin{definition}[Aussage]
+		\label{def:Aussage}
+		Unter einer \textbf{Aussage} verstehen wir einen Satz der natürlichen Sprache, welchem entweder der Wahrheitswert wahr oder falsch zugeordnet werden kann.
+	\end{definition}
+	
+	\begin{definition}[Logische Operatoren]
+		\label{def:LogischeOperatoren}
+		Mit Hilfe von \textbf{logischen Operatoren} (auch \textbf{Verknüpfungen} genannt) können aus vorhandenen \hyperref[def:Aussage]{Aussagen} neue \hyperref[def:Aussage]{Aussagen} gebildet werden. Seien $A$ und $B$ Aussagen, so definieren wir folgende logische Operatoren:
+		
+		\begin{tabular}{cccc}
+			\textbf{Negation}
+			&
+			\textbf{Konjunktion}
+			&
+			\textbf{Disjunktion}
+			&
+			\textbf{Implikation}
+			\\
+			\begin{tabular}[b]{c|c}
+				$A$ & $\lnot A$ \\ 
+				\hline 
+				$f$ & $w$ \\ 
+				\hline 
+				$w$ & $f$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \land B$ \\ 
+				\hline 
+				$f$ & $f$ & $f$ \\ 
+				\hline 
+				$f$ & $w$ & $f$ \\ 
+				\hline 
+				$w$ & $f$ & $f$ \\ 
+				\hline 
+				$w$ & $w$ & $w$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \lor B$ \\ 
+				\hline 
+				$f$ & $f$ & $f$ \\ 
+				\hline 
+				$f$ & $w$ & $w$ \\ 
+				\hline 
+				$w$ & $f$ & $w$ \\ 
+				\hline 
+				$w$ & $w$ & $w$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \Rightarrow B$ \\ 
+				\hline 
+				$f$ & $f$ & $w$ \\ 
+				\hline 
+				$f$ & $w$ & $w$ \\ 
+				\hline 
+				$w$ & $f$ & $f$ \\ 
+				\hline 
+				$w$ & $w$ & $w$ \\ 
+			\end{tabular} 
+		\end{tabular}
+	
+	
+	\end{definition}
+	
+	\begin{definition}[Atomare Aussage]
+		\label{def:AtomareAussage}
+		Unter einer \textbf{atomaren Aussage} verstehen wir eine \hyperref[def:Aussage]{Aussage} welche keine \hyperref[def:LogischeOperatoren]{logischen Verknüpfungen} enthält. 
+	\end{definition}
+
+	\begin{definition}[Tautologie]
+		Unter einer \textbf{Tautologie} verstehen wir eine \hyperref[def:Aussage]{Aussage} welche immer wahr ist.\sidenote{Beispiel: Die Aussage $A \lor \lnot A$ ist immer wahr da immer entweder $A$ oder $\lnot A$ wahr ist}
+	\end{definition}
+
+	
+
+\end{document}
+
+
+
