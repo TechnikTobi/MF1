@@ -52,18 +52,17 @@
 	## Stetige Funktionen
 	## Kurven
 
-# Algebraische Strukturen
-	## Gruppen
-		### Permutationsgruppen
-		### Restklassen
-	## Ringe
-		### Polynomringe
+# Elementare Algebra
+	## Strukturen
+		### Gruppen
+			#### Permutationsgruppen
+			#### Restklassen
+		### Ringe
+			#### Polynomringe
 			#### Polynomdivision
-	## Körper
-	## Homomorphismen
-		### Isomorphismus
-
-# Algebra
+		### Körper
+		### Homomorphismen
+			#### Isomorphismus
 	## Gleichungen
 	## Ungleichungen
 
