@@ -4,7 +4,7 @@
 	
 	\begin{definition}[Mathematische Aussage]
 		\label{def:MathematischeAussage}
-		Unter einer \textbf{mathematischen Aussage} (auch \textbf{Satz} genannt) verstehen wir im Normalfall ein Konstrukt der Form $v \Rightarrow f$, bestehend aus einer Voraussetzung $v$ und einer Folgerung $f$, welche beide ebenfalls wiederum mathematische Aussagen sein können.
+		Unter einer \textbf{mathematischen Aussage} (auch \textbf{Satz} genannt) verstehen wir im Normalfall ein Konstrukt der Form $v \Rightarrow f$, bestehend aus einer Voraussetzung $v$ und einer Folgerung $f$, welche beide ebenfalls wiederum \hyperref[def:Aussage]{Aussagen} (auch mathematische Aussagen) sein können.
 	\end{definition}
 
 	\begin{definition}[Mathematischer Beweis]
@@ -12,7 +12,14 @@
 		Unter einem \textbf{mathematischen Beweis} (meist auch nur \textbf{Beweis}) verstehen wir den Nachweis dass der zu einem mathematischen Satz korrespondierende logische Ausdruck immer wahr ist, d.h. eine Tautologie ist.
 	\end{definition}
 
+	\begin{definition}[Axiom]
+		Unter einem \textbf{Axiom} verstehen wir Aussage welche \textit{unbewiesen} als wahr angenommen wird. \sidenote{Axiome dienen uns als Grundbausteine für Herleitungen, Beweise, etc. die wir allerdings selbst nicht beweisen können und daher als wahr annehmen \textit{müssen}}
+	\end{definition}
+
+
+
 	\subsection{Arten von Beweisen}
+	
 	\begin{definition}[Direkter Beweis]
 		Beim \textbf{direkten Beweis} nehmen wir an, dass die Voraussetzung $v$ wahr ist und wir versuchen, durch Vereinigung von wahren Implikationen zur Aussage \dq$f$ ist wahr\dq zu kommen.
 		$$((v \Rightarrow v_1) \land (v_1 \Rightarrow v_2) \land ... (v_n \Rightarrow f)) \Rightarrow (v \Rightarrow f)$$
