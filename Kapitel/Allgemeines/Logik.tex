@@ -8,19 +8,19 @@
 	
 	\begin{definition}[Aussage]
 		\label{def:Aussage}
-		Unter einer \textbf{Aussage} verstehen wir einen Satz der natürlichen Sprache, welchem entweder der Wahrheitswert wahr oder falsch zugeordnet werden kann.
+		Unter einer \textbf{Aussage} verstehen wir einen Satz der natürlichen Sprache, welchem entweder der Wahrheitswert wahr ($w$, $\top$) oder falsch ($f$, $\bot$) zugeordnet werden kann.
 	\end{definition}
 	
 	\begin{definition}[Logische Operatoren]
 		\label{def:LogischeOperatoren}
-		Mit Hilfe von \textbf{logischen Operatoren} (auch \textbf{Verknüpfungen} genannt) können aus vorhandenen \hyperref[def:Aussage]{Aussagen} neue \hyperref[def:Aussage]{Aussagen} gebildet werden. Seien $A$ und $B$ Aussagen, so definieren wir folgende logische Operatoren:
+		Mithilfe von \textbf{logischen Operatoren} (auch \textbf{Verknüpfungen}) können aus vorhandenen \hyperref[def:Aussage]{Aussagen} neue \hyperref[def:Aussage]{Aussagen} gebildet werden. Seien $A$ und $B$ Aussagen, so definieren wir folgende logische Operatoren: \\
 		
-		\begin{tabular}{cccc}
-			\textbf{Negation}
+		\begin{longtable}{p{28mm}p{28mm}p{28mm}p{28mm}}
+			\textbf{Negation} (Nicht/NOT)
 			&
-			\textbf{Konjunktion}
+			\textbf{Konjunktion} (Und/AND)
 			&
-			\textbf{Disjunktion}
+			\textbf{Disjunktion} (Oder/OR)
 			&
 			\textbf{Implikation}
 			\\
@@ -67,8 +67,67 @@
 				\hline 
 				$w$ & $w$ & $w$ \\ 
 			\end{tabular} 
-		\end{tabular}
-	
+		\end{longtable}
+		Aufbauend auf diesen Operatoren lassen sich neue Verknüpfungen definieren, wie beispielsweise das Nicht-Und/-Oder, das exklusive Oder und die Äquivalenz: \\
+		
+		\begin{longtable}{p{28mm}p{28mm}p{28mm}p{28mm}}
+			\textbf{Nicht-Und} (NAND)
+			&
+			\textbf{Nicht-Oder} (NOR)
+			&
+			\textbf{Exklusive Oder} \vfill (XOR)
+			&
+			\textbf{Äquivalenz}
+			\\
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \tilde\land B$ \\ 
+				\hline 
+				$f$ & $f$ & $w$ \\ 
+				\hline 
+				$f$ & $w$ & $w$ \\ 
+				\hline 
+				$w$ & $f$ & $w$ \\ 
+				\hline 
+				$w$ & $w$ & $f$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \tilde\lor B$ \\ 
+				\hline 
+				$f$ & $f$ & $w$ \\ 
+				\hline 
+				$f$ & $w$ & $f$ \\ 
+				\hline
+				$w$ & $f$ & $f$ \\ 
+				\hline 
+				$w$ & $w$ & $f$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \veebar B$ \\ 
+				\hline 
+				$f$ & $f$ & $f$ \\ 
+				\hline 
+				$f$ & $w$ & $w$ \\ 
+				\hline 
+				$w$ & $f$ & $w$ \\ 
+				\hline 
+				$w$ & $w$ & $f$ \\ 
+			\end{tabular} 
+			&
+			\begin{tabular}{c|c|c}
+				$A$ & $B$ & $A \Leftrightarrow B$ \\ 
+				\hline 
+				$f$ & $f$ & $w$ \\ 
+				\hline 
+				$f$ & $w$ & $f$ \\ 
+				\hline 
+				$w$ & $f$ & $f$ \\ 
+				\hline 
+				$w$ & $w$ & $w$ \\ 
+			\end{tabular} 
+		\end{longtable}
+		
 	
 	\end{definition}
 	
@@ -78,9 +137,12 @@
 	\end{definition}
 
 	\begin{definition}[Tautologie]
-		Unter einer \textbf{Tautologie} verstehen wir eine \hyperref[def:Aussage]{Aussage} welche immer wahr ist.\sidenote{Beispiel: Die Aussage $A \lor \lnot A$ ist immer wahr da immer entweder $A$ oder $\lnot A$ wahr ist}
+		Unter einer \textbf{Tautologie} verstehen wir eine \hyperref[def:Aussage]{Aussage} welche immer \textit{wahr} ist.\sidenote{Beispiel: Die Aussage $A \lor \lnot A$ ist immer wahr da immer entweder $A$ oder $\lnot A$ wahr ist}
 	\end{definition}
 
+	\begin{definition}[Antilogie, Kontradiktion]
+		Unter einer \textbf{Antilogie} (auch \textbf{Kontradiktion}) verstehen wir eine \hyperref[def:Aussage]{Aussage} welche immer \textit{falsch} ist.\sidenote{Beispiel: Die Aussage $A \land \lnot A$ ist immer falsch da $A$ und $\lnot A$ nie gleichzeitig wahr sind}
+	\end{definition}
 	
 
 \end{document}
