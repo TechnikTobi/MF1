@@ -1,7 +1,7 @@
-# Part
-	## Chapter
-		### Section
-			#### Subsection
+# Part: Über dutzende Seiten hinweg
+	## Chapter: Über mehrere Seiten hinweg
+		### Section: Nicht mehr als 1-3 Seiten
+			#### Subsection: Nicht mehr als 1 Seite
 
 # Logik
 	## Grundlagen der Logik
@@ -41,10 +41,12 @@
 		### Rationale Zahlen
 		### Komplexe Zahlen
 	## Relationen
-		
+		### Äquivalenzrelation
+		### Ordnungsrelation
 
 # Funktionale Abhängigkeiten
 	## Abbildungen/Funktionen
+		### Umkehrabbildung
 	## Reelle Funktionen
 	## Elementare Funktionen
 	## Stetige Funktionen
@@ -55,14 +57,22 @@
 		### Permutationsgruppen
 		### Restklassen
 	## Ringe
+		### Polynomringe
+			#### Polynomdivision
 	## Körper
+	## Homomorphismen
+		### Isomorphismus
 
 # Algebra
-	# Gleichungen
-	# Ungleichungen
+	## Gleichungen
+	## Ungleichungen
 
 # Lineare Algebra
 	## Vektorräume
+		### Lineare Abbildungen
+		### Lineare Unabhängigkeit
+		### Basis Dimension
+		### ...
 	## Matrizen
 
 # Graphentheorie
@@ -83,3 +93,4 @@
 # Muss noch untergebracht werden
 ## Landau'sche Notation
 ## Folgen und Reihen
+## Teilbarkeit und der Algorithmus von Euklid
