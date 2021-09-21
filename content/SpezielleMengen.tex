@@ -4,8 +4,69 @@
 	
 	\chapter{Spezielle Mengen}
 	
-		\section{Natürliche Zahlen}
+		%\section{Natürliche Zahlen $\mathbb{N}$, Ganze Zahlen $\mathbb{Z}$ und Rationale Zahlen $\mathbb{Q}$}
+		\section{Natürliche ($\mathbb{N}$), Ganze ($\mathbb{Z}$) und Rationale ($\mathbb{Q}$) Zahlen}
 		
+		\begin{definition}[Natürliche Zahlen]
+			\label{def:NatürlicheZahlen}
+			Wir definieren die Menge $\mathbb{N}$ der \textbf{natürlichen Zahlen} mithilfe des folgenden \hyperref[def:Axiomensystem]{Axiomensystems}, bekannt als die \textit{Peano-Axiome}\sidenote{nach Giuseppe Peano (1858-1932)}:
+%			\begin{enumerate}
+%				\item[(P1)] $1 \in \mathbb{N}$
+%				\item[(P2)] Sei $n \in \mathbb{N}$, so hat $n$ genau einen Nachfolger $n'$ mit $n' \not=1$ und $n' \in \mathbb{N}$
+%				\item[(P3)] Seien $n,m \in \mathbb{N}$ voneinander verschiedene natürliche Zahlen, so sind ihre Nachfolger $n'$ bzw. $m'$ ebenfalls voneinander verschieden ($n \not= m \Rightarrow n' \not=m'$)
+%				\item[(P4)] Sei $M \subseteq \mathbb{N}$. Erfüllt $M$ die beiden Eigenschaften
+%					\begin{itemize}
+%						\item $1 \in M$
+%						\item Sei $n \in M$, so ist der Nachfolger $n'$ von $n$ ebenfalls in $M$ ($n \in M \Rightarrow n' \in M$)
+%					\end{itemize}
+%				so gilt: $M = \mathbb{N}$
+%			\end{enumerate}
+			\begin{enumerate}
+				\item Die Zahl 0 ist eine natürliche Zahl: $$0 \in \mathbb{N}$$
+				\item Sei $n$ eine natürliche Zahl, so hat $n$ genau einen Nachfolger $n'$\sidenote{Unter dem Nachfolger $n'$ einer Zahl $n$ verstehen wir im Kontext dieser Definition $n+1$} welcher ebenfalls eine natürliche Zahl ist: $$\forall n \in \mathbb{N}: n' \in \mathbb{N}$$
+				\item Sei $n$ eine natürliche Zahl, so hat $n$ genau einen Nachfolger $n'$ ungleich 0: $$\forall n \in \mathbb{N}: n' \not= 0$$
+				\item Seien $n$ und $m$ natürliche Zahlen und $n'$ und $m'$ ihre respektiven Nachfolger, so gilt dass falls $n'$ und $m'$ gleich sind auch $n$ und $m$ gleich sind: $$\forall n,m \in \mathbb{N}: n' = m' \Rightarrow n=m$$
+				\item Sei $M$ eine Menge. Enthält $M$ die Zahl 0 und für jede in $M$ enthaltene Zahl $n$ auch ihren Nachfolger $n'$, so ist die Menge der natürlichen Zahlen eine Teilmenge von $M$: $$\forall M: (0 \in M \land (n \in M) \Rightarrow (n' \in M)) \Rightarrow \mathbb{N} \subseteq M$$
+			\end{enumerate}
+			Es gibt verschiedene Formulierungen der Peano-Axiome denen man begegnet. Eine Weitere wäre beispielsweise:
+			\begin{enumerate}
+				\item $1 \in \mathbb{N}$
+				\item Sei $n \in \mathbb{N}$, so hat $n$ genau einen Nachfolger $n'$ mit $n' \not=1$ und $n' \in \mathbb{N}$
+				\item Seien $n,m \in \mathbb{N}$ voneinander verschiedene natürliche Zahlen, so sind ihre Nachfolger $n'$ bzw. $m'$ ebenfalls voneinander verschieden ($n \not= m \Rightarrow n' \not=m'$)
+				\item Sei $M \subseteq \mathbb{N}$. Erfüllt $M$ die beiden Eigenschaften
+					\begin{itemize}
+						\item $1 \in M$
+						\item Sei $n \in M$, so ist der Nachfolger $n'$ von $n$ ebenfalls in $M$ ($n \in M \Rightarrow n' \in M$)
+					\end{itemize}
+				so gilt: $M = \mathbb{N}$
+			\end{enumerate}
+			Wir sehen, dass diese Version der Axiome die Zahl 0 nicht zu den natürlichen Zahlen zählt. In weiterer Folge werden wir jedoch die Zahl 0 zu $\mathbb{N}$ hinzunehmen.\sidenote{Falls doch einmal notwendig werden wir $\mathbb{N}^*$ für $\mathbb{N}\setminus \{0\}$ verwenden.}
+		\end{definition}
+	
+		\begin{definition}[Ganze Zahlen]
+			\label{def:GanzeZahlen}
+			Basierend auf der Menge der \hyperref[def:NatürlicheZahlen]{natürlichen Zahlen} definieren wir die Menge der \textbf{ganzen Zahlen } $\mathbb{Z}$: $$\mathbb{Z} = \{z|z \in \mathbb{N} \lor -z \in \mathbb{N}\}$$
+		\end{definition}
+	
+		\begin{definition}[Rationale Zahlen]
+			Basierend auf der Menge der \hyperref[def:NatürlicheZahlen]{natürlichen Zahlen} und der \hyperref[def:GanzeZahlen]{ganzen Zahlen} definieren wir die Menge der \textbf{rationalen Zahlen} $\mathbb{R}$: $$\mathbb{R} = \{r | r = \frac{z}{n}, z \in \mathbb{Z}, n \in \mathbb{N}^* \}$$
+		\end{definition}
+	
+	
+
+		
+		
+		\subsection*{Die Mächtigkeit von $\mathbb{N}$, $\mathbb{Z}$ und $\mathbb{Q}$}
+		
+		$\aleph_0$
+		
+		\section{Irrationale Zahlen $\mathbb{R}$}
+		
+		$\mathfrak{c}$
+		
+		
+		
+		\section{Komplexe Zahlen $\mathbb{C}$}
 		
 	
 \end{document}
