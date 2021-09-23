@@ -1,0 +1,51 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+	\chapter{Abbildungen}
+	\label{chap:Abbildungen}
+
+	\begin{definition}[Abbildung, Funktion]
+		\label{def:Abbildung}
+		\label{def:Funktion}
+		Nehmen wir zwei \hyperref[def:Menge]{Mengen} $M$ und $N$. Unter einer \textbf{Abbildung} (auch, \textit{und viel häufiger}, \textbf{Funktion} genannt) $$f: M \rightarrow N, m \mapsto f(m)$$ verstehen wir nun die Zuordnung \textit{genau eines} Elements $n \in N$ zu jedem Element $m\in M$.\sidenote{In diesem Kontext: ''$\rightarrow$'' für Mengen\\ ''$\mapsto$'' für Elemente}
+	\end{definition}
+
+	\begin{definition}[Definitionsmenge]
+		\label{def:Definitionsmenge}
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Abbildung]{Abbildung}, dann nennen wir $D(f) = M$ \textbf{Definitionsmenge} von $f$.
+	\end{definition}
+
+	\begin{definition}[Argument]
+		\label{def:Argument}
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Abbildung]{Abbildung}, dann nennen wir $m \in M$ das Argument von $f$.
+	\end{definition}
+
+	\begin{definition}[Bildmenge]
+		\label{def:Bildmenge}
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Abbildung]{Abbildung}, dann nennen wir $$f(M) = \{n \in N | \exists m \in M: n=f(m)   \}$$
+	\end{definition}
+
+	\begin{definition}[Bild, Urbild]
+		\label{def:Bild}
+		\label{def:Urbild}
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Abbildung]{Abbildung}, $m \in M$, $n \in N$ und $n = f(m)$. Dann nennen wir $n$ das \textbf{Bild} von $m$ und $m$ das \textbf{Urbild} von $n$. Weiters sei $O \subseteq M$ und $P \subseteq N$. Dann heißt die Menge der Bilder von $o \in O$ \textbf{Bild von $O$} und die Menge der Urbilder von $p \in P$ \textbf{Urbild von $P$}: 
+	\end{definition}
+
+	\begin{definition}[Injektiv, Surjektiv, Bijektiv]
+		\label{def:Injektiv}
+		\label{def:Surjketiv}
+		\label{def:Bijektiv}
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Abbildung]{Abbildung}. So nennen wir $f$
+		\begin{itemize}
+			\item \textbf{Injektiv}: Für jedes Paar $m_1,m_2 \in M$ gilt, dass wenn die Bilder von $m_1$ und $m_2$ gleich sind, auch $m_1$ und $m_2$ gleich sind: $$\forall m_1,m_2 \in M: (f(m_1)=f(m_2)) \Rightarrow m_1 = m_2$$
+			\item \textbf{Surjektiv}: Für jedes $n \in N$ gibt es ein $m \in M$ sodass $f(m)=n$: $$\forall n \in N: \exists m \in M: f(m)=n$$
+			\item \textbf{Bijektiv}: Wenn $f$ injektiv und surjektiv ist
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Umkehrabbildung]
+		Sei $f: M \rightarrow N, m \mapsto f(m)$ eine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildung}. Nun definieren wir die sogenannte \textbf{Umkehrabbildung} $$f^{-1}: N \rightarrow M, n \mapsto m$$ mit $f^{-1}(n)=m$ wenn $f(m)=n$.
+	\end{definition}
+
+\end{document}
