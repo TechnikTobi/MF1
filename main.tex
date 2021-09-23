@@ -33,10 +33,12 @@
 
 % Für mathematische Notationen
 \usepackage{amssymb}
+\usepackage{amsmath}
 
 \usepackage{longtable, array, booktabs}
 
 % Schriftarten für Überschriften
+\addtokomafont{title}{\rmfamily}
 \addtokomafont{part}{\rmfamily}
 \addtokomafont{chapter}{\rmfamily}
 \addtokomafont{chapterentry}{\rmfamily}
@@ -50,16 +52,20 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
+% Für große Matrizen
+\setcounter{MaxMatrixCols}{20}
+
 % Nach einem Absatz nicht einrücken
 \setlength{\parindent}{0pt}
-
-% Beginnen wir mit Kapitel 0 ;)
-\setcounter{chapter}{-1}
 
 % Metadaten
 \title{Mathematik für 1nf0rmatiker:innen}
 \author{Tobias Prisching}
-\date{ }
+\date{Fassung vom \today}
+
+% Beginnen wir mit Kapitel 0 ;)
+% \setcounter{chapter}{-1}
+\setcounter{chapter}{0}
 
 % Für Tests...
 \usepackage{blindtext}
@@ -92,7 +98,6 @@
 	\addcontentsline{toc}{chapter}{Symbole}	
 	\subfile{content/Symbole}
 	
-	
 	\newpage
 	\addpart{Logik}
 	\subfile{content/GrundlagenDerLogik}	
@@ -102,5 +107,14 @@
 	\addpart{Mengen und Relationen}
 	\subfile{content/Mengenlehre}
 	\subfile{content/SpezielleMengen}
+	\subfile{content/Relationen}
+	
+	\newpage
+	\addpart{Funktionale Abhängigkeiten}
+	\subfile{content/Abbildungen}
+	
+	\newpage
+	\addpart{Algebra}
+	\subfile{content/AlgebraischeStrukturen}
 	
 \end{document}
