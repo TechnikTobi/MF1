@@ -28,6 +28,7 @@
 	\section{Teilmenge und Obermenge}
 
 	\begin{definition}[Teilmenge]
+		\label{def:Teilmenge}
 		Unter einer \textbf{Teilmenge} der Menge $M$ verstehen wir eine Menge $N$ von der jedes Element in $M$ enthalten ist: $N \subseteq M$.
 	\end{definition}
 
@@ -107,12 +108,17 @@
 
 	\section{Mächtigkeit}
 	
-	\begin{definition}[Mächtigkeit, Kardinalität]
-		Unter der \textbf{Mächtigkeit} (auch \textbf{Kardinalität}) einer Menge $M$ verstehen wir die Anzahl der in $M$ enthaltenen Elemente, welche als $|M|$ notiert wird. 
+	\begin{definition}[Mächtigkeit, Kardinalität, Kardinalzahl]
+		\label{def:Mächtigkeit}
+		\label{def:Kardinalität}
+		\label{def:Kardinalzahl}
+		Unter der \textbf{Mächtigkeit} (auch \textbf{Kardinalität}) einer Menge $M$ verstehen wir die Anzahl der in $M$ enthaltenen Elemente (die \textbf{Kardinalzahl}), welche als $|M|$ notiert wird. 
 	\end{definition}
-
-	Gilt $|M| = |N|$, so nennen wir die beiden Mengen $M$ und $N$ gleichmächtig. 
 	
+	\begin{definition}[gleichmächtig]
+		\label{def:gleichmächtig}
+		Gilt $|M| = |N|$, so nennen wir die beiden Mengen $M$ und $N$ \textbf{gleichmächtig} (wir sagen auch, sie haben die gleiche \hyperref[def:Kardinalität]{Kardinalität}). Des Weiteren halten wir fest, dass zwei Mengen $M$ und $N$ genau dann gleichmächtig sind, wenn es eine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildung}\sidenote{Siehe Kapitel \ref{chap:Abbildungen}} $f: M \rightarrow N$ zwischen diesen Mengen gibt. 
+	\end{definition}
 	
 
 \end{document}
