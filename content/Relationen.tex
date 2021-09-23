@@ -1,0 +1,53 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	
+	\chapter{Relationen}
+	
+	\begin{definition}[(2-stellige) Relation]
+		\label{def:Relation}
+		Seien $M$ und $N$ \hyperref[def:Menge]{Mengen} und $R$ eine \hyperref[def:Teilmenge]{Teilmenge} des kartesischen Produkt der beiden ($R \subseteq M \times N$). Nun verstehen wir unter $R$ eine \textbf{Relation} auf $M \times N$. Für den Spezialfall $M=N$ heißt $R$ Relation auf $M$.\sidenote{Der Punkt dabei ist, dass die \hyperref[def:Teilmenge]{Teilmenge} $R$ beliebig definiert werden kann um verschiedenste Relationen bilden zu können.}
+	\end{definition}
+
+	Dabei gilt es vor allem zu beachten, dass eine Relation für ein Paar von Werten (= ein Element des kartesischen Produkts) nur entweder zutreffen kann oder nicht - entweder es gibt eine Relation zwischen den Werten oder nicht. Wir können eine Relation also als eine Aussagevorschrift über das Verhältnis zwischen diesen Werten betrachten.\\
+	
+	
+	Um auszudrücken dass beispielsweise die Elemente $0$ und $1$ die Relation $<$ erfüllen können wir eine der folgenden Schreibweisen verwenden: $R_<(0,1)$\sidenote{Es kann auch nur $R(0,1)$ geschrieben werden, vorausgesetzt die Bezeichnung $R$ ist eindeutig} oder $(0,1) \in R_<$ oder schlicht $0<1$.
+	
+	\begin{definition}[$n$-stellige Relation]
+		\label{def:nStelligeRelation}
+		Basierend auf der vorangehenden Definition von \hyperref[def:Relation]{2-stelligen Relationen} definieren wir diese nun für $n$ Stellen: Seien $M_1$, ..., $M_n$ \hyperref[def:Menge]{Mengen} und $R \subseteq M_1 \times ... \times M_n$ dann heißt $R$ \textbf{$n$-stellige Relation} auf $M_1 \times ... \times M_n$.
+	\end{definition}
+
+	\begin{definition}[Äquivalenzrelation]
+		\label{def:Äquivalenzrelation}
+		Unter einer \textbf{Äquivalenzrelation}\sidenote{wie bspw. $R_=$} verstehen wir eine \hyperref[def:Relation]{Relation} $R$ auf einer \hyperref[def:Menge]{Menge} $M$ welche folgende Eigenschaften erfüllt: 
+		\begin{itemize}
+			\item \textbf{Reflexivität}: Für alle Elemente $m$ aus $M$ gilt, dass diese mit sich selbst in Relation stehen: $$\forall m \in M: R(m,m)$$
+			\item \textbf{Symmetrie}: Für alle Paare von Elementen $(m_1, m_2)$ aus $M \times M$ gilt, dass falls $m_1$ und $m_2$ in Relation stehen ($R(m_1,m_2)$) auch $m_2$ und $m_1$ in Relation stehen ($R(m_2, m_1)$): $$\forall m_1, m_2 \in M: R(m_1,m_2) \Leftrightarrow R(m_2, m_1)$$
+			\item \textbf{Transitivität}: Für alle Elemente $m_1$, $m_2$ und $m_3$ aus $M$ gilt, dass falls $m_1$ und $m_2$ in Relation stehen ($R(m_1, m_2)$) und $m_2$ und $m_3$ in Relation stehen ($R(m_2,m_3)$) auch $m_1$ und $m_3$ in Relation stehen ($R(m_1, m_3)$): $$\forall m_1, m_2, m_3 \in M: (R(m_1,m_2) \land R(m_2,m_3)  ) \Rightarrow R(m_1,m_3) $$
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Äquivalenzklasse]
+		Sei $R$ eine \hyperref[def:Äquivalenzrelation]{Äquivalenzrelation} auf einer \hyperref[def:Menge]{Menge} $M$ und $m \in M$. Nun verstehen wir unter einer \textbf{Äquivalenzklasse} $[m]$ eine \hyperref[def:Menge]{Menge} von Elementen welche zu $m$ in Relation stehen (auch, \textit{die zu $m$ äquivalent sind}): $$[m]=\{n \in M | R(n,m)\}$$
+	\end{definition}
+
+	\begin{definition}[partielle Ordnungsrelation]
+		\label{def:partielleOrdnungsrelation}
+		Unter einer \textbf{partiellen Ordnungsrelation}\sidenote{wie bspw. $R_\leq$} verstehen wir eine \hyperref[def:Relation]{Relation} $R$ auf einer \hyperref[def:Menge]{Menge} $M$ welche folgende Eigenschaften erfüllt:
+		\begin{itemize}
+			\item Reflexivität (Siehe \ref{def:Äquivalenzrelation})
+			\item Transitivität (Siehe \ref{def:Äquivalenzrelation})
+			\item \textbf{Anti-Symmetrie}: Für alle Paare von Elementen $(m_1, m_2)$ aus $M \times M$ gilt, dass falls $m_1$ und $m_2$ und auch $m_2$ und $m_1$ in Relation stehen ($R(m_1,m_2)$ und $R(m_2, m_1)$), $m_1$ und $m_2$ gleich sein müssen: $$\forall m_1, m_2 \in M: (R(m_1,m_2) \land R(m_2, m_1)) \Rightarrow m_1 = m_2$$
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[totale Ordnungsrelation]
+		Unter einer \textbf{totalen Ordnungsrelation} verstehen wir eine \hyperref[def:Relation]{Relation} $R$ auf einer \hyperref[def:Menge]{Menge} $M$ welche neben den Eigenschaften der \hyperref[def:partielleOrdnungsrelation]{partiellen Ordnungsrelation} auch die folgende Eigenschaft erfüllt:
+		\begin{itemize}
+			\item \textbf{Totalität}: Für alle Paare von Elementen $m_1$, $m_2$ mit $m_1 \in M$ und $m_2 \in M$ gilt, dass entweder $m_1$ und $m_2$ in Relation stehen oder aber $m_2$ und $m_1$: $$\forall m_1, m_2 \in M: R(m_1,m_2) \lor R(m_2, m_1) $$
+		\end{itemize}
+	\end{definition}
+	
+\end{document}
