@@ -4,6 +4,8 @@
 	
 	\chapter{Relationen}
 	
+	\section{Grundlegendes}
+	
 	\begin{definition}[(2-stellige) Relation]
 		\label{def:Relation}
 		Seien $M$ und $N$ \hyperref[def:Menge]{Mengen} und $R$ eine \hyperref[def:Teilmenge]{Teilmenge} des kartesischen Produkt der beiden ($R \subseteq M \times N$). Nun verstehen wir unter $R$ eine \textbf{Relation} auf $M \times N$. Für den Spezialfall $M=N$ heißt $R$ Relation auf $M$.\sidenote{Der Punkt dabei ist, dass die \hyperref[def:Teilmenge]{Teilmenge} $R$ beliebig definiert werden kann um verschiedenste Relationen bilden zu können.}
@@ -19,6 +21,8 @@
 		Basierend auf der vorangehenden Definition von \hyperref[def:Relation]{2-stelligen Relationen} definieren wir diese nun für $n$ Stellen: Seien $M_1$, ..., $M_n$ \hyperref[def:Menge]{Mengen} und $R \subseteq M_1 \times ... \times M_n$ dann heißt $R$ \textbf{$n$-stellige Relation} auf $M_1 \times ... \times M_n$.
 	\end{definition}
 
+	\section{Äquivalenzrelationen}
+
 	\begin{definition}[Äquivalenzrelation]
 		\label{def:Äquivalenzrelation}
 		Unter einer \textbf{Äquivalenzrelation}\sidenote{wie bspw. $R_=$} verstehen wir eine \hyperref[def:Relation]{Relation} $R$ auf einer \hyperref[def:Menge]{Menge} $M$ welche folgende Eigenschaften erfüllt: 
@@ -29,9 +33,63 @@
 		\end{itemize}
 	\end{definition}
 
+	\subsection{Äquivalenzklassen}
+	
 	\begin{definition}[Äquivalenzklasse]
+		\label{def:Äquivalenzklasse}
 		Sei $R$ eine \hyperref[def:Äquivalenzrelation]{Äquivalenzrelation} auf einer \hyperref[def:Menge]{Menge} $M$ und $m \in M$. Nun verstehen wir unter einer \textbf{Äquivalenzklasse} $[m]$ eine \hyperref[def:Menge]{Menge} von Elementen welche zu $m$ in Relation stehen (auch, \textit{die zu $m$ äquivalent sind}): $$[m]=\{n \in M | R(n,m)\}$$
 	\end{definition}
+
+%	\begin{definition}[kongruent modulo $n$, Restklasse]
+%		\label{def:Restklasse}
+%		Sei $R$ eine \hyperref[def:Äquivalenzrelation]{Äquivalenzrelation} auf $\mathbb{Z}$ bei der die Differenz zwischen den Elementen durch eine gegebene Zahl teilbar ist. Die beiden Elemente $z_1, z_2 \in \mathbb{Z}$ nennen wir \textbf{kongruent modulo} $n$ mit $n \in \mathbb{N}$ wenn $z_1 - z_2$ durch $n$ ohne Rest teilbar ist, geschrieben $z_1 \equiv z_2 \mod n$ \sidenote{Nicht zu verwechseln mit $x \mod y$ (gesprochen $x$ \textit{Modulo} $y$), dem verbleibenden Rest nach der Division von $x$ durch $y$}
+%	\end{definition}
+
+	\subsection{Einschub: Teilbarkeit}
+
+	\begin{definition}[teilbar, Quotient]
+		\label{def:teilbar}
+		\label{def:Quotient}
+		Es seien $z_1, z_2 \in \mathbb{Z}$ mit $z_2 \not = 0$. Wir sagen dass $z_1$ durch $z_2$ \textbf{teilbar} ist (geschrieben $z_2|z_1$, ''$z_2$ teilt $z_1$'') wenn ein \textbf{Quotient} $q \in \mathbb{Z}$ existiert sodass $z_1 = z_2 \cdot q$ gilt.
+	\end{definition}
+
+%	\begin{definition}[kongruent modulo $n$]
+%		\label{def:kongruentModuloN}
+%		Wir definieren eine neue \hyperref[def:Äquivalenzrelation]{Äquivalenzrelation}: Es seien $z_1,z_2 \in \mathbb{Z}$, $n \in \mathbb{N}^*$. Die beiden Elemente $z_1, z_2$ nennen wir \textbf{kongruent modulo} $n$ wenn $z_1 - z_2$ durch $n$ ohne Rest \hyperref[def:teilbar]{teilbar} ist, geschrieben $z_1 \equiv z_2 \mod n$. 
+%	\end{definition}
+	
+	\begin{definition}[kongruent modulo $n$]
+		\label{def:kongruentModuloN}
+		Es seien $z_1,z_2 \in \mathbb{Z}$, $n \in \mathbb{N}^*$. Die beiden Elemente $z_1, z_2$ nennen wir \textbf{kongruent modulo} $n$ wenn $z_1 - z_2$ durch $n$ ohne Rest \hyperref[def:teilbar]{teilbar} ist, geschrieben $z_1 \equiv z_2 \mod n$. 
+	\end{definition}
+
+	\begin{theorem}
+		\label{satz:kongruentModuloN}
+		Seien $z_1, z_2 \in \mathbb{Z}$. Die beiden Elemente $z_1,z_2$ sind genau dann \hyperref[def:kongruentModuloN]{kongruent modulo} $n$ mit $n \in \mathbb{N}^*$ (also $z_1 \equiv z_2 \mod n$) wenn $z_1$ und $z_2$ nach der Division mit $n$ beide den gleichen Rest haben (also $z_1 \mod n = z_2 \mod n$).
+		\begin{proof}
+			Wir wollen zeigen: $$z_1 \equiv z_2 \mod n \Leftrightarrow z_1 \mod n = z_2 \mod n$$ Zeigen wir zunächst ''$\Leftarrow$'': Dazu schreiben wir $z_1$ und $z_2$ um: $z_1 = q_1 \cdot n + r$ und $z_2 = q_2 \cdot n + r$ mit den Quotienten $q_1,q_2$ und dem Rest $r$ (aus $z_1 \mod n = z_2 \mod n$ folgt dass beide den gleichen Rest $r$ haben müssen). Folglich lautet die Differenz $z_1-z_2$ der beiden Elemente: $z_1 - z_2 = q_1 \cdot n + r - (q_2 \cdot n + r) = q_1 \cdot n - q_2 \cdot n = (q_1 - q_2) \cdot n$. Diese Differenz ist durch $n$ teilbar, also folgt $z_1 \equiv z_2 \mod n$. \\ \\
+			Nun zeigen wir den ''$\Rightarrow$'' Teil: Schreiben wir $z_1$ und $z_2$ erneut um: $z_1 = q_1 \cdot n + r_1$ und $z_2 = q_2 \cdot n + r_2$ mit den Quotienten $q_1,q_2$ und den Resten $r_1,r_2$ (aus $z_1 \equiv z_2 \mod n$ ist nicht direkt ersichtlich dass beide den gleichen Rest haben müssen). Des Weiteren wissen wir dass die Differenz $z_1-z_2$ ein Vielfaches von $n$ ist: $z_1-z_2 = q \cdot n$. Wir können die Differenz aber auch so schreiben: $z_1 - z_2 = q_1 \cdot n + r_1 - q_2 \cdot n + r_2 = (q_1-q_2) \cdot n + (r_1-r_2) (=q \cdot n)$. Da $(q_1-q_2) \cdot n$ offensichtlich ein Vielfaches von $n$ ist, muss auch $(r_1-r_2)$ ein Vielfaches von $n$ sein: $r_1-r_2=q_r \cdot n$. Durch Umformen erhalten wir: $r_1 = q_r\cdot n + r_2$. Da aber $r_1 < n$ sein muss (und der Rest $r_2$ positiv sein muss), muss $q_r=0$ gelten, woraus folgt: $r_1 = 0 \cdot n + r_2 = r_2$. Da wir die Reste durch Anwendung von Modulo erhalten, folgt: $z_1 \mod n = z_2 \mod n$.
+		\end{proof}
+	\end{theorem}
+
+	\begin{theorem}
+		Die Relation $\equiv$ ist eine Äquivalenzrelation.
+		\begin{proof}\hspace*{1cm}
+			\begin{itemize}
+				\item Reflexivität: $z_1 \equiv z_1 \mod n$ ist offensichtlich wahr (ob $z_1-z_1$ oder $z_1-z_1$\sidenote{Nein, kein Tippfehler} durch $n$ \hyperref[def:teilbar]{teilbar} ist macht keinen Unterschied)
+				\item Symmetrie: Aus $z_1 \equiv z_2 \mod n$ folgt $z_2 \equiv z_1 \mod n$, da dadurch schlichtweg das Vorzeichen der Differenz der Elemente (und folglich auch des Quotienten) umgedreht wird, der Rest aber unverändert bleibt. 
+				\item Transitivität: Dass wenn $z_1 \equiv z_2 \mod n$ und $z_2 \equiv z_3 \mod n$ wahr sind auch $z_1 \equiv z_3 \mod n$ wahr ist, lässt sich dank Satz \ref{satz:kongruentModuloN} einfach zeigen: $z_1$ und $z_2$ haben offensichtlich nach der Division mit $n$ den gleichen Rest ($z_1 \mod n = z_2 \mod n$), gleiches gilt auch für $z_2$ und $z_3$. Wenn $(z_1 \mod n) = (z_2 \mod n)$ und $(z_2 \mod n) = (z_3 \mod n)$\sidenote{Klammern gesetzt um ''$=$'' als Äquivalenzrelation hervorzuheben}, dann muss auch $(z_1 \mod n) = (z_3 \mod n)$ gelten, woraus (dank Satz \ref{satz:kongruentModuloN}) folgt, dass $z_1 \equiv z_3 \mod n$ wahr ist.
+			\end{itemize}
+		\end{proof}
+	\end{theorem}
+
+	\subsection{Restklassen}
+	\begin{definition}[Restklasse]
+		Sei $n \in \mathbb{N}^*$ und $m \in \mathbb{N}$ mit $m < n$. Nun bilden jene Elemente welche zu $m$ kongruent modulo $n$ sind eine \hyperref[def:Äquivalenzklasse]{Äquivalenzklasse} $[m]_n$, eine sogenannte \textbf{Restklasse}. 
+	\end{definition}
+	
+
+	\section{Ordnungsrelationen}
 
 	\begin{definition}[partielle Ordnungsrelation]
 		\label{def:partielleOrdnungsrelation}
