@@ -2,4 +2,121 @@
 
 \begin{document}
 	
+	\chapter{Algebraische Strukturen}
+	
+		\begin{definition}[Operation]
+			\label{def:Operation}
+			Unter einer \textbf{Operation} verstehen wir eine Abbildung vom kartesischen Produkt einer zugrundeliegenden Menge mit sich selbst in eben diese Menge. Einfacher formuliert handelt es sich dabei um eine Verknüpfung von Elementen.\sidenote{Addition und Multiplikation sind zwei Beispiele für Operationen} 
+		\end{definition}
+	
+		\begin{definition}[Algebraische Struktur]
+			\label{def:AlgebraischeStrutur}
+			Unter einer \textbf{algebraischen Struktur} verstehen wir eine \hyperref[def:Menge]{Menge} auf welcher eine oder mehrere \hyperref[def:Operation]{Operation(en)} definiert ist/sind.
+		\end{definition}
+	
+		\section{Gruppen}
+	
+		\begin{definition}[Gruppe, neutrales Element, inverses Element, assoziativ]
+			\label{def:Gruppe}
+			\label{def:neutralesElement}
+			\label{def:inversesElement}
+			\label{def:assoziativ}
+			Unter einer \textbf{Gruppe} $(G,*)$ verstehen wir eine \hyperref[def:Menge]{Menge} $G$ auf welcher eine \hyperref[def:Operation]{Operation} (\hyperref[def:Abbildung]{Abbildung}) $*: G \times G \rightarrow G$ definiert ist. Dabei müssen folgende Eigenschaften erfüllt sein:
+			\begin{itemize}
+				\item \textbf{Neutrales Element}: Es existiert ein $e \in G$ sodass $e * g = g * e = g$ für alle $g\in G$ gilt. Dieses Element $e$ nennen wir neutrales Element in $G$.
+				\item \textbf{Inverses Element}: Für jedes $g \in G$ existiert genau ein eindeutiges Element $g^{-1} \in G$ sodass $g * g^{-1} = g^{-1} * g = e$ gilt. Jedes solche Element $g^{-1}$ nennen wir das inverse Element zu $g$.
+				\item \textbf{Assoziativ}: Es seien $g_1, g_2,g_3 \in G$ beliebig. Gilt für jedes solches Triplett dass $g_1 * (g_2 * g_3) = (g_1 * g_2) * g_3$, so nennen wir $G$ assoziativ. 
+			\end{itemize}
+		\end{definition}
+	
+		\begin{definition}[kommutativ, kommutative Gruppe, abelsche Gruppe]
+			\label{def:kommutativeGruppe}
+			\label{def:abelscheGruppe}
+			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe}. Erfüllt $(G,*)$ nun zusätzlich die Eigenschaft 
+			\begin{itemize}
+				\item \textbf{Kommutativ}: Für alle $g_1,g_2 \in G$ gilt, dass $g_1 * g_2 = g_2 * g_1$
+			\end{itemize}
+			so nennen wir $(G,*)$ eine \textbf{kommutative} (oder auch \textbf{abelsche}\sidenote{benannt nach Niels Henrik Abel (1802-1829)}) Gruppe. 
+		\end{definition}
+	
+		\begin{theorem}
+			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe}, so gilt für alle $g_1,g_2\in G$:
+			\begin{itemize}
+				\item Das \hyperref[def:inversesElement]{inverse Element} von $(g_1*g_2)$ lässt sich folgendermaßen umschreiben: \sidenote{Wichtig: \\ $(g_1*g_2)^{-1}=g_1^{-1}*g_2^{-1}$ gilt nur in \hyperref[def:abelscheGruppe]{abelschen Gruppen}} $$(g_1*g_2)^{-1}=g_2^{-1}*g_1^{-1}$$
+				\begin{proof}
+					Wir wollen folgendes zeigen: $(g_1*g_2)*(g_2^{-1}*g_1^{-1})=e$. Dazu wenden wir das Assoziativgesetz an: $(g_1*g_2)*(g_2^{-1}*g_1^{-1})=g_1 * (g_2*g_2^{-1}) * g_1^{-1}$. Nun können wir die Eigenschaft des inversen Elements anwenden: $g_2*g_2^{-1}=e$ $\Rightarrow g_1 * (g_2*g_2^{-1}) * g_1^{-1} = g_1 * e * g_1^{-1}$. Aufgrund der Eigenschaft des neutralen Elements wissen wir: $g_1 * e = g_1$, woraus folgt: $g_1 * e * g_1^{-1} = g_1 * g_1^{-1}$. Wir wenden erneut die Eigenschaft des inversen Elements an: $g_1 * g_1^{-1} = e$
+				\end{proof}
+				\item Das \hyperref[def:inversesElement]{inverse Element} eines Elements $g \in G$ ist eindeutig.
+				\begin{proof}
+					Nehmen wir an, es gibt zwei \hyperref[def:inversesElement]{inverse Elemente} $g^{-1}$ und $\hat{g}$ zu $g \in G$. Wir wollen zeigen, dass diese beiden \hyperref[def:inversesElement]{inverse Elemente} gleich sind: $g^{-1} = \hat{g}$. Wir wissen, dass wir ein Element mit dem neutralen Element erweitern können: $g^{-1} = g^{-1} * e$. Des Weiteren erhalten wir das neutrale Element durch Verknüpfung: $g^{-1} * e = g^{-1} * (g * \hat{g})$. Nun wenden wir das Assoziativgesetz an und erneut die Eigenschaften des inversen und des neutralen Elements: $g^{-1} * (g * \hat{g}) = (g^{-1} * g) * \hat{g} = e * \hat{g} = \hat{g}$
+				\end{proof}
+			\end{itemize}
+		\end{theorem}
+	
+		\begin{definition}[Untergruppe]
+			\label{def:Untergruppe}
+			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe} und $U \subseteq G$, so ist $(U,*)$ eine \textbf{Untergruppe} von $G$\sidenote{bspw. ist $(\mathbb{Z},+)$ eine Untergruppe von $(\mathbb{R},+)$}, wenn folgende Eigenschaften erfüllt sind:  
+			\begin{itemize}
+				\item Für jedes in $U$ enthaltene Element ist auch dessen \hyperref[def:inversesElement]{inverses Element} in $U$:\sidenote{Achtung: Der Allquantor $\forall$ besagt \textit{nicht} dass jedes Element von $G$ auch in $U$ ist!} $$\forall g \in G: (g \in U) \Rightarrow (g^{-1} \in U)$$
+				\item Die Verknüpfung zweier Elemente aus $U$ ist ebenfalls in $U$: $$\forall g_1,g_2 \in G: (g_1, g_2 \in U) \Rightarrow (g_1 * g_2 \in U)$$
+			\end{itemize}
+		\end{definition}
+	
+		\subsection{Permutationsgruppen}
+	
+		\subsection{Restklassen als Gruppen}
+	
+	
+	
+	
+	
+	
+	
+		\section{Ringe}
+		\begin{definition}[Ring]
+			\label{def:Ring}
+			Unter einem \textbf{Ring} $(R, \oplus, \odot)$ verstehen wir eine \hyperref[def:Menge]{Menge} auf welcher zwei \hyperref[def:Operation]{Operation} $\oplus$ und $\odot$ definiert sind. Dabei müssen folgende Eigenschaften erfüllt sein: 
+			\begin{itemize}
+				\item \textbf{Kommutative Gruppe}: $(R, \oplus)$ ist eine \hyperref[def:kommutativeGruppe]{kommutative Gruppe}
+				\item \textbf{Assoziativ}: Es seien $r_1, r_2, r_3 \in R$ beliebig. Gilt für jedes solche Triplett dass $r_1 \odot (r_2 \odot r_3) = (r_1 \odot r_2) \odot r_3$, so nennen wir $R$ assoziativ (bezüglich $\odot$). 
+				\item \textbf{Distributiv}: Es seien $r_1, r_2, r_3 \in R$ beliebig. Gilt für jedes solche Triplett dass 
+				\begin{itemize}
+					\item $a \odot (b \oplus c) = (a \odot b) \oplus (a \odot c)$
+					\item $(b \oplus c) \odot a = (b \odot a) \oplus (c \odot a)$
+				\end{itemize}
+				so nennen wir $R$ distributiv.
+			\end{itemize}
+		\end{definition}
+	
+		\begin{definition}[kommutativer Ring]
+			\label{def:kommutativerRing}
+			Es sei $(R, \oplus, \odot)$ ein \hyperref[def:Ring]{Ring}. Erfüllt $(R, \oplus, \odot)$ nun zusätzlich die Eigenschaft 
+			\begin{itemize}
+				\item \textbf{Kommutativ (bezüglich $\odot$)}: Für alle $r_1,r_2 \in R$ gilt, dass $r_1 \odot r_2 = r_2 \odot r_1$
+			\end{itemize}
+			so nennen wir $(R, \oplus, \odot)$ einen \textbf{kommutativen Ring}.
+		\end{definition}
+		
+		
+		\begin{definition}[Ring mit Eins, unitärer Ring]
+			Kommt später...
+		\end{definition}
+	
+		\begin{definition}[Unterring]
+			Kommt später...
+		\end{definition}
+	
+		\subsection{Polynomringe}
+		
+		\section{Körper}
+		\begin{definition}[Körper]
+			Unter einem \textbf{Körper} $(K, \oplus, \odot)$ verstehen wir eine \hyperref[def:Menge]{Menge} $K$ auf welcher zwei \hyperref[def:Operation]{Operation} $\oplus$ und $\odot$ definiert sind. Dabei müssen folgende Eigenschaften erfüllt sein: 
+			\begin{itemize}
+				\item \textbf{Kommutativer Ring}: $(K, \oplus, \odot)$ ist ein \hyperref[def:kommutativerRing]{kommutativer Ring}
+				\item \textbf{''$1$''-Element}: Es existiert ein Element ''$1$''\sidenote{''$1$'' statt $1$ da es um ''die Idee hinter $1$ als neutrales Element'' und nicht um $1 \in \mathbb{N}$ geht. Dies wird später bspw. bei der Identitätsmatrix verständlicher.} in $K$ sodass $1 \odot k = k \odot 1 = k$ für jedes $k \in K$ mit $k\not=0$ 
+				\item \textbf{Inverses Element (bezüglich $\odot$)}: Für jedes Element $k\in K$ mit $k\not = 0$ existiert genau ein eindeutiges Element $k^{-1} \in K$ sodass $k^{-1} \odot k = 1$ gilt.
+			\end{itemize}
+			Daraus folgt dass $(K\setminus \{0\}, \odot)$ eine \hyperref[def:abelscheGruppe]{abelsche Gruppe} mit \hyperref[def:neutralesElement]{neutralem Element} $1$ ist.
+		\end{definition}
+	
 \end{document}
