@@ -106,6 +106,23 @@
 			Kommt später...
 		\end{definition}
 	
+		\subsection{Restklassenringe}
+		\begin{definition}[Restklassenring]
+			\label{def:Restklassenring}
+			Sei $n \in \mathbb{N}^*$. Die Menge aller Restklassen $[0]$, ..., $[n-1]$ bezeichnen wir als $\mathbb{Z}/n\mathbb{Z}$, welche die Struktur eines \hyperref[def:Ring]{Rings} hat und wir deshalb als \textbf{Restklassenring} bezeichnet. Wir definieren die folgenden Verknüpfungen auf $\mathbb{Z}/n\mathbb{Z}$, wobei $[z_1]_n$, $[z_2]_n$ Restklassen aus $\mathbb{Z}/n\mathbb{Z}$ sind: 
+			\begin{itemize}
+				\item $[z_1]_n \oplus [z_2]_n = [z_1 + z_2]_n$
+				\item $[z_1]_n \odot [z_2]_n = [z_1 \cdot z_2]_n$
+			\end{itemize}
+			Was wenn $z_1+z_2$ bzw. $z_1 \cdot z_2$ größer $n$? Erinnern wir uns an Definition von \hyperref[def:Restklasse]{Restklassen}: Die Restklassen $[m]_n$, $[m+n]_n$, usw. sind gleich, d.h. $[z_1 + z_2]_n$ ist die gleiche Restklasse wie $[(z_1 + z_2) \mod n]_n$ (analog für $z_1 \cdot z_2$). \\
+			
+			Aufgrund der Bedeutung von Restklassenringen in der Informatik werden wir in Zukunft auch schlichtweg nur Reste und nicht die gesamte Restklasse anschreiben (also $z_1$ statt $[z_1]_n$, wobei $n$ immer klar aus dem Kontext erkennbar bleiben sollte). Da es in diesem Fall wichtig ist, dass das Ergebnis \textit{immer} kleiner $n$ sein muss, definieren wir diese Operationen für diese Schreibweise neu: Seien $z_1$, $z_2$ Reste:
+			\begin{itemize}
+				\item $z_1 \oplus z_2 = (z_1 + z_2) \mod n$
+				\item $z_2 \odot z_2 = (z_1 \cdot z_2) \mod n$
+			\end{itemize}
+		\end{definition}
+	
 		\subsection{Polynomringe}
 		
 		\section{Körper}
