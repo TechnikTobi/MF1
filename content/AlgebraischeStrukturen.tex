@@ -23,13 +23,14 @@
 			\label{def:assoziativ}
 			Unter einer \textbf{Gruppe} $(G,*)$ verstehen wir eine \hyperref[def:Menge]{Menge} $G$ auf welcher eine \hyperref[def:Operation]{Operation} (\hyperref[def:Abbildung]{Abbildung}) $*: G \times G \rightarrow G$ definiert ist. Dabei müssen folgende Eigenschaften erfüllt sein:
 			\begin{itemize}
-				\item \textbf{Neutrales Element}: Es existiert ein $e \in G$ sodass $e * g = g * e = g$ für alle $g\in G$ gilt. Dieses Element $e$ nennen wir neutrales Element in $G$.
-				\item \textbf{Inverses Element}: Für jedes $g \in G$ existiert genau ein eindeutiges Element $g^{-1} \in G$ sodass $g * g^{-1} = g^{-1} * g = e$ gilt. Jedes solche Element $g^{-1}$ nennen wir das inverse Element zu $g$.
-				\item \textbf{Assoziativ}: Es seien $g_1, g_2,g_3 \in G$ beliebig. Gilt für jedes solches Triplett dass $g_1 * (g_2 * g_3) = (g_1 * g_2) * g_3$, so nennen wir $G$ assoziativ. 
+				\item \textbf{Neutrales Element}: Es existiert ein $e \in G$ sodass $e * g = g * e = g$ für alle $g\in G$ gilt. Dieses Element $e$ nennen wir \textbf{neutrales Element} in $G$.
+				\item \textbf{Inverses Element}: Für jedes $g \in G$ existiert genau ein eindeutiges Element $g^{-1} \in G$ sodass $g * g^{-1} = g^{-1} * g = e$ gilt. Jedes solche Element $g^{-1}$ nennen wir das \textbf{inverse Element} zu $g$.
+				\item \textbf{Assoziativ}: Es seien $g_1, g_2,g_3 \in G$ beliebig. Gilt für jedes solches Triplett dass $g_1 * (g_2 * g_3) = (g_1 * g_2) * g_3$, so nennen wir $G$ \textbf{assoziativ}. 
 			\end{itemize}
 		\end{definition}
 	
 		\begin{definition}[kommutativ, kommutative Gruppe, abelsche Gruppe]
+			\label{def:kommutativ}
 			\label{def:kommutativeGruppe}
 			\label{def:abelscheGruppe}
 			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe}. Erfüllt $(G,*)$ nun zusätzlich die Eigenschaft 
@@ -55,36 +56,125 @@
 	
 		\begin{definition}[Untergruppe]
 			\label{def:Untergruppe}
-			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe} und $U \subseteq G$, so ist $(U,*)$ eine \textbf{Untergruppe} von $G$\sidenote{bspw. ist $(\mathbb{Z},+)$ eine Untergruppe von $(\mathbb{R},+)$}, wenn folgende Eigenschaften erfüllt sind:  
+			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe} und $U \subseteq G$, so ist $(U,*)$ eine \textbf{Untergruppe} von $(G,*)$\sidenote{bspw. ist $(\mathbb{Z},+)$ eine Untergruppe von $(\mathbb{R},+)$}, wenn folgende Eigenschaften erfüllt sind:  
 			\begin{itemize}
 				\item Für jedes in $U$ enthaltene Element ist auch dessen \hyperref[def:inversesElement]{inverses Element} in $U$:\sidenote{Achtung: Der Allquantor $\forall$ besagt \textit{nicht} dass jedes Element von $G$ auch in $U$ ist!} $$\forall g \in G: (g \in U) \Rightarrow (g^{-1} \in U)$$
 				\item Die Verknüpfung zweier Elemente aus $U$ ist ebenfalls in $U$: $$\forall g_1,g_2 \in G: (g_1, g_2 \in U) \Rightarrow (g_1 * g_2 \in U)$$
 			\end{itemize}
 		\end{definition}
 	
+		\begin{definition}[Halbgruppe]
+			\label{def:Halbgruppe}
+			Unter einer \textbf{Halbgruppe} verstehen wir eine \hyperref[def:Menge]{Menge} $G$ auf welcher eine \hyperref[def:Operation]{Operation} $*: G \times G \rightarrow G$ definiert ist. Dabei muss die folgende Eigenschaft erfüllt sein:
+			\begin{itemize}
+				\item Assoziativ: Es seien $g_1, g_2,g_3 \in G$ beliebig. Gilt für jedes solches Triplett dass $g_1 * (g_2 * g_3) = (g_1 * g_2) * g_3$, so nennen wir $G$ assoziativ. 
+			\end{itemize}
+			Eine Halbgruppe muss also kein \hyperref[def:neutralesElement]{neutrales Element}, noch für jedes Element von $G$ ein \hyperref[def:inversesElement]{inverses Element} beinhalten.\sidenote{bspw. ist schon $(\emptyset, +)$ eine Halbgruppe, da $G$ auch leer sein kann} 
+		\end{definition}
+	
+		\begin{definition}[Monoid]
+			Unter einem \textbf{Monoid} verstehen wir eine \hyperref[def:Halbgruppe]{Halbgruppe} $(G,*)$ welche zusätzlich die folgende Eigenschaft erfüllt:
+			\begin{itemize}
+				\item Inverses Element: Für jedes $g \in G$ existiert genau ein eindeutiges Element $g^{-1} \in G$ sodass $g * g^{-1} = g^{-1} * g = e$ gilt. Jedes solche Element $g^{-1}$ nennen wir das inverse Element zu $g$.
+			\end{itemize}
+			Im Gegensatz zur \hyperref[def:Gruppe]{Gruppe} muss ein Monoid also nicht für jedes enthaltene Element ein \hyperref[def:inversesElement]{inverses Element} beinhalten.\sidenote{bspw. ist $(\mathbb{N},+)$ ein Monoid mit \hyperref[def:neutralesElement]{neutralem Element} $0$}
+		\end{definition}
+	
+	
+	
 		\subsection{Permutationsgruppen}
+		\begin{definition}[Permutation, Zyklus]
+			\label{def:Permutation}
+			\label{def:Zyklus}
+			Sei $n \in \mathbb{N}^*$ und $M$ die \hyperref[def:Menge]{Menge} $\{1,...,n\}$. Unter einer \textbf{Permutation} verstehen wir schlicht eine bestimmte Anordnung der Elemente aus $M$, wobei es sich dabei um eine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildung} handelt, bei der die Zahlen $1,...,n$ auf eine andere Anordnung abgebildet werden. \\
+			
+			\textbf{Beispiel}: Sei $n=5$, so können wir beispielsweise Permutationen so anschreiben, dass wir in eine Zeile die ''originalen'' Elemente anschreiben und darunter eine Anordnung dieser:
+			
+			$$
+			p_1 = \begin{pmatrix}
+			1 & 2 & 3 & 4 & 5 \\
+			4 & 3 & 1 & 5 & 2
+			\end{pmatrix} 
+			\hspace{1cm}
+			p_2 = \begin{pmatrix}
+			1 & 2 & 3 & 4 & 5 \\
+			2 & 1 & 3 & 5 & 4
+			\end{pmatrix}
+			$$
+			
+			Zur Vereinfachung schreiben wir einfach die Abfolge auf, welche Elemente bei wiederholter Anwendung einer Permutation durchlaufen, wobei das letzte Element wieder auf das erste abgebildet wird. Beispielsweise wird in $p_1$ $1$ auf $4$ abgebildet, die $4$ auf die $5$, $5$ auf $2$, $2$ auf $3$ und $3$ wieder zurück auf $1$. Eine solche Abfolge bezeichnen wir als \textbf{Zyklus}. Ein Zyklus ist dabei immer eine Permutation, eine Permutation kann aber aus mehreren Zyklen bestehen. Gibt es mehrere Zyklen innerhalb einer Permutation, so schreiben wir diese separat hintereinander auf,  wobei diese durch den ''$\circ$'' Operator verknüpft werden. Für unser Beispiel: 
+			
+			$$
+			p_1 = \begin{pmatrix}
+			1 & 4 & 5 & 2 & 3
+			\end{pmatrix}
+			\hspace{1cm}
+			p_2 = \begin{pmatrix}
+			1 & 2
+			\end{pmatrix} \circ \begin{pmatrix}
+			4 & 5
+			\end{pmatrix}
+			= \begin{pmatrix}
+			2 & 1
+			\end{pmatrix} \circ \begin{pmatrix}
+			5 & 4
+			\end{pmatrix}
+			$$
+		\end{definition}
 	
-		\subsection{Restklassen als Gruppen}
+		\begin{theorem}
+			Anhand des Beispiels aus Definition \ref{def:Permutation} sehen wir: Es kann \textit{mehrere} Schreibweisen für die gleiche \hyperref[def:Permutation]{Permutation} geben: $\begin{pmatrix}1 & 2 \end{pmatrix}$ ist das gleiche wie $\begin{pmatrix}2 & 1 \end{pmatrix}$
+		\end{theorem}
 	
+		\begin{theorem}
+			Die Operation ''$\circ$'' auf \hyperref[def:Permutation]{Permutationen} ist \textit{nicht} kommutativ.
+			\begin{proof}
+				Wir beweisen diesen Satz indirekt. Es seien $p_1=\begin{pmatrix}1 & 2\end{pmatrix}$ und $p_2=\begin{pmatrix}2 & 3\end{pmatrix}$ aus $S_3$. Nun nehmen wir an dass $p_1 \circ p_2 = p_2 \circ p_1$. Wir berechnen beide Seiten der Gleichung: 
+				$$p_1 \circ p_2 = \begin{pmatrix}1 & 2 & 3 \\ 2 & 1 & 3\end{pmatrix} \circ \begin{pmatrix}1 & 2 & 3 \\ 1 & 3 & 2\end{pmatrix} = \begin{pmatrix}1 & 2 & 3 \\ 3 & 1 & 2\end{pmatrix} = \begin{pmatrix} 1 & 3 & 2\end{pmatrix}$$
+				$$p_2 \circ p_1 = \begin{pmatrix}1 & 2 & 3 \\ 1 & 3 & 2\end{pmatrix} \circ \begin{pmatrix}1 & 2 & 3 \\ 2 & 1 & 3\end{pmatrix} = \begin{pmatrix}1 & 2 & 3 \\ 2 & 3 & 1\end{pmatrix} = \begin{pmatrix} 1 & 2 & 3\end{pmatrix}$$
+				Wir haben ein Gegenbeispiel für unsere Annahme gefunden, folglich ist $p_1 \circ p_2 \not = p_2 \circ p_1$ und die \hyperref[def:Operation]{Operation} ''$\circ$'' ist \textit{nicht} \hyperref[def:kommutativ]{kommutativ}.
+			\end{proof}
+		\end{theorem}
 	
+		\begin{definition}[Transposition]
+			\label{def:Transposition}
+			Unter einer \textbf{Transposition} verstehen wir einen \hyperref[def:Zyklus]{Zyklus} mit genau 2 Elementen: $t = \begin{pmatrix} t_1 & t_2 \end{pmatrix}$
+		\end{definition}
 	
+		\begin{theorem}
+			Ein \hyperref[def:Permutation]{Zyklus} $z=\begin{pmatrix} z_1 & ... & z_m\end{pmatrix}$ lässt sich immer als eine Hintereinanderausführung von \hyperref[def:Transposition]{Transpositionen} $t_1 \circ ... \circ t_{m-1}$ mit $t_i = \begin{pmatrix}p_i & p_{i+1}\end{pmatrix}$aufschreiben. 
+		\end{theorem}
 	
+		\begin{definition}[Permutationsgruppe]
+			\label{def:Permutationsgruppe}
+			Sei $n \in \mathbb{N}^*$ und $M$ die \hyperref[def:Menge]{Menge} $\{1,...,n\}$. Wir definieren nun die Menge $S_n$ der sogenannten \textbf{Permutationsgruppe}, wobei $S_n$ alle möglichen \hyperref[def:Permutation]{Permutationen} von $M$ beinhaltet, also ist $S_n$ genau genommen eine Menge von (\hyperref[def:Bijektiv]{bijektiven}) \hyperref[def:Abbildung]{Abbildungen}.\sidenote{Wir werden später sehen dass $|S_n|=n!$ gilt, wobei $n!=1 \cdot ... \cdot n$ definiert ist}
+		\end{definition}
 	
-	
+		\begin{theorem}
+			Sei $n \in \mathbb{N}^*$ und $S_n$ die Menge aller Permutationen für $n$ Elemente aus $M = \{1,...,n\}$. Dann ist die \hyperref[def:Permutationsgruppe]{Permutationsgruppe} $(S_n, \circ)$ eine \hyperref[def:Gruppe]{Gruppe}.
+			\begin{proof}\hspace*{1cm}
+				\begin{itemize}
+					\item Neutrales Element: Für alle \hyperref[def:Permutation]{Permutationen} $p \in S_n$ gilt, dass $e = ()$ (die ''leere'' \hyperref[def:Permutation]{Permutation} bei der jedes Element auf sich selbst abgebildet wird) als neutrales Element dient: $$p \circ e = e \circ p = p$$
+					\item Inverses Element: Für jede \hyperref[def:Permutation]{Permutation} $p \in S_n$ gibt es eine \hyperref[def:Permutation]{Permutation} $p^{-1}$ welche die Elemente in ihre ursprüngliche Reihenfolge permutiert. Dies erscheint plausibel da $S_n$ jede mögliche \hyperref[def:Permutation]{Permutation} enthält und es nur endlich viele \hyperref[def:Permutation]{Permutationen} für ein endliches $M$ gibt.
+					\item Assoziativ: Es seien $p_1,p_2,p_3$ \hyperref[def:Permutation]{Permutationen} aus $S_n$. Des Weiteren sei $m\in M$. Wir wollen zeigen, dass die Anwendung von $(p_1 \circ p_2) \circ p_3$ auf $m$ das gleiche Ergebnis liefert wie $p_1 \circ (p_2 \circ p_3)$: $$((p_1 \circ p_2) \circ p_3)(m)=(p_1 \circ (p_2 \circ p_3))(m)$$
+				\end{itemize}
+			\end{proof}
+		\end{theorem}
 	
 		\section{Ringe}
-		\begin{definition}[Ring]
+		\begin{definition}[Ring, distributiv]
 			\label{def:Ring}
+			\label{def:distributiv}
 			Unter einem \textbf{Ring} $(R, \oplus, \odot)$ verstehen wir eine \hyperref[def:Menge]{Menge} auf welcher zwei \hyperref[def:Operation]{Operation} $\oplus$ und $\odot$ definiert sind. Dabei müssen folgende Eigenschaften erfüllt sein: 
 			\begin{itemize}
-				\item \textbf{Kommutative Gruppe}: $(R, \oplus)$ ist eine \hyperref[def:kommutativeGruppe]{kommutative Gruppe}
-				\item \textbf{Assoziativ}: Es seien $r_1, r_2, r_3 \in R$ beliebig. Gilt für jedes solche Triplett dass $r_1 \odot (r_2 \odot r_3) = (r_1 \odot r_2) \odot r_3$, so nennen wir $R$ assoziativ (bezüglich $\odot$). 
+				\item Kommutative Gruppe: $(R, \oplus)$ ist eine \hyperref[def:kommutativeGruppe]{kommutative Gruppe}
+				\item Assoziativ: Es seien $r_1, r_2, r_3 \in R$ beliebig. Gilt für jedes solche Triplett dass $r_1 \odot (r_2 \odot r_3) = (r_1 \odot r_2) \odot r_3$, so nennen wir $R$ assoziativ (bezüglich $\odot$). 
 				\item \textbf{Distributiv}: Es seien $r_1, r_2, r_3 \in R$ beliebig. Gilt für jedes solche Triplett dass 
 				\begin{itemize}
 					\item $a \odot (b \oplus c) = (a \odot b) \oplus (a \odot c)$
 					\item $(b \oplus c) \odot a = (b \odot a) \oplus (c \odot a)$
 				\end{itemize}
-				so nennen wir $R$ distributiv.
+				so nennen wir $R$ \textbf{distributiv}.
 			\end{itemize}
 		\end{definition}
 	
@@ -92,18 +182,28 @@
 			\label{def:kommutativerRing}
 			Es sei $(R, \oplus, \odot)$ ein \hyperref[def:Ring]{Ring}. Erfüllt $(R, \oplus, \odot)$ nun zusätzlich die Eigenschaft 
 			\begin{itemize}
-				\item \textbf{Kommutativ (bezüglich $\odot$)}: Für alle $r_1,r_2 \in R$ gilt, dass $r_1 \odot r_2 = r_2 \odot r_1$
+				\item Kommutativ (bezüglich $\odot$): Für alle $r_1,r_2 \in R$ gilt, dass $r_1 \odot r_2 = r_2 \odot r_1$
 			\end{itemize}
 			so nennen wir $(R, \oplus, \odot)$ einen \textbf{kommutativen Ring}.
-		\end{definition}
-		
+		\end{definition}		
 		
 		\begin{definition}[Ring mit Eins, unitärer Ring]
-			Kommt später...
+			\label{def:unitärerRing}
+			\label{def:RingMitEins}
+			Es sei $(R, \oplus, \odot)$ ein \hyperref[def:Ring]{Ring}. Erfüllt $(R, \oplus, \odot)$ nun zusätzlich die Eigenschaft
+			\begin{itemize}
+				\item Neutrales Element (bezüglich $\odot$): Es existiert ein $e \in R$ sodass $e \odot r = r \odot e = r$ für alle $r\in R$ gilt. Dieses Element $e$ nennen wir neutrales Element (bezüglich $\odot$) in $R$.
+			\end{itemize}
+			so nennen wir $(R, \oplus, \odot)$ einen \textbf{unitären Ring} (oder auch \textbf{Ring mit Eins}).
 		\end{definition}
 	
-		\begin{definition}[Unterring]
-			Kommt später...
+		\begin{definition}[Unterring, Teilring]
+			\label{def:Unterring}
+			Es sei $(R,\oplus,\odot)$ ein \hyperref[def:Ring]{Ring} und $U \subseteq R$, so ist $(U,\oplus,\odot)$ ein \textbf{Unterring} (auch \textbf{Teilring}) von $(R,\oplus,\odot)$\sidenote{bspw. ist $(\mathbb{Q},+,\cdot)$ ein Unterring von $(\mathbb{R},+,\cdot)$}, wenn folgende Eigenschaften erfüllt sind:  
+			\begin{itemize}
+				\item $(U,\oplus)$ ist eine \hyperref[def:Untergruppe]{Untergruppe} von $(R,\oplus)$
+				\item Die Verknüpfung zweier Elemente durch $\odot$ aus $U$ ist ebenfalls in $U$: $$\forall r_1,r_2 \in R: (r_1, r_2 \in U) \Rightarrow (r_1 \odot r_2 \in U)$$
+			\end{itemize}
 		\end{definition}
 	
 		\subsection{Restklassenringe}
@@ -114,7 +214,7 @@
 				\item $[z_1]_n \oplus [z_2]_n = [z_1 + z_2]_n$
 				\item $[z_1]_n \odot [z_2]_n = [z_1 \cdot z_2]_n$
 			\end{itemize}
-			Was wenn $z_1+z_2$ bzw. $z_1 \cdot z_2$ größer $n$? Erinnern wir uns an Definition von \hyperref[def:Restklasse]{Restklassen}: Die Restklassen $[m]_n$, $[m+n]_n$, usw. sind gleich, d.h. $[z_1 + z_2]_n$ ist die gleiche Restklasse wie $[(z_1 + z_2) \mod n]_n$ (analog für $z_1 \cdot z_2$). \\
+			Was wenn $z_1+z_2$ bzw. $z_1 \cdot z_2$ größer $n$? Erinnern wir uns an die Definition von \hyperref[def:Restklasse]{Restklassen}: Die Restklassen $[m]_n$, $[m+n]_n$, usw. sind gleich, d.h. $[z_1 + z_2]_n$ ist die gleiche Restklasse wie $[(z_1 + z_2) \mod n]_n$ (analog für $z_1 \cdot z_2$).\sidenote{Dabei ist es rechnerisch egal, wann der Modulo gebildet wird: $[344 \cdot 6-48 \cdot 2]_7=[1968]_7=[1]_7$ ist das gleiche wie $[1 \cdot 6 - 6 \cdot 2]_7 = [6-12]_7=[6-5]_7 = [1]_7$} \\
 			
 			Aufgrund der Bedeutung von Restklassenringen in der Informatik werden wir in Zukunft auch schlichtweg nur Reste und nicht die gesamte Restklasse anschreiben (also $z_1$ statt $[z_1]_n$, wobei $n$ immer klar aus dem Kontext erkennbar bleiben sollte). Da es in diesem Fall wichtig ist, dass das Ergebnis \textit{immer} kleiner $n$ sein muss, definieren wir diese Operationen für diese Schreibweise neu: Seien $z_1$, $z_2$ Reste:
 			\begin{itemize}
@@ -124,16 +224,88 @@
 		\end{definition}
 	
 		\subsection{Polynomringe}
+		\label{sub:Polynomringe}
+		\begin{definition}[Polynom, Polynomfunktion]
+			\label{def:Polynom}
+			\label{def:Polynomfunktion}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und seien $a_0,...,a_n \in R$. So nennen wir die \hyperref[def:Abbildung]{Abbildung} $$f:R \rightarrow R, x \mapsto a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$$
+			eine \textbf{Polynomfunktion} über $R$ und den Term $a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ ein \textbf{Polynom} über $R$. 
+		\end{definition}
+	
+		\begin{definition}[Grad eines Polynoms]
+			\label{def:GradEinesPolynoms}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und $p = a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ mit $a_0,...,a_n\in R$ ein Polynom über $R$ mit dem Argument $x \in R$. Unter dem \textbf{Grad des Polynoms} $\textrm{grad}(p)$ verstehen wir das größte $i$ für das gilt dass $a_i \not=0$. Ist also $a_n \not=0$, so ist das Polynom vom Grad $n$.
+		\end{definition}
+	
+		\begin{definition}[Polynomring]
+			\label{def:Polynomring}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring}, so bezeichnen wir die \hyperref[def:Menge]{Menge} aller \hyperref[def:Polynom]{Polynome} über $R$ mit einem variablen $x \in X$ als $R[X]$. Des Weiteren seien $p_1,p_2 \in R[X]$, so definieren wir die \hyperref[def:Operation]{Operationen} $+$ und $\cdot$ als
+			\begin{itemize}
+				\item $p_1 + p_2 = (p_1 + p_2)(x) = p_1(x) + p_2(x)$
+				\item $p_1 \cdot p_2 = (p_1 \cdot p_2)(x) = p_1(x) \cdot p_2(x)$
+			\end{itemize}
+			für alle $x \in X$. Wir nennen dann den Ring $(R[X],+,\cdot)$ einen \textbf{Polynomring} über $R$.
+			
+		\end{definition}
 		
 		\section{Körper}
 		\begin{definition}[Körper]
+			\label{def:Körper}
 			Unter einem \textbf{Körper} $(K, \oplus, \odot)$ verstehen wir eine \hyperref[def:Menge]{Menge} $K$ auf welcher zwei \hyperref[def:Operation]{Operation} $\oplus$ und $\odot$ definiert sind. Dabei müssen folgende Eigenschaften erfüllt sein: 
 			\begin{itemize}
 				\item \textbf{Kommutativer Ring}: $(K, \oplus, \odot)$ ist ein \hyperref[def:kommutativerRing]{kommutativer Ring}
-				\item \textbf{''$1$''-Element}: Es existiert ein Element ''$1$''\sidenote{''$1$'' statt $1$ da es um ''die Idee hinter $1$ als neutrales Element'' und nicht um $1 \in \mathbb{N}$ geht. Dies wird später bspw. bei der Identitätsmatrix verständlicher.} in $K$ sodass $1 \odot k = k \odot 1 = k$ für jedes $k \in K$ mit $k\not=0$ 
+				\item \textbf{''$1$''-Element}: Es existiert ein Element ''$1$''\sidenote{''$1$'' statt $1$ da es um ''die Idee hinter $1$ als neutrales Element'' und nicht speziell um $1 \in \mathbb{N}$ geht. Siehe auch Definition \ref{def:unitärerRing}} in $K$ sodass $1 \odot k = k \odot 1 = k$ für jedes $k \in K$ mit $k\not=0$ 
 				\item \textbf{Inverses Element (bezüglich $\odot$)}: Für jedes Element $k\in K$ mit $k\not = 0$ existiert genau ein eindeutiges Element $k^{-1} \in K$ sodass $k^{-1} \odot k = 1$ gilt.
 			\end{itemize}
-			Daraus folgt dass $(K\setminus \{0\}, \odot)$ eine \hyperref[def:abelscheGruppe]{abelsche Gruppe} mit \hyperref[def:neutralesElement]{neutralem Element} $1$ ist.
+			Daraus folgt dass $(K\setminus \{0\}, \odot)$ eine \hyperref[def:abelscheGruppe]{abelsche Gruppe} mit \hyperref[def:neutralesElement]{neutralem Element} $1$ ist. \\
+			
+			Anders lässt sich ein Körper als ein \hyperref[def:kommutativerRing]{kommutativer} \hyperref[def:RingMitEins]{Ring mit Eins} $(K,\oplus,\odot)$ der \textit{ungleich} dem Nullring $(\emptyset, \oplus, \odot)$ ist definieren, für welchen zusätzlich gilt, dass $K$ jedes $k \in K$ mit $k \not = 0$ ein \hyperref[def:inversesElement]{inverses Element} bezüglich der Operation ''$\odot$'' enthält.
 		\end{definition}
+	
+		\begin{definition}[endlicher Körper,Galoiskörper]
+			\label{def:endlicherKörper}
+			\label{def:Galoiskörper}
+			Kommt später...
+		\end{definition}
+	
+		\subsection{Polynomdivision}
+		
+		Weiterführend aus Abschnitt \ref{sub:Polynomringe} definieren wir nun die Division über \hyperref[def:Polynom]{Polynome}:
+		
+		\begin{definition}[Polynomdivision]
+			\label{def:Polynomdivision}
+			Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $K[X]$ ein \hyperref[def:Polynomring]{Polynomring} über $K$. Des Weiteren seien $p_1,p_2 \in K[X]$ mit $p_2 \not = 0$, so verstehen wir unter der \textbf{Polynomdivision} von $p_1$ durch $p_2$ das Aufsuchen von $q,r \in K[X]$ sodass $p_1 = q \cdot p_2 + r$ mit $\textrm{grad}(r) < \textrm{grad}(p_2)$.
+		\end{definition}
+	
+		\textbf{Beispiel}: Sei $p_1 = 6 \cdot x^2 + 2 \cdot x + 8$ und $p_2 = 2 \cdot x + 8$. Die \hyperref[def:Polynomdivision]{Polynomdivision} $p_1:p_2$
+		\begin{alignat*}{5}
+			( &6 \cdot x^2  &+  2 \cdot x &+ 8)              & :(2\cdot x + 8) = 3 \cdot x - 11 \\
+			-(&6\cdot x^2   &+  24\cdot x &)  \\[-2ex]
+			\cline{1-4} \\[-4.5ex]
+			  &0\cdot x^2   &-  22 \cdot x &+ 8 \\	
+			  &             &-(-22 \cdot x &+ 88) \\[-2ex]
+			\cline{1-4} \\[-4.5ex]
+			  &             &    0 \cdot x &- 80 
+		\end{alignat*}
+		Gibt uns den Quotienten $q = 3 \cdot x - 11$ und den Rest $r=-80$.
+		
+		\begin{definition}[Wurzel einer Polynomfunktion]
+			\label{def:Wurzel}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $f:K\rightarrow K$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $K$. Unter einer \textbf{Wurzel}\sidenote{Nicht zu verwechseln mit der Wurzel beim Wurzelziehen, bspw. der Wurzel aus 2: $\sqrt{2}$} $k_0$ \textbf{der Polynomfunktion} $f$ verstehen wir eine \hyperref[def:Nullstelle]{Nullstelle} von $f$: $f(k_0)=0$
+		\end{definition}
+		
+		\begin{theorem}
+			Sei $f:\mathbb{R}\rightarrow \mathbb{R}$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $\mathbb{R}$. Hat $f$ nun die \hyperref[def:Wurzel]{Wurzel} (\hyperref[def:Nullstelle]{Nullstelle}) $x_0$ (also $f(x_0)=0$), so lässt sich das Polynom von $f$ ohne Rest durch $(x-x_0)$ dividieren, d.h. es gibt ein \hyperref[def:Polynom]{Polynom} $q \in K[\mathbb{R}]$ sodass für alle $x\in \mathbb{R}$ gilt: $$f(x)=q(x)\cdot(x-x_0)+r(x) \textrm{ mit } r(x)=0 \rightarrow f(x)=q(x)\cdot(x-x_0)$$
+			Wir sagen, wir haben die Nullstelle $x_0$ \textbf{abgespalten}.
+			
+			\begin{proof}
+				Wir wollen zeigen, dass wenn $x_0$ Wurzel der Polynomfunktion $f$ ist, das Polynom von $f$ sich in ein Polynom bestehend aus $(x-x_0)$, multipliziert mit einem weiteren unbekannten Polynom $q$ (dem Quotienten der \hyperref[def:Polynomdivision]{Polynomdivision}), aufspalten lässt mit Rest 0: $$f(x_0)=q(x)\cdot(x-x_0)$$
+				Wir wissen, dass der Grad des \hyperref[def:Polynom]{Polynoms} $(x-x_0)$ gleich $1$ ist (da kein $a_i \cdot x^i$ mit $i>1$ und $a_i\not =0$ vorkommt) und folglich der Grad von dem ''Rest-\hyperref[def:Polynom]{Polynom}'' $r$ kleiner $1$ sein muss, folglich ist $\textrm{grad}(r)=0$ und das Polynom $r$ lässt sich durch eine Konstante $r_0$ beschreiben. Es folgt also: $$f(x)=q(x) \cdot (x-x_0) + r_0$$
+				Außerdem wissen wir: $f(x_0) = 0$, also $f(x_0)=q(x_0)\cdot(x-x_0)+r_0=q(x_0)\cdot 0 + r_0 = r_0$, woraus folgt: $r_0=0$
+			\end{proof}
+		\end{theorem}
+	
+	
+		\subsection{Der Körper $(\mathbb{C},+,\cdot)$}
 	
 \end{document}
