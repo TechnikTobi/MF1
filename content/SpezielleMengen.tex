@@ -60,7 +60,7 @@
 		\subsection*{Die Mächtigkeit von $\mathbb{N}$, $\mathbb{Z}$ und $\mathbb{Q}$}
 		\begin{definition}[abzählbar unendlich]
 			\label{def:abzählbarUnendlich}
-			Intuitiv stelle wir fest dass es \textit{unendlich} viele natürliche Zahlen gibt, da es für jede beliebige natürliche Zahl $n$ einen Nachfolger $n+1$ gibt welcher ebenfalls eine natürliche Zahl ist und ebenfalls einen Nachfolger hat usw. Folglich hat die Menge $\mathbb{N}$ keine endliche Kardinalität, daher definieren wir $|\mathbb{N}|=\aleph_0$ (gesprochen: Aleph Null) und sagen, dass $\mathbb{N}$ \textbf{abzählbar unendlich} ist. 
+			Intuitiv stellen wir fest dass es \textit{unendlich} viele natürliche Zahlen gibt, da es für jede beliebige natürliche Zahl $n$ einen Nachfolger $n+1$ gibt welcher ebenfalls eine natürliche Zahl ist und ebenfalls einen Nachfolger hat usw. Folglich hat die Menge $\mathbb{N}$ keine endliche Kardinalität, daher definieren wir $|\mathbb{N}|=\aleph_0$ (gesprochen: Aleph Null) und sagen, dass $\mathbb{N}$ \textbf{abzählbar unendlich} ist. 
 		\end{definition}
 		
 		Nun zeigen wir, basierend auf den Definition \ref{def:gleichmächtig} und \ref{def:abzählbarUnendlich}, dass auch die Mengen $\mathbb{Z}$ und $\mathbb{Q}$ abzählbar unendlich sind. Dazu suchen wir uns \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildungen}\sidenote{Siehe Kapitel \ref{chap:Abbildungen}} $f_Z: \mathbb{N} \rightarrow \mathbb{Z}$ und $f_Q: \mathbb{N} \rightarrow \mathbb{Q}$ um zu zeigen dass $\mathbb{N}$, $\mathbb{Z}$ und $\mathbb{Q}$ \hyperref[def:gleichmächtig]{gleichmächtig} sind:
@@ -116,7 +116,35 @@
 	
 		\begin{definition}[überabzählbar unendlich]
 			\label{def:überabzählbarUnendlich}
-			$\mathfrak{c}$
+			Nachdem die Menge der \hyperref[def:ReelleZahlen]{reellen Zahlen} auf der Menge der \hyperref[def:RationaleZahlen]{rationalen Zahlen} aufbaut scheint es zunächst logisch, dass diese ebenfalls unendlich groß ist und \hyperref[def:abzählbarUnendlich]{abzählbar unendlich} ist. Dem ist allerdings nicht so, und wir werden nun sehen, dass die unendliche \hyperref[def:Kardinalität]{Kardinalität} von $\mathbb{R}$ größer ist als die von $\mathbb{N}$, $\mathbb{Z}$ und $\mathbb{Q}$. 
+			\begin{proof}
+				Nehmen wir zunächst an, $\mathbb{R}$ sei \hyperref[def:abzählbarUnendlich]{abzählbar unendlich}. Dann könnte man eine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildung} $f_R: \mathbb{N} \rightarrow \mathbb{R}$ folgendermaßen konstruieren, wobei die reellen Zahlen mit unendlich vielen Nachkommastellen aufgeschrieben werden\sidenote{um bspw. $\pi$ oder $e$ korrekt zu notieren}:
+				\begin{itemize}
+					\item $0 \rightarrow 0.00000...$
+					\item $1 \rightarrow 1.29456...$
+					\item $2 \rightarrow 2.71828...$
+					\item $3 \rightarrow 3.14159...$
+					\item ...
+				\end{itemize}
+				Dabei gibt es keine besondere Reihenfolge, welche natürliche Zahl auf welche reelle Zahl abgebildet wird. Nun konstruieren wir die folgende reelle Zahl $r \in \mathbb{R}$, welche vor dem Komma (der Einfachheit halber) schlicht eine $0$ stehen hat. Dann...
+				\begin{itemize}
+					\item ...setzen wir die \textit{erste} Nachkommastelle auf die \textit{erste} Nachkommastelle von $f_R(0)$, addieren zu dieser Ziffer $1$ und bilden falls notwendig den Modulo $10$. Wir erhalten $0.1$. Weiters...
+					\item ...setzen wir die \textit{zweite} Nachkommastelle auf die \textit{zweite} Nachkommastelle von $f_R(1)$, addieren zu dieser Ziffer $1$ und bilden falls notwendig den Modulo $10$. Wir erhalten $0.10$. Weiters...
+					\item ...setzen wir die \textit{dritte} Nachkommastelle auf die \textit{dritte} Nachkommastelle von $f_R(2)$, addieren zu dieser Ziffer $1$ und bilden falls notwendig den Modulo $10$. Wir erhalten $0.109$. Weiters...
+					\item ...setzen wir die \textit{vierte} Nachkommastelle auf die \textit{vierte} Nachkommastelle von $f_R(3)$, addieren zu dieser Ziffer $1$ und bilden falls notwendig den Modulo $10$. Wir erhalten $0.1096$. Weiters...
+					\item ...
+				\end{itemize}
+				Wir erhalten am Ende eine reelle Zahl $r \in \mathbb{R}$, welche kein \hyperref[def:Urbild]{Urbild}\sidenote{Siehe Kapitel \ref{chap:Abbildungen}} hat:
+				\begin{itemize}
+					\item Das \hyperref[def:Urbild]{Urbild} kann nicht $0$ sein, da sich $f_R(0)$ und $r$ in der \textit{ersten} Nachkommastelle unterscheiden.
+					\item Das \hyperref[def:Urbild]{Urbild} kann nicht $1$ sein, da sich $f_R(1)$ und $r$ in der \textit{zweiten} Nachkommastelle unterscheiden.
+					\item Das \hyperref[def:Urbild]{Urbild} kann nicht $2$ sein, da sich $f_R(2)$ und $r$ in der \textit{dritten} Nachkommastelle unterscheiden.
+					\item Das \hyperref[def:Urbild]{Urbild} kann nicht $3$ sein, da sich $f_R(3)$ und $r$ in der \textit{vierten} Nachkommastelle unterscheiden.
+					\item ...
+				\end{itemize}
+				Folglich kann es keine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:Abbildung]{Abbildung} $f_R: \mathbb{N} \rightarrow \mathbb{R}$ geben.\sidenote{Bekannt als \textit{Cantors zweites Diagonalargument}}
+			\end{proof}
+			Wir sehen also, dass $|\mathbb{R}| > |\mathbb{N}|$ gelten muss. Wir nennen $\mathbb{R}$ \textbf{überabzählbar unendlich} und definieren $|\mathbb{R}| = \mathfrak{c}$ (gesprochen: Kontinuum).
 		\end{definition}
 		
 		
@@ -137,5 +165,23 @@
 				\label{def:Imaginärteil}
 				Sei $c \in \mathbb{C}$, also $c = a+b \cdot i$ mit $a,b \in \mathbb{R}$. Dann definieren wir den \textbf{Realteil} $\mathfrak{R}(c)$ der komplexen Zahl $c$ als $\mathfrak{R}(c) = a$ und den \textbf{Imaginärteil} $\mathfrak{I}(c)=b$\sidenote{$i$ gehört \textit{nicht} zum Imaginärteil:\\ $\mathfrak{I}(c)=b\not=b \cdot i$}
 			\end{definition}
+		
+			\begin{definition}[(komplexe) Konjugation]
+				\label{def:komplexKonjugiert}
+				\label{def:komplexeKonjugation}
+				Sei $c \in \mathbb{C}$, also $c = a+b \cdot i$ mit $a,b \in \mathbb{R}$. Dann definieren wir die \textbf{(komplexe) Konjugation} von $c$ als $\overline{c} = a - b \cdot i$
+			\end{definition}
+		
+			\begin{definition}[Betrag einer komplexen Zahl]
+				\label{def:betragKomplexerZahl}
+				Sei $c \in \mathbb{C}$, also $c = a+b \cdot i$ mit $a,b \in \mathbb{R}$. Dann definieren wir den \textbf{Betrag (der komplexen Zahl)} $c$ als $|c| = |a + b \cdot i| = \sqrt{a^2 + b^2}$
+			\end{definition}
+		
+			\begin{theorem}
+				Sei $c \in \mathbb{C}$. Dann gilt: $$|c|^2 = c \cdot \overline{c}$$
+				\begin{proof}
+					Wir benutzen $c=a+b\cdot i$ und $\overline{c}=a-b\cdot i$ um $c \cdot \overline{c}$ umzuschreiben: $c \cdot \overline{c} = (a+b \cdot i) \cdot (a-b\cdot i)$. Mithilfe der binomischen Formel\sidenote{Verweis erforderlich.} erhalten wir: $$c \cdot \overline{c} = a^2 - a \cdot b \cdot i + a \cdot b \cdot i - b^2 \cdot i^2 = a^2 - b^2 \cdot i^2$$ Mithilfe der Definition der \hyperref[def:imaginäreEinheit]{imaginären Einheit} erhalten wir $$c \cdot \overline{c} = a^2 - b^2 \cdot i^2 = a^2 - b^2 \cdot (\sqrt{-1})^2 = a^2 - b^2 \cdot (-1) = a^2 + b^2$$ Setzen wir nun in $|c|^2$ ein: $$|c|^2 = |a+b\cdot i|^2 = (\sqrt{a^2+b^2})^2 = a^2 + b^2$$ Wir sehen, dass die beiden Seiten gleich sind. 
+				\end{proof}
+			\end{theorem}
 	
 \end{document}
