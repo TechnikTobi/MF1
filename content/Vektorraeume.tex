@@ -1,0 +1,74 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	
+	\chapter{Vektorräume}
+	
+	\begin{definition}[(reeller/komplexer)Vektorraum]
+		\label{def:Vektorraum}
+		\label{def:skalareMultiplikation}
+		Sei $(K, +, \cdot)$ ein \hyperref[def:Körper]{Körper}. Ein sogenannter \textbf{Vektorraum} $V$ mit Skalaren\sidenote{Mathematische Objekte welche sich allein durch einen einzigen Wert beschreiben lassen, bspw. $0$, $1$, $\pi$, etc.} aus $K$ besteht dann aus einer \hyperref[def:kommutativeGruppe]{kommutativen Gruppe} $(V, +)$ und einer zusätzlichen Operation, der \textbf{skalaren Multiplikation}, welche die Multiplikation ''$\cdot$'' aus $(K,+,\cdot)$ erweitert: $\cdot: K \times V \rightarrow V, (k, v) \mapsto k \cdot v$, wobei für alle $v_1,v_2 \in V$, $k_1,k_2 \in K$ gilt:
+		\begin{itemize}
+			\item Assoziativ: $k_1 \cdot (k_2 \cdot v_1) = (k_1 \cdot k_2) \cdot v_1$
+			\item Neutrales Element: $1 \cdot v_1 = v_1$
+			\item Distributiv 1: $k_1 \cdot (v_1 + v_2) = k_1 \cdot v_1 + k_1 \cdot v_2$
+			\item Distributiv 2: $(k_1 + k_2) \cdot v_1 = k_1 \cdot v_1 + k_2 \cdot v_1$
+		\end{itemize}
+		Für $K=\mathbb{R}$ reden wir von einem \textbf{reellen Vektorraum} (Vektorraum über $\mathbb{R}$, $V(\mathbb{R})$, $\mathbb{R}$-Vektorraum), bei $K=\mathbb{C}$ von einem \textbf{komplexen Vektorraum}. 
+	\end{definition}
+
+	\begin{definition}[Teilraum, Untervektorraum, Unterraum]
+		\label{def:Teilraum}
+		\label{def:Untervektorraum}
+		\label{def:Unterraum}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$ und $U \subseteq V$ mit $U\not=\emptyset$. Bildet $U$ mit den gleichen Verknüpfungen aus $V$ ebenfalls einen Vektorraum über $K$, so nennen wir $U$ einen \textbf{Untervektorraum} (auch \textbf{Teilraum} oder nur \textbf{Unterraum}). 
+	\end{definition}
+
+	\begin{definition}[Linearkombination]
+		\label{def:Linearkombination}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$, $k_1,...,k_m \in K$ beliebig und $v_1,...,v_m\in V$ beliebig. Dann nennen wir $$k_1 \cdot v_1 + ... + k_m \cdot v_m$$ eine \textbf{Linearkombination} von $v_1,...,v_m$. 
+	\end{definition}
+
+	\begin{definition}[Lineare Hülle]
+		\label{def:LineareHülle}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Des Weiteren seien $v_1,...,v_m \in V$ beliebig. Wir bezeichnen dann $$\textrm{span}(v_1,...,v_m)= \{ k_1 \cdot v_1 + ... + k_m \cdot v_m | k_1,...,k_m \in K \textrm{beliebig} \}$$ als die \textbf{lineare Hülle} von $v_1,...,v_m$. Diese \hyperref[def:Menge]{Menge} enthält alle möglichen \hyperref[def:Linearkombination]{Linearkombinationen} von $v_1,...,v_m$ und bildet immer einen \hyperref[def:Untervektorraum]{Untervektorraum} von $V$. 
+	\end{definition}
+
+	\begin{definition}[Lineare Abbildung]
+		\label{def:LineareAbbildung}
+		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Wir bezeichnen eine \hyperref[def:Abbildung]{Abbildung} $f:V \rightarrow W$ als \textbf{lineare Abbildung}, wenn für alle $v_1,v_2 \in V$ und alle $k \in K$ gilt: 
+		\begin{itemize}
+			\item $f(v_1+v_2) = f(v_1) + f(v_2)$
+			\item $f(k \cdot v_1) = k \cdot f(v_1)$
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Verketten von linearen Abbildungen]
+		Es seien $f_1,f_2$ \hyperref[def:LineareAbbildung]{lineare Abbildungen}. Beim \textbf{Verketten der beiden linearen Abbildungen} $f_1$ und $f_2$ erhalten wir ebenfalls wieder eine \hyperref[def:LineareAbbildung]{lineare Abbildung} und bezeichnen diese Verkettung als $f_1 \circ f_2$, wobei \textit{zuerst} $f_2$ und \textit{danach} $f_1$ ausgeführt wird: $f_1(f_2(x))$.
+	\end{definition}
+
+	\begin{theorem}
+		Es seien $f_1,f_2$ \hyperref[def:Bijektiv]{bijektive} \hyperref[def:LineareAbbildung]{lineare Abbildungen}. Dann ist auch $f_1 \circ f_2$ eine \hyperref[def:Bijektiv]{bijektive} \hyperref[def:LineareAbbildung]{lineare Abbildung}.
+	\end{theorem}
+
+	\begin{definition}[Kern/Kernel und Bild/Image einer linearen Abbildung]
+		\label{def:KernelLineareAbbildung}
+		\label{def:KernLineareAbbildung}
+		\label{def:ImageLineareAbbildung}
+		\label{def:BildLineareAbbildung}
+		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. So nennen wir analog zu Definition \ref{def:KernHomomorphismus}
+		\begin{itemize}
+			\item $\textrm{Ker}(f) = \{ v \in V | f(v) = 0 \}$ den \textbf{Kern} (engl. \textbf{Kernel}) von $f$
+			\item $\textrm{Im}(f) = \{ w \in W | \exists v \in V: f(v)=w \}$ das \textbf{Bild} (engl. \textbf{Image}) von $f$
+		\end{itemize}
+	\end{definition}
+	
+	\begin{theorem}
+		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $f$ ist genau dann \hyperref[def:Injektiv]{injektiv} wenn $\textrm{Ker}(f)=\{0\}$
+	\end{theorem}
+
+	\begin{theorem}
+		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $\textrm{Ker}(f)$ ist ein \hyperref[def:Untervektorraum]{Untervektorraum} von $V$, $\textrm{Im}(f)$ ein \hyperref[def:Untervektorraum]{Untervektorraum} von $W$. 
+	\end{theorem}
+	
+\end{document}
