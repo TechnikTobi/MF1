@@ -80,6 +80,19 @@
 			Im Gegensatz zur \hyperref[def:Gruppe]{Gruppe} muss ein Monoid also nicht für jedes enthaltene Element ein \hyperref[def:inversesElement]{inverses Element} beinhalten.\sidenote{bspw. ist $(\mathbb{N},+)$ ein Monoid mit \hyperref[def:neutralesElement]{neutralem Element} $0$}
 		\end{definition}
 	
+		\begin{definition}[zyklische Gruppe, erzeugendes Element]
+			\label{def:zyklischeGruppe}
+			\label{def:erzeugendesElement}
+			Es sei $(G,*)$ eine \hyperref[def:Gruppe]{Gruppe}, wobei $G$ endlich ist, d.h. $|G| < \aleph_0$. Es sei $n=|G|$ die Anzahl der endlich vielen Elemente in $G$. Wir nennen $(G,*)$ nun eine \textbf{zyklische Gruppe} falls es ein $g \in G$ gibt, sodass $G = \{g,g^2,g^3,...,g^n\}$, wobei $$g^i = \underbrace{g * g * ... * g}_{i\textrm{-mal}}$$ und $g$ als \textbf{erzeugendes Element} von $G$ bezeichnet wird.
+		\end{definition}
+	
+		\begin{theorem}
+			Es sei $(G,*)$ eine \hyperref[def:zyklischeGruppe]{zyklische Gruppe} wobei $n = |G|$. Dann gilt: $$g^n = e$$ wobei $e$ das \hyperref[def:neutralesElement]{neutrale Element} von $(G,*)$ ist. 
+			\begin{proof}
+				Angenommen es gilt $g^m = e$ für ein $m < n$. Dann wäre $g^m * g = e * g = g$. Dadurch würden allerdings nicht mehr alle Elemente aus $G$ getroffen werden, $g$ wäre folglich nicht \hyperref[def:erzeugendesElement]{erzeugendes Element} von $G$. 
+			\end{proof}
+		\end{theorem}
+	
 	
 	
 		\subsection*{Permutationsgruppen}
