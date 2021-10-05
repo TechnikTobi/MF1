@@ -1,0 +1,117 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	
+	\chapter{Polynome}
+	
+		\section{Allgemein}
+
+		\begin{definition}[Polynom, Polynomfunktion]
+			\label{def:Polynom}
+			\label{def:Polynomfunktion}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und seien $a_0,...,a_n \in R$. So nennen wir die \hyperref[def:Abbildung]{Abbildung} $$f:R \rightarrow R, x \mapsto a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$$
+			eine \textbf{Polynomfunktion} über $R$ und den Term $a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ ein \textbf{Polynom} über $R$. 
+		\end{definition}
+	
+		\begin{definition}[Grad eines Polynoms]
+			\label{def:GradEinesPolynoms}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und $p = a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ mit $a_0,...,a_n\in R$ ein Polynom über $R$ mit dem Argument $x \in R$. Unter dem \textbf{Grad des Polynoms} $\textrm{grad}(p)$ verstehen wir das größte $i$ für das gilt dass $a_i \not=0$. Ist also $a_n \not=0$, so ist das Polynom vom Grad $n$.
+		\end{definition}
+	
+		\begin{definition}[Polynomring]
+			\label{def:Polynomring}
+			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring}, so bezeichnen wir die \hyperref[def:Menge]{Menge} aller \hyperref[def:Polynom]{Polynome} über $R$ mit einem variablen $x \in X$ als $R[X]$. Des Weiteren seien $p_1,p_2 \in R[X]$, so definieren wir die \hyperref[def:Operation]{Operationen} $+$ und $\cdot$ als
+			\begin{itemize}
+				\item $p_1 + p_2 = (p_1 + p_2)(x) = p_1(x) + p_2(x)$
+				\item $p_1 \cdot p_2 = (p_1 \cdot p_2)(x) = p_1(x) \cdot p_2(x)$
+			\end{itemize}
+			für alle $x \in X$. Wir nennen dann den Ring $(R[X],+,\cdot)$ einen \textbf{Polynomring} über $R$.
+			
+		\end{definition}
+	
+		\section{Polynomdivision}
+		
+		%Weiterführend aus Abschnitt \ref{sub:Polynomringe} definieren wir nun die Division über \hyperref[def:Polynom]{Polynome}:
+		
+		\begin{definition}[Polynomdivision]
+			\label{def:Polynomdivision}
+			Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $K[X]$ ein \hyperref[def:Polynomring]{Polynomring} über $K$. Des Weiteren seien $p_1,p_2 \in K[X]$ mit $p_2 \not = 0$, so verstehen wir unter der \textbf{Polynomdivision} von $p_1$ durch $p_2$ das Aufsuchen von $q,r \in K[X]$ sodass $p_1 = q \cdot p_2 + r$ mit $\textrm{grad}(r) < \textrm{grad}(p_2)$.
+		\end{definition}
+	
+		\textbf{Beispiel}: Sei $p_1 = 6 \cdot x^2 + 2 \cdot x + 8$ und $p_2 = 2 \cdot x + 8$. Die \hyperref[def:Polynomdivision]{Polynomdivision} $p_1:p_2$
+		\begin{alignat*}{5}
+			( &6 \cdot x^2  &+  2 \cdot x &+ 8)              & :(2\cdot x + 8) = 3 \cdot x - 11 \\
+			-(&6\cdot x^2   &+  24\cdot x &)  \\[-2ex]
+			\cline{1-4} \\[-4.5ex]
+			  &0\cdot x^2   &-  22 \cdot x &+ 8 \\	
+			  &             &-(-22 \cdot x &- 88) \\[-2ex]
+			\cline{1-4} \\[-4.5ex]
+			  &             &    0 \cdot x &+ 96 
+		\end{alignat*}
+		Gibt uns den Quotienten $q = 3 \cdot x - 11$ und den Rest $r=96$.
+		
+		\begin{definition}[Wurzel einer Polynomfunktion]
+			\label{def:Wurzel}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $f:K\rightarrow K$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $K$. Unter einer \textbf{Wurzel}\sidenote{Nicht zu verwechseln mit der Wurzel beim Wurzelziehen, bspw. der Wurzel aus 2: $\sqrt{2}$} $k_0$ \textbf{der Polynomfunktion} $f$ verstehen wir eine \hyperref[def:Nullstelle]{Nullstelle} von $f$: $f(k_0)=0$
+		\end{definition}
+		
+		\begin{definition}[Linearfaktor]
+			\label{def:Linearfaktor}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $f:K\rightarrow K$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $K$. Wir nennen das \hyperref[def:Polynom]{Polynom} von $f$ einen \textbf{Linearfaktor} wenn dieses von der Form $x + a_0$ mit $a_0 \in K$.
+		\end{definition}
+		
+		\begin{theorem}
+			\label{satz:AbspaltenEinerNullstelle}
+			Sei $f:\mathbb{R}\rightarrow \mathbb{R}$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $\mathbb{R}$. Hat $f$ nun die \hyperref[def:Wurzel]{Wurzel} (\hyperref[def:Nullstelle]{Nullstelle}) $x_0$ (also $f(x_0)=0$), so lässt sich das Polynom von $f$ ohne Rest durch den \hyperref[def:Linearfaktor]{Linearfaktor} $(x-x_0)$ dividieren, d.h. es gibt ein \hyperref[def:Polynom]{Polynom} $q \in K[\mathbb{R}]$ sodass für alle $x\in \mathbb{R}$ gilt: $$f(x)=q(x)\cdot(x-x_0)+r(x) \textrm{ mit } r(x)=0 \rightarrow f(x)=q(x)\cdot(x-x_0)$$
+			Wir sagen, wir haben die Nullstelle $x_0$ (oder auch den \hyperref[def:Linearfaktor]{Linearfaktor} $x-x_0$) \textbf{abgespalten}\sidenote{Es gibt \hyperref[def:Polynom]{Polynome} über $\mathbb{R}$ bei denen dies nicht möglich ist, bspw. $x^2+1$ (da diese keine \hyperref[def:Wurzel]{Wurzel} $x_0 \in \mathbb{R}$ besitzen)}.
+			
+			\begin{proof}
+				Wir wollen zeigen, dass wenn $x_0$ Wurzel der Polynomfunktion $f$ ist, das Polynom von $f$ sich in ein Polynom bestehend aus dem \hyperref[def:Linearfaktor]{Linearfaktor} $(x-x_0)$, multipliziert mit einem weiteren unbekannten Polynom $q$ (dem Quotienten der \hyperref[def:Polynomdivision]{Polynomdivision}), aufspalten lässt mit Rest 0: $$f(x)=q(x)\cdot(x-x_0)$$
+				Wir wissen, dass der Grad des \hyperref[def:Polynom]{Polynoms} $(x-x_0)$ gleich $1$ ist (da kein $a_i \cdot x^i$ mit $i>1$ und $a_i\not =0$ vorkommt) und folglich der Grad von dem ''Rest-\hyperref[def:Polynom]{Polynom}'' $r$ kleiner $1$ sein muss, folglich ist $\textrm{grad}(r)=0$ und das Polynom $r$ lässt sich durch eine Konstante $r_0$ beschreiben. Es folgt also: $$f(x)=q(x) \cdot (x-x_0) + r_0$$
+				Außerdem wissen wir: $f(x_0) = 0$, also $f(x_0)=q(x_0)\cdot(x-x_0)+r_0=q(x_0)\cdot 0 + r_0 = r_0$, woraus folgt: $r_0=0$
+			\end{proof}
+		\end{theorem}
+	
+		\begin{definition}[Leitkoeffizient, normiertes Polynom]
+			\label{def:Leitkoeffizient}
+			\label{def:normiertesPolynom}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $p \in K[X]$ ein \hyperref[def:Polynom]{Polynom} über $K$ mit $p = a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ und $a_0, ..., a_n \in K$. Wir nennen $p$ ein \textbf{normiertes \hyperref[def:Polynom]{Polynom}} wenn der sogenannte \textbf{Leitkoeffizient} $a_n$ (der Koeffizient von $x^n$ wobei $\textrm{grad}(p)=n$) gleich dem \hyperref[def:Einselement]{Einselement} ist. 
+		\end{definition}
+	
+		\begin{definition}[(ir)reduzibles Polynom]
+			\label{def:reduziblesPolynom}
+			\label{def:irreduziblesPolynom}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $p \in K[X]$ ein \hyperref[def:Polynom]{Polynom} über $K$. Wir nennen $p$ ein \textbf{irreduzibles \hyperref[def:Polynom]{Polynom}} wenn es \textit{kein} \hyperref[def:Polynom]{Polynom} $q \in K[X]$ mit $0 < \textrm{grad}(q) < \textrm{grad}(p)$ gibt, sodass $p$ durch $q$ ohne Rest geteilt werden kann. Anders formuliert gibt es \textit{keine} \hyperref[def:Polynom]{Polynome} $p_1,p_2 \in K[X]$ sodass $p = p_1 \cdot p_2$. Ansonsten nennen wir $p$ ein \textbf{reduzibles \hyperref[def:Polynom]{Polynom}}.
+		\end{definition}
+	
+		\begin{theorem}
+			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $p \in K[X]$ ein \hyperref[def:normiertesPolynom]{normiertes Polynom} über $K$. Es gilt für \textit{jedes beliebige} $p$:
+			\begin{itemize}
+				\item $p$ lässt sich \textit{eindeutig} als Produkt von \hyperref[def:normiertesPolynom]{normierten} \hyperref[def:irreduziblesPolynom]{irreduziblen Polynomen} aufschreiben
+				\item Sei $p = p_1 \cdot ... \cdot p_m$, so gilt: $\textrm{grad}(p) = \textrm{grad}(p_1) + ... + \textrm{grad}(p_m)$
+			\end{itemize}
+		\end{theorem}
+	
+	
+		\section{Der Körper $(\mathbb{C},+,\cdot)$}
+		
+		\begin{definition}[algebraisch abgeschlossen]
+			\label{def:algebraischAbgeschlossen}
+			Sei $(K, +, \cdot)$ ein \hyperref[def:Körper]{Körper}. Wir nennen diesen \hyperref[def:Körper]{Körper} \textbf{algebraisch abgeschlossen} wenn jede beliebige \hyperref[def:Polynomfunktion]{Polynomfunktion} $f: K \rightarrow K$ über $K$ mindestens eine \hyperref[def:Wurzel]{Wurzel} $x_0 \in K$ besitzt. 
+		\end{definition}
+	
+		\begin{theorem}[Fundamentalsatz der Algebra]
+			\label{satz:FundamentalsatzDerAlgebra}
+			Der Körper $(\mathbb{C},+,\cdot)$ ist \hyperref[def:algebraischAbgeschlossen]{algebraisch abgeschlossen}. 
+		\end{theorem}
+	
+		\begin{theorem}
+			\label{satz:Linearfaktorzerlegung}
+			Sei $f: \mathbb{C} \rightarrow \mathbb{C}$ eine beliebige \hyperref[def:Polynomfunktion]{Polynomfunktion} über $\mathbb{C}$ mit \hyperref[def:GradEinesPolynoms]{Grad} $n$. Aus Satz \ref{satz:FundamentalsatzDerAlgebra} folgt nun, dass jede solche \hyperref[def:Funktion]{Funktion} $f$ mindestens eine \hyperref[def:Nullstelle]{Nullstelle} $x_0 \in \mathbb{C}$ besitzt, welche sich laut Satz \ref{satz:AbspaltenEinerNullstelle} vom \hyperref[def:Polynom]{Polynom} von $f$ ohne Rest abspalten lässt. Dabei erhalten wir als \hyperref[def:Quotient]{Quotienten} ein neues Polynom $f'$, wobei gilt: $f=f'\cdot(x-x_0)$. Dies lässt sich immer weiter fortsetzen, bis $f$ ausschließlich in $n$ \hyperref[def:Linearfaktor]{Linearfaktoren} (und einen zusätzlichen Faktor $a \in \mathbb{C}$) aufgespalten wurde: $$f = a \cdot (x-x_0) \cdot ... \cdot (x-x_{n-1})$$
+		\end{theorem}
+	
+		\begin{theorem}
+			Aus Satz \ref{satz:Linearfaktorzerlegung} folgt, dass ein \hyperref[def:Polynom]{Polynom} (über $\mathbb{C}$) maximal $n$ \hyperref[def:Nullstelle]{Nullstellen} haben kann (wobei sich \hyperref[def:Nullstelle]{Nullstellen} wiederholen dürfen)
+		\end{theorem}
+	
+\end{document}

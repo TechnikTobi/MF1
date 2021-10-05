@@ -82,7 +82,7 @@
 	
 	
 	
-		\subsection{Permutationsgruppen}
+		\subsection*{Permutationsgruppen}
 		\begin{definition}[Permutation, Zyklus]
 			\label{def:Permutation}
 			\label{def:Zyklus}
@@ -187,12 +187,13 @@
 			so nennen wir $(R, \oplus, \odot)$ einen \textbf{kommutativen Ring}.
 		\end{definition}		
 		
-		\begin{definition}[Ring mit Eins, unitärer Ring]
+		\begin{definition}[Ring mit Eins, unitärer Ring, Einselement]
 			\label{def:unitärerRing}
 			\label{def:RingMitEins}
+			\label{def:Einselement}
 			Es sei $(R, \oplus, \odot)$ ein \hyperref[def:Ring]{Ring}. Erfüllt $(R, \oplus, \odot)$ nun zusätzlich die Eigenschaft
 			\begin{itemize}
-				\item Neutrales Element (bezüglich $\odot$): Es existiert ein $e \in R$ sodass $e \odot r = r \odot e = r$ für alle $r\in R$ gilt. Dieses Element $e$ nennen wir neutrales Element (bezüglich $\odot$) in $R$.
+				\item Neutrales Element (bezüglich $\odot$): Es existiert ein $e \in R$ sodass $e \odot r = r \odot e = r$ für alle $r\in R$ gilt. Dieses Element $e$ nennen wir neutrales Element (bezüglich $\odot$) in $R$ oder auch \textbf{Einselement}.
 			\end{itemize}
 			so nennen wir $(R, \oplus, \odot)$ einen \textbf{unitären Ring} (oder auch \textbf{Ring mit Eins}).
 		\end{definition}
@@ -206,7 +207,7 @@
 			\end{itemize}
 		\end{definition}
 	
-		\subsection{Restklassenringe}
+		\subsection*{Restklassenringe}
 		\begin{definition}[Restklassenring]
 			\label{def:Restklassenring}
 			Sei $n \in \mathbb{N}^*$. Die Menge aller Restklassen $[0]$, ..., $[n-1]$ bezeichnen wir als $\mathbb{Z}/n\mathbb{Z}$, welche die Struktur eines \hyperref[def:Ring]{Rings} hat und wir deshalb als \textbf{Restklassenring} bezeichnet. Wir definieren die folgenden Verknüpfungen auf $\mathbb{Z}/n\mathbb{Z}$, wobei $[z_1]_n$, $[z_2]_n$ Restklassen aus $\mathbb{Z}/n\mathbb{Z}$ sind: 
@@ -221,31 +222,6 @@
 				\item $z_1 \oplus z_2 = (z_1 + z_2) \mod n$
 				\item $z_2 \odot z_2 = (z_1 \cdot z_2) \mod n$
 			\end{itemize}
-		\end{definition}
-	
-		\subsection{Polynomringe}
-		\label{sub:Polynomringe}
-		\begin{definition}[Polynom, Polynomfunktion]
-			\label{def:Polynom}
-			\label{def:Polynomfunktion}
-			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und seien $a_0,...,a_n \in R$. So nennen wir die \hyperref[def:Abbildung]{Abbildung} $$f:R \rightarrow R, x \mapsto a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$$
-			eine \textbf{Polynomfunktion} über $R$ und den Term $a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ ein \textbf{Polynom} über $R$. 
-		\end{definition}
-	
-		\begin{definition}[Grad eines Polynoms]
-			\label{def:GradEinesPolynoms}
-			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring} und $p = a_0 + a_1 \cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$ mit $a_0,...,a_n\in R$ ein Polynom über $R$ mit dem Argument $x \in R$. Unter dem \textbf{Grad des Polynoms} $\textrm{grad}(p)$ verstehen wir das größte $i$ für das gilt dass $a_i \not=0$. Ist also $a_n \not=0$, so ist das Polynom vom Grad $n$.
-		\end{definition}
-	
-		\begin{definition}[Polynomring]
-			\label{def:Polynomring}
-			Sei $(R,+,\cdot)$ ein \hyperref[def:Ring]{Ring}, so bezeichnen wir die \hyperref[def:Menge]{Menge} aller \hyperref[def:Polynom]{Polynome} über $R$ mit einem variablen $x \in X$ als $R[X]$. Des Weiteren seien $p_1,p_2 \in R[X]$, so definieren wir die \hyperref[def:Operation]{Operationen} $+$ und $\cdot$ als
-			\begin{itemize}
-				\item $p_1 + p_2 = (p_1 + p_2)(x) = p_1(x) + p_2(x)$
-				\item $p_1 \cdot p_2 = (p_1 \cdot p_2)(x) = p_1(x) \cdot p_2(x)$
-			\end{itemize}
-			für alle $x \in X$. Wir nennen dann den Ring $(R[X],+,\cdot)$ einen \textbf{Polynomring} über $R$.
-			
 		\end{definition}
 		
 		\section{Körper}
@@ -265,72 +241,88 @@
 		\begin{definition}[endlicher Körper,Galoiskörper]
 			\label{def:endlicherKörper}
 			\label{def:Galoiskörper}
-			Kommt später...
+			Unter einem \textbf{endlichen Körper} (auch \textbf{Galoiskörper}\sidenote{benannt nach Evariste Galois (1811-1832)}) verstehen wir einen \hyperref[def:Körper]{Körper} $(K, \oplus, \odot)$ für den gilt, dass die Menge $K$ endlich ist, d.h. sie enthält endlich viele Elemente. Für ihre \hyperref[def:Kardinalität]{Kardinalität} gilt: $|K| < |\mathbb{N}| =\aleph_0$
 		\end{definition}
 	
-		\subsection{Polynomdivision}
-		
-		Weiterführend aus Abschnitt \ref{sub:Polynomringe} definieren wir nun die Division über \hyperref[def:Polynom]{Polynome}:
-		
-		\begin{definition}[Polynomdivision]
-			\label{def:Polynomdivision}
-			Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $K[X]$ ein \hyperref[def:Polynomring]{Polynomring} über $K$. Des Weiteren seien $p_1,p_2 \in K[X]$ mit $p_2 \not = 0$, so verstehen wir unter der \textbf{Polynomdivision} von $p_1$ durch $p_2$ das Aufsuchen von $q,r \in K[X]$ sodass $p_1 = q \cdot p_2 + r$ mit $\textrm{grad}(r) < \textrm{grad}(p_2)$.
-		\end{definition}
-	
-		\textbf{Beispiel}: Sei $p_1 = 6 \cdot x^2 + 2 \cdot x + 8$ und $p_2 = 2 \cdot x + 8$. Die \hyperref[def:Polynomdivision]{Polynomdivision} $p_1:p_2$
-		\begin{alignat*}{5}
-			( &6 \cdot x^2  &+  2 \cdot x &+ 8)              & :(2\cdot x + 8) = 3 \cdot x - 11 \\
-			-(&6\cdot x^2   &+  24\cdot x &)  \\[-2ex]
-			\cline{1-4} \\[-4.5ex]
-			  &0\cdot x^2   &-  22 \cdot x &+ 8 \\	
-			  &             &-(-22 \cdot x &- 88) \\[-2ex]
-			\cline{1-4} \\[-4.5ex]
-			  &             &    0 \cdot x &+ 96 
-		\end{alignat*}
-		Gibt uns den Quotienten $q = 3 \cdot x - 11$ und den Rest $r=96$.
-		
-		\begin{definition}[Wurzel einer Polynomfunktion]
-			\label{def:Wurzel}
-			Sei $(K,\oplus, \odot)$ ein \hyperref[def:Körper]{Körper} und $f:K\rightarrow K$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $K$. Unter einer \textbf{Wurzel}\sidenote{Nicht zu verwechseln mit der Wurzel beim Wurzelziehen, bspw. der Wurzel aus 2: $\sqrt{2}$} $k_0$ \textbf{der Polynomfunktion} $f$ verstehen wir eine \hyperref[def:Nullstelle]{Nullstelle} von $f$: $f(k_0)=0$
-		\end{definition}
-		
-		\begin{definition}[Linearfaktor]
-			\label{def:Linearfaktor}
-			Sei $f: K \rightarrow K$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $K$. Wir nennen das \hyperref[def:Polynom]{Polynom} von $f$ einen \textbf{Linearfaktor} wenn dieses von der Form $x + a_0$ mit $a_0 \in K$.
-		\end{definition}
-		
 		\begin{theorem}
-			\label{satz:AbspaltenEinerNullstelle}
-			Sei $f:\mathbb{R}\rightarrow \mathbb{R}$ eine \hyperref[def:Polynomfunktion]{Polynomfunktion} über $\mathbb{R}$. Hat $f$ nun die \hyperref[def:Wurzel]{Wurzel} (\hyperref[def:Nullstelle]{Nullstelle}) $x_0$ (also $f(x_0)=0$), so lässt sich das Polynom von $f$ ohne Rest durch den \hyperref[def:Linearfaktor]{Linearfaktor} $(x-x_0)$ dividieren, d.h. es gibt ein \hyperref[def:Polynom]{Polynom} $q \in K[\mathbb{R}]$ sodass für alle $x\in \mathbb{R}$ gilt: $$f(x)=q(x)\cdot(x-x_0)+r(x) \textrm{ mit } r(x)=0 \rightarrow f(x)=q(x)\cdot(x-x_0)$$
-			Wir sagen, wir haben die Nullstelle $x_0$ (oder auch den \hyperref[def:Linearfaktor]{Linearfaktor} $x-x_0$) \textbf{abgespalten}\sidenote{Es gibt \hyperref[def:Polynom]{Polynome} über $\mathbb{R}$ bei denen dies nicht möglich ist, bspw. $x^2+1$ (da diese keine \hyperref[def:Wurzel]{Wurzel} $x_0 \in \mathbb{R}$ besitzen)}.
-			
+			Sei $\mathbb{Z}/n\mathbb{Z}$ ein \hyperref[def:Restklassenring]{Restklassenring} mit $n \in \mathbb{N}^*$. Nun gilt: Genau dann wenn $n$ eine Primzahl\sidenote{Verweis erforderlich} ist, ist $\mathbb{Z}/n\mathbb{Z}$ ein \hyperref[def:endlicherKörper]{endlicher Körper}.
+		\end{theorem}
+	
+	
+	
+		\section{Homomorphismen}
+		
+		\begin{definition}[(Gruppen-)Homomorphismus, verknüpfungsverträglich]
+			\label{def:Homomorphismus}
+			\label{def:GruppenHomomorphismus}
+			\label{def:verknüpfungsverträglich}
+			Es seien $(G,*)$ und $(H,*)$ \hyperref[def:Gruppe]{Gruppen} und $\varphi: G \rightarrow H$ eine \hyperref[def:Abbildung]{Abbildung}, wobei für alle $g_1, g_2 \in G$ gilt: $$\varphi(g_1 * g_2) = \varphi(g_1) * \varphi(g_2)$$
+			dann nennen wir $\varphi$ einen \textbf{(Gruppen-)Homomorphismus}. Die Besonderheit eines Homomorphismus ist, dass dieser \textbf{verknüpfungsverträglich} ist, d.h. die Eigenschaften von \hyperref[def:Operation]{Operationen} bleiben erhalten.\sidenote{Dies ist nützlich, da man so zum Rechnen in eine andere Struktur wechseln kann, wobei das Ergebnis davon nicht beeinflusst wird}
+		\end{definition}
+	
+		\begin{theorem}
+			Es sei $\varphi: G \rightarrow H$ ein Gruppen-Homomorphismus. Es gilt:
+			\begin{itemize}
+				\item Das \hyperref[def:neutralesElement]{neutrale Element} aus $G$ wird immer auf das \hyperref[def:neutralesElement]{neutrale Element} aus $H$ abgebildet: $$\varphi(e_G) = e_H$$
+					\begin{proof}
+						\begin{align*}
+							e_H &= \varphi(e_G) * \varphi(e_G)^{-1} = \\
+								&= \varphi(e_G * e_G) * \varphi(e_G)^{-1} = \\
+								&= (\varphi(e_G) * \varphi(e_G)) * \varphi(e_G)^{-1} = \\
+								&= \varphi(e_G) * (\varphi(e_G) * \varphi(e_G)^{-1}) = \\
+								&= \varphi(e_G) * e_H = \\
+								&= \varphi(e_G)
+						\end{align*}
+					\end{proof}
+				\item Der \hyperref[def:GruppenHomomorphismus]{Homomorphismus} bewahrt die Eigenschaft der \hyperref[def:inversesElement]{inversen Elemente}: $$\varphi(g^{-1}) = \varphi(g)^{-1} \textrm{ für alle } g \in G$$ 
+			\end{itemize}
+		\end{theorem}
+	
+		\begin{definition}[(Ring-)Homomorphismus]
+			\label{def:RingHomomorphismus}
+			Es seien $(R, \oplus, \odot)$ und $(S, \oplus, \odot)$ \hyperref[def:Ring]{Ringe} und $\varphi: R \rightarrow S$ eine \hyperref[def:Abbildung]{Abbildung}, wobei für alle $r_1, r_2 \in R$ gilt:
+			$$\varphi(r_1 \oplus r_2) = \varphi(r_1) \oplus \varphi(r_2)$$
+			$$\varphi(r_1 \odot r_2) = \varphi(r_1) \odot \varphi(r_2)$$
+			dann nennen wir $\varphi$ einen \textbf{(Ring-)Homomorphismus}. 
+		\end{definition}
+	
+		\begin{definition}[Kernel, Kern, Image, Bild]
+			\label{def:KernelHomomorphismus}
+			\label{def:KernHomomorphismus}
+			\label{def:ImageHomomorphismus}
+			\label{def:BildHomomorphismus}
+			Es sei $\varphi: A \rightarrow B$ ein (\hyperref[def:GruppenHomomorphismus]{Gruppen}- oder \hyperref[def:RingHomomorphismus]{Ring}-)Homomorphismus. So nennen wir 
+			\begin{itemize}
+				\item $\textrm{Ker}(\varphi) = \{ a \in A | \varphi(a) = 0 \}$ den \textbf{Kern} (engl. \textbf{Kernel}) von $\varphi$\sidenote{''Ker'' ist die Abkürzung von ''Kernel''}
+				\item $\textrm{Im}(\varphi) = \{ b \in B | \exists a \in A: \varphi(a)=b \}$ das \textbf{Bild} (engl. \textbf{Image}) von $\varphi$\sidenote{''Im'' ist die Abkürzung von ''Image''}
+			\end{itemize}
+		\end{definition}
+	
+		\begin{definition}[Isomorphismus]
+			Es sei $\varphi: A \rightarrow B$ ein \hyperref[def:Bijektiv]{\textit{bijektiver}} (\hyperref[def:GruppenHomomorphismus]{Gruppen}- oder \hyperref[def:RingHomomorphismus]{Ring}-)Homomorphismus. Dann nennen wir $\varphi$ einen \textbf{Isomorphismus}. 
+		\end{definition}
+	
+		\subsection*{Beispiel für einen Ring-Homomorphismus}
+		\begin{theorem}
+			Die \hyperref[def:Abbildung]{Abbildung} $\varphi: \mathbb{Z} \rightarrow \mathbb{Z}/n\mathbb{Z}, z \rightarrow z \mod n$ ist ein \hyperref[def:RingHomomorphismus]{Ring-Homomorphismus}.
 			\begin{proof}
-				Wir wollen zeigen, dass wenn $x_0$ Wurzel der Polynomfunktion $f$ ist, das Polynom von $f$ sich in ein Polynom bestehend aus dem \hyperref[def:Linearfaktor]{Linearfaktor} $(x-x_0)$, multipliziert mit einem weiteren unbekannten Polynom $q$ (dem Quotienten der \hyperref[def:Polynomdivision]{Polynomdivision}), aufspalten lässt mit Rest 0: $$f(x)=q(x)\cdot(x-x_0)$$
-				Wir wissen, dass der Grad des \hyperref[def:Polynom]{Polynoms} $(x-x_0)$ gleich $1$ ist (da kein $a_i \cdot x^i$ mit $i>1$ und $a_i\not =0$ vorkommt) und folglich der Grad von dem ''Rest-\hyperref[def:Polynom]{Polynom}'' $r$ kleiner $1$ sein muss, folglich ist $\textrm{grad}(r)=0$ und das Polynom $r$ lässt sich durch eine Konstante $r_0$ beschreiben. Es folgt also: $$f(x)=q(x) \cdot (x-x_0) + r_0$$
-				Außerdem wissen wir: $f(x_0) = 0$, also $f(x_0)=q(x_0)\cdot(x-x_0)+r_0=q(x_0)\cdot 0 + r_0 = r_0$, woraus folgt: $r_0=0$
+				Es seien $z_1 = q_1 \cdot n + r_1$ und $z_2 = q_2 \cdot n + r_2$ \hyperref[def:GanzeZahlen]{ganze Zahlen}. Dann gilt:
+				\begin{align*}
+				\varphi(z_1 + z_2) &= \varphi(q_1 \cdot n + r_1 + q_2 \cdot n + r_2) = \\ 
+				                   &= \varphi((q_1+q_2)\cdot n + (r_1 + r_2)) = \\ 
+				                   &= r_1 + r_2 = \\ 
+				                   &= \varphi(q_1 \cdot n + r_1) + \varphi(q_2 \cdot n + r_2) = \varphi(z_1) + \varphi(z_2)
+				\end{align*}
+				
+				\begin{align*}
+				\varphi(z_1 \cdot z_2) &= \varphi((q_1 \cdot n + r_1) \cdot (q_2 \cdot n + r_2)) = \\ 
+				                       &= \varphi(q_1 \cdot q_2 \cdot n \cdot n + q_1 \cdot r_2 \cdot n + q_2 \cdot r_1 \cdot n + r_1 \cdot r_2) = \\ 
+				                       &= \varphi((q_1 \cdot q_2 \cdot n + q_1 \cdot r_2 + q_2 \cdot r_1) \cdot n + (r_1 \cdot r_2)) = \\ 
+				                       &= (r_1 \cdot r_2) \mod n = \\ 
+				                       &= [r_1 \cdot r_2] = \\ 
+				                       &= [(r_1 \mod n) \cdot (r_2 \mod n)] = \\
+				                       &= \varphi(q_1 \cdot n + r_1) \cdot \varphi(q_2 \cdot n + r_2) = \varphi(z_1) \cdot \varphi(z_2)
+				\end{align*}
 			\end{proof}
 		\end{theorem}
-	
-	
-		\subsection{Der Körper $(\mathbb{C},+,\cdot)$}
-		
-		\begin{definition}[algebraisch abgeschlossen]
-			\label{def:algebraischAbgeschlossen}
-			Sei $(K, +, \cdot)$ ein \hyperref[def:Körper]{Körper}. Wir nennen diesen \hyperref[def:Körper]{Körper} \textbf{algebraisch abgeschlossen} wenn jede beliebige \hyperref[def:Polynomfunktion]{Polynomfunktion} $f: K \rightarrow K$ über $K$ mindestens eine \hyperref[def:Wurzel]{Wurzel} $x_0 \in K$ besitzt. 
-		\end{definition}
-	
-		\begin{theorem}[Fundamentalsatz der Algebra]
-			\label{satz:FundamentalsatzDerAlgebra}
-			Der Körper $(\mathbb{C},+,\cdot)$ ist \hyperref[def:algebraischAbgeschlossen]{algebraisch abgeschlossen}. 
-		\end{theorem}
-	
-		\begin{theorem}
-			\label{satz:Linearfaktorzerlegung}
-			Sei $f: \mathbb{C} \rightarrow \mathbb{C}$ eine beliebige \hyperref[def:Polynomfunktion]{Polynomfunktion} über $\mathbb{C}$ mit \hyperref[def:GradEinesPolynoms]{Grad} $n$. Aus Satz \ref{satz:FundamentalsatzDerAlgebra} folgt nun, dass jede solche \hyperref[def:Funktion]{Funktion} $f$ mindestens eine \hyperref[def:Nullstelle]{Nullstelle} $x_0 \in \mathbb{C}$ besitzt, welche sich laut Satz \ref{satz:AbspaltenEinerNullstelle} vom \hyperref[def:Polynom]{Polynom} von $f$ ohne Rest abspalten lässt. Dabei erhalten wir als \hyperref[def:Quotient]{Quotienten} ein neues Polynom $f'$, wobei gilt: $f=f'\cdot(x-x_0)$. Dies lässt sich immer weiter fortsetzen, bis $f$ ausschließlich in $n$ \hyperref[def:Linearfaktor]{Linearfaktoren} (und einen zusätzlichen Faktor $a \in \mathbb{C}$) aufgespalten wurde: $$f = a \cdot (x-x_0) \cdot ... \cdot (x-x_{n-1})$$
-		\end{theorem}
-	
-		\begin{theorem}
-			Aus Satz \ref{satz:Linearfaktorzerlegung} folgt, dass ein \hyperref[def:Polynom]{Polynom} (über $\mathbb{C}$) maximal $n$ \hyperref[def:Nullstelle]{Nullstellen} haben kann (wobei sich \hyperref[def:Nullstelle]{Nullstellen} wiederholen dürfen)
-		\end{theorem}
-	
 \end{document}
