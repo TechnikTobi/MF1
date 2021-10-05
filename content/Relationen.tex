@@ -77,7 +77,7 @@
 		\begin{proof}\hspace*{1cm}
 			\begin{itemize}
 				\item Reflexivität: $z_1 \equiv z_1 \mod n$ ist offensichtlich wahr (ob $z_1-z_1$ oder $z_1-z_1$\sidenote{Nein, kein Tippfehler} durch $n$ \hyperref[def:teilbar]{teilbar} ist macht keinen Unterschied)
-				\item Symmetrie: Aus $z_1 \equiv z_2 \mod n$ folgt $z_2 \equiv z_1 \mod n$, da dadurch schlichtweg das Vorzeichen der Differenz der Elemente (und folglich auch des Quotienten) umgedreht wird, der Rest aber unverändert bleibt. 
+				\item Symmetrie: Aus $z_1 \equiv z_2 \mod n$ folgt $z_2 \equiv z_1 \mod n$, da dadurch schlichtweg das Vorzeichen der Differenz der Elemente (und folglich auch des \hyperref[def:Quotient]{Quotienten}) umgedreht wird, der Rest aber unverändert bleibt. 
 				\item Transitivität: Dass wenn $z_1 \equiv z_2 \mod n$ und $z_2 \equiv z_3 \mod n$ wahr sind auch $z_1 \equiv z_3 \mod n$ wahr ist, lässt sich dank Satz \ref{satz:kongruentModuloN} einfach zeigen: $z_1$ und $z_2$ haben offensichtlich nach der Division mit $n$ den gleichen Rest ($z_1 \mod n = z_2 \mod n$), gleiches gilt auch für $z_2$ und $z_3$. Wenn $(z_1 \mod n) = (z_2 \mod n)$ und $(z_2 \mod n) = (z_3 \mod n)$\sidenote{Klammern gesetzt um ''$=$'' als Äquivalenzrelation hervorzuheben}, dann muss auch $(z_1 \mod n) = (z_3 \mod n)$ gelten, woraus (dank Satz \ref{satz:kongruentModuloN}) folgt, dass $z_1 \equiv z_3 \mod n$ wahr ist.
 			\end{itemize}
 		\end{proof}
