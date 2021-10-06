@@ -4,9 +4,10 @@
 	
 	\chapter{Vektorräume}
 	
-	\begin{definition}[(reeller/komplexer)Vektorraum]
+	\begin{definition}[(reeller/komplexer)Vektorraum, Vektor]
 		\label{def:Vektorraum}
 		\label{def:skalareMultiplikation}
+		\label{def:Vektor}
 		Sei $(K, +, \cdot)$ ein \hyperref[def:Körper]{Körper}. Ein sogenannter \textbf{Vektorraum} $V$ mit Skalaren\sidenote{Mathematische Objekte welche sich allein durch einen einzigen Wert beschreiben lassen, bspw. $0$, $1$, $\pi$, etc.} aus $K$ besteht dann aus einer \hyperref[def:kommutativeGruppe]{kommutativen Gruppe} $(V, +)$ und einer zusätzlichen Operation, der \textbf{skalaren Multiplikation}, welche die Multiplikation ''$\cdot$'' aus $(K,+,\cdot)$ erweitert: $\cdot: K \times V \rightarrow V, (k, v) \mapsto k \cdot v$, wobei für alle $v_1,v_2 \in V$, $k_1,k_2 \in K$ gilt:
 		\begin{itemize}
 			\item Assoziativ: $k_1 \cdot (k_2 \cdot v_1) = (k_1 \cdot k_2) \cdot v_1$
@@ -14,7 +15,7 @@
 			\item Distributiv 1: $k_1 \cdot (v_1 + v_2) = k_1 \cdot v_1 + k_1 \cdot v_2$
 			\item Distributiv 2: $(k_1 + k_2) \cdot v_1 = k_1 \cdot v_1 + k_2 \cdot v_1$
 		\end{itemize}
-		Für $K=\mathbb{R}$ reden wir von einem \textbf{reellen Vektorraum} (Vektorraum über $\mathbb{R}$, $V(\mathbb{R})$, $\mathbb{R}$-Vektorraum), bei $K=\mathbb{C}$ von einem \textbf{komplexen Vektorraum}. 
+		Die Elemente von $V$ nennen wir \textbf{Vektoren}. Für $K=\mathbb{R}$ reden wir von einem \textbf{reellen Vektorraum} (Vektorraum über $\mathbb{R}$, $V(\mathbb{R})$, $\mathbb{R}$-Vektorraum), bei $K=\mathbb{C}$ von einem \textbf{komplexen Vektorraum}. 
 	\end{definition}
 
 	\begin{definition}[Teilraum, Untervektorraum, Unterraum]
@@ -70,5 +71,61 @@
 	\begin{theorem}
 		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $\textrm{Ker}(f)$ ist ein \hyperref[def:Untervektorraum]{Untervektorraum} von $V$, $\textrm{Im}(f)$ ein \hyperref[def:Untervektorraum]{Untervektorraum} von $W$. 
 	\end{theorem}
-	
+
+	\section{Lineare (Un)Abhängigkeit, Basis \& Dimension}
+
+	\begin{definition}[Lineare (Un)Abhängigkeit eines Vektors]
+		\label{def:LineareAbhängigkeit}
+		\label{def:LineareUnabhängigkeit}
+		Es seien $v_1,...,v_n$ $n$ Vektoren eines \hyperref[def:Vektorraum]{Vektorraums} $V$ über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Gibt es nun $k_1,...,k_{n-1} \in K$ sodass $$v_n = k_1 \cdot v_1 + ... + k_{n-1} \cdot v_{n-1}$$ wobei mindestens ein $k_i \not = 0$, so nennen wir $v_n$ \textbf{linear abhängig} von $v_1,...,v_{n-1}$. Das heißt, dass die Aussagen $$v_n \textrm{ lässt sich als \hyperref[def:Linearkombination]{Linearkombination} von } v_1,...,v_{n-1} \textrm{ aufschreiben}$$ und $$v_n \in \textrm{span}(\{v_1,...,v_{n-1}\})$$ und $$v_n \textrm{ist linear abhängig von } v_1,...,v_{n-1}$$ äquivalent sind.\sidenote{$v_n$ muss natürlich nicht unbedingt der ''letzte'' Vektor sein, sondern schlicht ein beliebiger Vektor aus unserer \hyperref[def:Menge]{Menge}} Falls es \textit{keine} solchen $k_1,...,k_{n-1} \in K$ mit mindestens einem $k_i \not = 0$ gibt, so nennen wir $v_n$ \textbf{linear unabhängig} von $v_1,...,v_{n-1}$.
+	\end{definition}
+
+	\begin{definition}[Lineare (Un)Abhängigkeit einer Menge von Vektoren]
+		\label{def:LineareAbhängigkeitMenge}
+		\label{def:LineareUnabhängigkeitMenge}
+		Es seien $v_1,...,v_n$ $n$ Vektoren eines \hyperref[def:Vektorraum]{Vektorraums} $V$ über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Wir nennen die \hyperref[def:Menge]{Menge} $\{v_1,...,v_n\}$ \textbf{linear unabhängig}, wenn für jede \hyperref[def:Linearkombination]{Linearkombination} dieser \hyperref[def:Vektor]{Vektoren} gilt: $$k_1 \cdot v_1 + ... + k_n \cdot v_n = 0 \Rightarrow k_1 = ... = k_n = 0$$ Die \hyperref[def:Menge]{Menge} $\{v_1,...,v_n\}$ heißt \textbf{linear abhängig} wenn sie nicht linear unabhängig ist. 
+	\end{definition}
+
+	\begin{theorem}
+		Es seien $v_1,...,v_n$ $n$ Vektoren eines \hyperref[def:Vektorraum]{Vektorraums} $V$ über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Es gilt: Die \hyperref[def:Menge]{Menge} $\{v_1,...,v_n\}$ ist dann \hyperref[def:LineareAbhängigkeitMenge]{linear abhängig}, wenn ein \hyperref[def:Vektor]{Vektor} $v_i \in\{v_1,...,v_n\}$ \hyperref[def:LineareAbhängigkeit]{linear abhängig} ist von den restlichen \hyperref[def:Vektor]{Vektoren} $\{v_1,...,v_n\}\setminus \{v_i\}$. 
+	\end{theorem}
+
+	\begin{theorem}
+		Es seien $v_1,...,v_n$ $n$ Vektoren eines \hyperref[def:Vektorraum]{Vektorraums} $V$ über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Des Weiteren sei $v_i$ ein beliebiger Vektor aus $\{v_1,...,v_n\}$. Es gilt: $$v_i \in \textrm{span}(\{v_1,...,v_n\}\setminus\{v_i\}) \Rightarrow \textrm{span}(\{v_1,...,v_n\}) = \textrm{span}(\{v_1,...,v_n\}\setminus\{v_i\})$$
+	\end{theorem}
+
+	\begin{definition}[Basis]
+		\label{def:Basis}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum}. Eine \hyperref[def:Teilmenge]{Teilmenge} $W$ von $V$, welche die Eigenschaften
+		\begin{itemize}
+			\item $\textrm{span}(W) = V$\sidenote{Wir sagen: \\ ''$B$ \textit{erzeugt} $V$''}
+			\item Die \hyperref[def:Menge]{Menge} $W$ ist \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängig}
+		\end{itemize}
+		erfüllt, nennen wir \textbf{Basis} von $V$. 
+	\end{definition}
+
+	\begin{definition}[Dimension]
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $W = \{w_1,...,w_n\}$ eine (endliche) \hyperref[def:Basis]{Basis} von $V$. Dann sagen wir dass $n$ ($n=|W|$) die \textbf{Dimension} von $V$ ist: $\textrm{dim}(V)=n$. Der \textit{Nullraum} $\{0\}$ hat Dimension 0. 
+	\end{definition}
+
+	\begin{theorem}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} mit $\textrm{dim}(V)=n$. Dann hat jede (endliche) \hyperref[def:Basis]{Basis} von $V$ $n$ Elemente.
+	\end{theorem}
+
+	\begin{theorem}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} mit $\textrm{dim}(V)=n$. Es ist nicht möglich eine \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige} \hyperref[def:Menge]{Menge} von $n+1$ (oder mehr) \hyperref[def:Vektor]{Vektoren} $v_i \in V$ zu finden.
+	\end{theorem}
+
+	\begin{theorem}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $W \subseteq V$ ein \hyperref[def:Untervektorraum]{Untervektorraum}. Folgende Aussagen sind dann äquivalent:\sidenote{Natürlich folgt aus $W \subseteq V$ \textit{nicht} dass $W$ eine Basis von $V$ ist, es gilt lediglich, dass entweder alle oder keine der Aussagen wahr sind}
+		\begin{itemize}
+			\item $W$ ist eine \hyperref[def:Basis]{Basis} von $V$
+			\item $W$ ist eine maximale \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige} \hyperref[def:Teilmenge]{Teilmenge} von $V$ (gibt es eine \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige}\hyperref[def:Teilmenge]{Teilmenge} $X \subseteq V$ und gilt $W \subseteq X$, so folgt: $W = X$)
+			\item $W$ ist eine minimale 
+		\end{itemize}
+	\end{theorem}
+
+	\begin{theorem}
+		Seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $\varphi: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $$\textrm{dim}(V) = \textrm{dim}(\textrm{Ker}(\varphi)) + \textrm{dim}(\textrm{Im}(\varphi))$$
+	\end{theorem}
 \end{document}
