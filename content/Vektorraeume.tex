@@ -63,14 +63,6 @@
 			\item $\textrm{Im}(f) = \{ w \in W | \exists v \in V: f(v)=w \}$ das \textbf{Bild} (engl. \textbf{Image}) von $f$
 		\end{itemize}
 	\end{definition}
-	
-	\begin{theorem}
-		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $f$ ist genau dann \hyperref[def:Injektiv]{injektiv} wenn $\textrm{Ker}(f)=\{0\}$
-	\end{theorem}
-
-	\begin{theorem}
-		Es seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $\textrm{Ker}(f)$ ist ein \hyperref[def:Untervektorraum]{Untervektorraum} von $V$, $\textrm{Im}(f)$ ein \hyperref[def:Untervektorraum]{Untervektorraum} von $W$. 
-	\end{theorem}
 
 	\section{Lineare (Un)Abhängigkeit, Basis \& Dimension}
 
@@ -126,6 +118,13 @@
 	\end{theorem}
 
 	\begin{theorem}
-		Seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $\varphi: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt: $$\textrm{dim}(V) = \textrm{dim}(\textrm{Ker}(\varphi)) + \textrm{dim}(\textrm{Im}(\varphi))$$
+		Seien $V, W$ \hyperref[def:Vektorraum]{Vektorräume} und $f: V \rightarrow W$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. Es gilt:
+		\begin{itemize}
+			\item $f$ ist genau dann \hyperref[def:Injektiv]{injektiv} wenn $\textrm{Ker}(f)=\{0\}$
+			\item $\textrm{Ker}(f)$ ist ein \hyperref[def:Untervektorraum]{Untervektorraum} von $V$, $\textrm{Im}(f)$ ein \hyperref[def:Untervektorraum]{Untervektorraum} von $W$. 
+			\item $\textrm{dim}(V) = \textrm{dim}(\textrm{Ker}(f)) + \textrm{dim}(\textrm{Im}(f))$
+			\item Ist $f$ ein \hyperref[def:Isomorphismus]{Isomorphismus}, so ist die \hyperref[def:Umkehrabbildung]{Umkehrabbildung} $f^{-1}: W \rightarrow V$ auch eine \hyperref[def:LineareAbbildung]{lineare Abbildung}
+			\item $\textrm{dim}(V)=\textrm{dim}(W) \Leftrightarrow f \textrm{ ist ein \hyperref[def:Isomorphismus]{Isomorphismus}}$
+		\end{itemize}
 	\end{theorem}
 \end{document}
