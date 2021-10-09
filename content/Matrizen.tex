@@ -4,6 +4,8 @@
 	
 	\chapter{Matrizen}
 	
+	\section{Allgemein}
+	
 	\begin{definition}[Matrix, Dimension einer Matrix, Spaltenindex, Zeilenindex]
 		\label{def:Matrix}
 		\label{def:DimensionMatrix}
@@ -11,13 +13,99 @@
 		\label{def:Zeilenindex}
 		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Die rechteckige, tabellen-artige Anordnung 
 		
-		$$m = \begin{pmatrix}
+		$$M = \begin{pmatrix}
 			k_{1,1} & \dots & k_{1,m} \\
 			\vdots  & \ddots & \vdots \\
 			k_{n,1} & \dots & k_{n,m}
 		\end{pmatrix}$$
 		
-		$m$ von Elementen $k_{i,j}$ aus $K$ nennen wir eine \textbf{$n\times m$ Matrix} (plural: Matrizen), wobei wir $i$ als \textbf{Zeilenindex} und $j$ als \textbf{Spaltenindex} bezeichnen. Sie besteht aus $m$ Spaltenvektoren\sidenote{Verweis ausstehend} bzw. $n$ Zeilenvektoren\sidenote{Verweis ausstehend}. Wir nennen $(n,m)$ die \textbf{Dimension der Matrix} $m$. Die \hyperref[def:Menge]{Menge} aller Matrizen (bestehend aus Elementen $k_{i,j} \in K$) mit Dimension $(n,m)$ schreiben wir als $K^{n \times m}$. 
+		$M$ von Elementen $k_{i,j}$ aus $K$ nennen wir eine \textbf{$n\times m$ Matrix} (plural: Matrizen), wobei wir $i$ als \textbf{Zeilenindex} und $j$ als \textbf{Spaltenindex} bezeichnen. Die Matrix $M$\sidenote{Es ist üblich für Matrizen große Buchstaben zu verwenden} besteht aus $m$ Spaltenvektoren\sidenote{Verweis ausstehend} bzw. $n$ Zeilenvektoren\sidenote{Verweis ausstehend}. Wir nennen $(n,m)$ die \textbf{Dimension $\textrm{dim}(M)$ der Matrix} $M$. Die \hyperref[def:Menge]{Menge} aller Matrizen (bestehend aus Elementen $k_{i,j} \in K$) mit Dimension $(n,m)$ schreiben wir als $K^{n \times m}$. 
+	\end{definition}
+
+	\begin{definition}[Matrixaddition]
+		\label{def:Matrixaddition}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $A,B\in K^{n\times m}$. Wir definieren die \textbf{Matrixaddition} $A+B$ als
+		
+		$$
+		A+B = 
+		\begin{pmatrix}
+			a_{1,1} & \dots & a_{1,m} \\
+			\vdots  & \ddots & \vdots \\
+			a_{n,1} & \dots & a_{n,m}
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			b_{1,1} & \dots & b_{1,m} \\
+			\vdots  & \ddots & \vdots \\
+			b_{n,1} & \dots & b_{n,m}
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			a_{1,1}+b_{1,1} & \dots & a_{1,m}+b_{1,m} \\
+			\vdots  & \ddots & \vdots \\
+			a_{n,1}+b_{n,1} & \dots & a_{n,m}+b_{n,m}
+		\end{pmatrix}
+		$$
+		
+		\textit{Wichtig}: Die Addition zweier \hyperref[def:Matrix]{Matrizen} $A$ und $B$ ist nur möglich, wenn sie die gleichen \hyperref[def:DimensionMatrix]{Dimensionen} haben: $\textrm{dim}(A) = \textrm{dim}(B)$. Die Matrixaddition ist 
+		\begin{itemize}
+			\item \hyperref[def:kommutativ]{kommutativ}: $A+B = B+A$
+			\item \hyperref[def:assoziativ]{assoziativ}: $(A+B)+C = A+(B+C)$
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Matrixmultiplikation]
+		\label{def:Matrixmultiplikation}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und seien $A\in K^{n \times m}$ und $B \in K^{m \times o}$ \hyperref[def:Matrix]{Matrizen}. Wir definieren die \textbf{Matrixmultiplikation}\sidenote{Merksatz für die Matrixmultiplikation: \textit{Zeile} (von $A$) \textit{mal Spalte} (von $B$)!} $A\times B$ als
+		
+		\begin{align*}
+			A \times B
+			&=
+			\begin{pmatrix}
+			a_{1,1} & \dots & a_{1,m} \\
+			\vdots  & \ddots & \vdots \\
+			a_{n,1} & \dots & a_{n,m}
+			\end{pmatrix}
+			\times
+			\begin{pmatrix}
+			b_{1,1} & \dots & b_{1,o} \\
+			\vdots  & \ddots & \vdots \\
+			b_{m,1} & \dots & b_{m,o}
+			\end{pmatrix}
+			= \\ 
+			&= 
+			\begin{pmatrix}
+				a_{1,1} \cdot b_{1,1} + \dots + a_{1,m} \cdot b_{m,1} & \dots & a_{1,1} \cdot b_{1,o} + \dots + a_{1,m} \cdot b_{m,o} \\
+				\vdots  & \ddots & \vdots \\
+				a_{n,1} \cdot b_{1,1} + \dots + a_{n,m} \cdot b_{m,1} & \dots & a_{n,1} \cdot b_{1,o} + \dots + a_{n,m} \cdot b_{m,o}
+			\end{pmatrix}
+		\end{align*}
+		
+		\textit{Wichtig}: Die Multiplikation zweier \hyperref[def:Matrix]{Matrizen} $A$ und $B$ ist nur möglich, wenn die Anzahl von Spalten in $A$ mit der Anzahl von Zeilen in $B$ übereinstimmt. Daher ist die Matrixmultiplikation
+		\begin{itemize}
+			\item zwar \hyperref[def:assoziativ]{assoziativ}: $(A \times B) \times C = A \times (B \times C)$
+			\item aber allgemein \textit{nicht} \hyperref[def:kommutativ]{kommutativ}: $A \times B \not = B \times A$
+			\item \hyperref[def:distributiv]{distributiv} bezüglich der \hyperref[def:Matrixaddition]{Matrixaddition}: $A \times (B+C) = A \times B + A \times C$
+		\end{itemize}
+	
+		Das Ergebnis der Matrixmultiplikation hat dann die \hyperref[def:DimensionMatrix]{Dimensionen} $$\textrm{dim}(A \times B) = (n,o)$$
+		Daher ist $A \times B \in K^{n \times o}$. \\
+		
+	
+		\textbf{Beispiel:}		
+		$$
+		\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \\ 7 & 8\end{pmatrix} 
+		\times 
+		\begin{pmatrix} 9 & 10 & 11 \\ 12 & 13 & 14\end{pmatrix}
+		=
+		\begin{pmatrix} 
+		1 \cdot 9 + 2 \cdot 12 & 1 \cdot 10 + 2 \cdot 13  & 1 \cdot 11 + 2 \cdot 14 \\ 
+		3 \cdot 9 + 4 \cdot 12 & 3 \cdot 10 + 4 \cdot 13  & 3 \cdot 11 + 4 \cdot 14 \\
+		5 \cdot 9 + 6 \cdot 12 & 5 \cdot 10 + 6 \cdot 13  & 5 \cdot 11 + 6 \cdot 14 \\
+		7 \cdot 9 + 8 \cdot 12 & 7 \cdot 10 + 8 \cdot 13  & 7 \cdot 11 + 8 \cdot 14
+		\end{pmatrix}
+		$$
+		
 	\end{definition}
 	
 \end{document}
