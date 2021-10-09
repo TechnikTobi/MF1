@@ -64,7 +64,7 @@
 		\end{itemize}
 	\end{definition}
 
-	\section{Lineare (Un)Abhängigkeit, Basis \& Dimension}
+	\section{Lineare (Un)Abhängigkeit, Basis, Dimension \& Koordinaten}
 
 	\begin{definition}[Lineare (Un)Abhängigkeit eines Vektors]
 		\label{def:LineareAbhängigkeit}
@@ -96,7 +96,12 @@
 		erfüllt, nennen wir \textbf{Basis} von $V$. 
 	\end{definition}
 
+	\begin{theorem}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} mit $V$ ungleich dem \textit{Nullraum}: $V\not = \{0\}$. Jeder beliebiger solcher \hyperref[def:Vektorraum]{Vektorraum} hat eine \hyperref[def:Basis]{Basis}.
+	\end{theorem}
+
 	\begin{definition}[Dimension]
+		\label{def:Dimension}
 		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $W = \{w_1,...,w_n\}$ eine (endliche) \hyperref[def:Basis]{Basis} von $V$. Dann sagen wir dass $n$ ($n=|W|$) die \textbf{Dimension} von $V$ ist: $\textrm{dim}(V)=n$. Der \textit{Nullraum} $\{0\}$ hat Dimension 0. 
 	\end{definition}
 
@@ -124,7 +129,15 @@
 			\item $\textrm{Ker}(f)$ ist ein \hyperref[def:Untervektorraum]{Untervektorraum} von $V$, $\textrm{Im}(f)$ ein \hyperref[def:Untervektorraum]{Untervektorraum} von $W$. 
 			\item $\textrm{dim}(V) = \textrm{dim}(\textrm{Ker}(f)) + \textrm{dim}(\textrm{Im}(f))$
 			\item Ist $f$ ein \hyperref[def:Isomorphismus]{Isomorphismus}, so ist die \hyperref[def:Umkehrabbildung]{Umkehrabbildung} $f^{-1}: W \rightarrow V$ auch eine \hyperref[def:LineareAbbildung]{lineare Abbildung}
-			\item $\textrm{dim}(V)=\textrm{dim}(W) \Leftrightarrow f \textrm{ ist ein \hyperref[def:Isomorphismus]{Isomorphismus}}$
+			\item $\textrm{dim}(V)=\textrm{dim}(W) \Leftrightarrow f \textrm{ ist ein \hyperref[def:Isomorphismus]{Isomorphismus}}$\\
+				Wenn $f$ ein \hyperref[def:Isomorphismus]{Isomorphismus} ist, ist $f$ \hyperref[def:Bijektiv]{bijektiv} und folglich auch \hyperref[def:Injektiv]{injektiv}. Daraus folgt wiederum, dass $\textrm{Ker}(f)=\{0\}$ und folglich $\textrm{dim}(\textrm{Ker}(f))=0$ (Siehe Definition \ref{def:Dimension}). Da $f$ auch \hyperref[def:Surjketiv]{surjektiv} ist, ist $\textrm{Im}(f)=W$, und es folgt: $\textrm{dim}(V)=\textrm{dim}(\textrm{Ker}(f)) + \textrm{dim}(\textrm{Im}(f)) = \textrm{dim}(\textrm{Im}(f)) = \textrm{dim}(W)$
 		\end{itemize}
 	\end{theorem}
+
+	\begin{definition}[Koordinaten]
+		\label{def:Koordinaten}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$ und $B=\{b_1,...,b_n\}$ eine \hyperref[def:Basis]{Basis} von $V$. Nun gibt es für jeden \hyperref[def:Vektor]{Vektor} $v \in V$ eindeutig bestimmbare Elemente $k_1,...,k_n \in K$, wobei gilt: $$v = k_1 \cdot b_1 + ... + k_n \cdot b_n$$ Die Elemente $k_1,...,k_n$ nennen wir \textbf{Koordinaten} von $v$ bezüglich der \hyperref[def:Basis]{Basis} $B$. Wir schreiben: $$v = \begin{pmatrix}k_1 \\ \vdots \\ k_n \end{pmatrix}_B$$
+	\end{definition}
+
+
 \end{document}
