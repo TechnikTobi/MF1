@@ -108,4 +108,69 @@
 		
 	\end{definition}
 	
+	\begin{definition}[Multiplikation einer Matrix mit einem Skalar]
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix} und $b \in K$ ein Skalar. Wir definieren die \textbf{Multiplikation einer Matrix $A$ mit einem Skalar $b$} als 
+		
+		$$A \cdot b = b \cdot A = b \cdot \begin{pmatrix} a_{1,1} & \dots & a_{1,m} \\ \vdots & \ddots & \vdots \\ a_{n,1} & \dots & a_{n,m} \end{pmatrix} = \begin{pmatrix} b \cdot a_{1,1} & \dots & b \cdot a_{1,m} \\ \vdots & \ddots & \vdots \\ b \cdot a_{n,1} & \dots & b \cdot a_{n,m} \end{pmatrix}$$
+		
+		Dabei wird jedes Element $a_{i,j}$ der \hyperref[def:Matrix]{Matrix} $A$ mit dem Skalar $b$ multipliziert. Andersherum kann so jeder beliebige Skalar (ungleich 0) aus $A$ herausgehoben werden. 
+	\end{definition}
+
+	\begin{definition}[Transponieren, transponierte Matrix]
+		\label{def:Transponieren}
+		\label{def:transponierteMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}, so verstehen wir unter der \textbf{transponierten Matrix} $A^\top \in K^{m \times n}$ jene \hyperref[def:Matrix]{Matrix} welche durch Vertauschung der Zeilen und Spalten von $A$ entsteht.
+		
+		$$A = \begin{pmatrix} a_{1,1} & \dots & a_{1,m} \\ \vdots & \ddots & \vdots \\ a_{n,1} & \dots & a_{n,m} \end{pmatrix} \Rightarrow A^\top = \begin{pmatrix} a_{1,1} & \dots & a_{1,n} \\ \vdots & \ddots & \vdots \\ a_{m,1} & \dots & a_{n,m} \end{pmatrix}$$
+		
+		Für eine \hyperref[def:Matrix]{Matrix} $A \in K^{n \times n}$ entspricht dies der Spiegelung entlang der \textit{Hauptdiagonale}. 
+		
+		\textbf{Beispiel:}
+		
+		$$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix} \Rightarrow A^\top = \begin{pmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{pmatrix}$$
+	\end{definition}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: $$(A^\top)^\top = A$$
+	\end{theorem}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und seien $A_1,...,A_n$ beliebige \hyperref[def:Matrix]{Matrizen} passender Größe über $K$. Es gilt: $$(A_1 \times ... \times A_n)^\top = A_n^\top \times ... \times A_1^\top$$
+	\end{theorem}
+
+	\section{Spezielle Matrizen und ihre Eigenschaften}
+	
+	\begin{definition}[Quadratische Matrix]
+		\label{def:QuadratischeMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Wir nennen \hyperref[def:Matrix]{Matrizen} $A \in K^{n \times n}$ \textbf{quadratisch} da diese gleich viele Zeilen wie Spalten haben. 
+	\end{definition}
+	
+	
+	\begin{definition}[Symmetrische Matrix]
+		\label{def:SymmetrischeMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times n}$ eine beliebige \hyperref[def:QuadratischeMatrix]{quadratische Matrix}. Wir nennen $A$ eine \textbf{symmetrische Matrix} wenn gilt: $A=A^\top$. 
+	\end{definition}
+
+	\begin{definition}[Hermitesche Matrix]
+		\label{def:HermitescheMatrix}
+		Sei $A \in \mathbb{C}^{n \times n}$ eine \hyperref[def:QuadratischeMatrix]{quadratische Matrix} mit Elementen aus $\mathbb{C}$. Wir nennen $A$ eine \textbf{hermitesche Matrix} wenn gilt: $$A^\top = \overline{A} \Rightarrow \overline{A}^\top = A$$ wobei $\overline{A}$ die \hyperref[def:komplexKonjugiert]{komplex konjugierten} Versionen $\overline{a_{i,j}}$ der Einträge $a_{i,j}$ von $A$ enthält. \textit{Wichtig}: Die Einträge entlang der \textit{Hauptdiagonale} von $A$ müssen \hyperref[def:ReelleZahlen]{reell} sein. 
+	\end{definition}
+
+	\begin{theorem}
+		Seien $A_1,...,A_n$ beliebige \hyperref[def:HermitescheMatrix]{hermitesche Matrizen} passender Größe über $\mathbb{C}$. Es gilt: $$(\overline{A_1 \times ... \times A_n})^\top = \overline{A_n}^\top \times ... \times \overline{A_1}^\top$$
+	\end{theorem}
+
+	\begin{definition}[Rang einer Matrix]
+		\label{def:RangMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Als \textbf{Rang der Matrix} \textrm{rang}(A) bezeichnen wir die maximale Anzahl linear unabhängiger Zeilen- bzw. Spaltenvektoren.
+	\end{definition}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der ''Zeilenrang'' von $A$ ist \textit{immer} gleich dem ''Spaltenrang'' von $A$. Es folgt: $$\textrm{rang}(A) = \textrm{rang}(A^\top)$$
+	\end{theorem}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der \hyperref[def:RangMatrix]{Rang} von $A$ kann maximal dem Minimum von Zeilen- und Spaltenanzahl sein: $$\textrm{rang}(A) \leq \textrm{min}(n,m)$$
+	\end{theorem}
+	
 \end{document}
