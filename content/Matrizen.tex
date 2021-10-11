@@ -22,6 +22,11 @@
 		$M$ von Elementen $k_{i,j}$ aus $K$ nennen wir eine \textbf{$n\times m$ Matrix} (plural: Matrizen), wobei wir $i$ als \textbf{Zeilenindex} und $j$ als \textbf{Spaltenindex} bezeichnen. Die Matrix $M$\sidenote{Es ist üblich für Matrizen große Buchstaben zu verwenden} besteht aus $m$ Spaltenvektoren\sidenote{Verweis ausstehend} bzw. $n$ Zeilenvektoren\sidenote{Verweis ausstehend}. Wir nennen $(n,m)$ die \textbf{Dimension $\textrm{dim}(M)$ der Matrix} $M$. Die \hyperref[def:Menge]{Menge} aller Matrizen (bestehend aus Elementen $k_{i,j} \in K$) mit Dimension $(n,m)$ schreiben wir als $K^{n \times m}$. 
 	\end{definition}
 
+	\begin{definition}[Quadratische Matrix]
+		\label{def:QuadratischeMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Wir nennen \hyperref[def:Matrix]{Matrizen} $A \in K^{n \times n}$ \textbf{quadratisch} da diese gleich viele Zeilen wie Spalten haben. 
+	\end{definition}
+
 	\begin{definition}[Matrixaddition]
 		\label{def:Matrixaddition}
 		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $A,B\in K^{n\times m}$. Wir definieren die \textbf{Matrixaddition} $A+B$ als
@@ -123,7 +128,7 @@
 		
 		$$A = \begin{pmatrix} a_{1,1} & \dots & a_{1,m} \\ \vdots & \ddots & \vdots \\ a_{n,1} & \dots & a_{n,m} \end{pmatrix} \Rightarrow A^\top = \begin{pmatrix} a_{1,1} & \dots & a_{1,n} \\ \vdots & \ddots & \vdots \\ a_{m,1} & \dots & a_{n,m} \end{pmatrix}$$
 		
-		Für eine \hyperref[def:Matrix]{Matrix} $A \in K^{n \times n}$ entspricht dies der Spiegelung entlang der \textit{Hauptdiagonale}. 
+		Eine \hyperref[def:QuadratischeMatrix]{quadratische Matrix} wird dabei entlang der \textit{Hauptdiagonale} gespiegelt. 
 		
 		\textbf{Beispiel:}
 		
@@ -139,11 +144,6 @@
 	\end{theorem}
 
 	\section{Spezielle Matrizen und ihre Eigenschaften}
-	
-	\begin{definition}[Quadratische Matrix]
-		\label{def:QuadratischeMatrix}
-		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Wir nennen \hyperref[def:Matrix]{Matrizen} $A \in K^{n \times n}$ \textbf{quadratisch} da diese gleich viele Zeilen wie Spalten haben. 
-	\end{definition}
 	
 	
 	\begin{definition}[Symmetrische Matrix]
@@ -178,6 +178,47 @@
 		\label{def:singuläreMatrix}
 		\label{def:vollerRang}
 		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times n}$ eine beliebige \hyperref[def:QuadratischeMatrix]{quadratische Matrix}. Ist der \hyperref[def:RangMatrix]{Rang} von $A$ gleich ihrer \hyperref[def:DimensionMatrix]{Zeilen- bzw. Spaltendimension} ($\textrm{rang}(A)=n$), so sagen wir $A$ hat \textbf{vollen Rang} und bezeichnen $A$ als eine \textbf{reguläre Matrix}. \hyperref[def:Matrix]{Matrizen} welche nicht vollen Rang haben, nennen wir \textbf{singulär}. 
+	\end{definition}
+
+	\begin{definition}[Diagonalmatrix]
+		\label{def:Diagonalmatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Unter einer \textbf{Diagonalmatrix} verstehen wir eine \hyperref[def:QuadratischeMatrix]{quadratische Matrix} $A\in K^{n \times n}$ bei der alle Einträge außerhalb der \textit{Hauptdiagonale} gleich 0 sind. 
+		
+		\textbf{Beispiel:}
+		$$
+		A = \begin{pmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+		\end{pmatrix}
+		$$
+	\end{definition}
+
+	\begin{definition}[Einheitsmatrix, Identität]
+		\label{def:Einheitsmatrix}
+		\label{def:Identitätsmatrix}
+		Unter der \textbf{Einheitsmatrix} (auch als \textbf{Identität}(-\hyperref[def:Matrix]{Matrix}) bezeichnet) verstehen wir eine \hyperref[def:Diagonalmatrix]{Diagonalmatrix} welche entlang der Hauptdiagonale nur Einsen stehen hat (Siehe Beispiel in Definition \ref{def:Diagonalmatrix}). Es gilt: Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}. Für jede \hyperref[def:Matrix]{Matrix} $A \in K^{n \times m}$ und dazu passender Einheitsmatrix $I$ gilt: $$A \times I = A \textrm{ bzw. } I \times A = A$$
+		Sie ist das \hyperref[def:neutralesElement]{neutrale Element} der \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation}. \textit{Anmerkung}: Die beiden Gleichungen wurden nur deshalb voneinander getrennt, da es sein kann, dass aufgrund der \hyperref[def:Dimension]{Dimension} von $A$ unterschiedlich große Einheitsmatrizen $I$ links bzw. rechts benötigt werden (da die \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation} nicht \hyperref[def:kommutativ]{kommutativ} ist).
+	\end{definition}
+
+	\begin{definition}[Inverse Matrix, invertierbar]
+		\label{def:InverseMatrix}
+		\label{def:invertierbareMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times n}$ eine beliebige \hyperref[def:reguläreMatrix]{reguläre Matrix}. So existiert für jedes solche $A$ die \textbf{inverse Matrix} $A^{-1}$ (das \hyperref[def:inversesElement]{inverse Element} der \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation}), für die gilt: $$A \times A^{-1} = A^{-1} \times A = I$$
+		Wir sagen auch, $A$ ist \textbf{invertierbar} wenn für diese die inverse Matrix existiert. 
+	\end{definition}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und seien $A_1, ..., A_n$ beliebige \hyperref[def:invertierbareMatrix]{invertierbare Matrizen} passender Größe über $K$. Es gilt: $$(A_1 \times ... \times A_n)^{-1} = A_n^{-1} \times ... \times A_1^{-1}$$
+	\end{theorem}
+
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A \in K^{n \times n}$ eine beliebige \hyperref[def:invertierbareMatrix]{invertierbare Matrix}. Es gilt: $$(A^\top)^{-1} = (A^{-1})^\top$$
+	\end{theorem}
+
+	\begin{definition}[reelle/komplexe allgemeine lineare Gruppe]
+		Unter einer \textbf{reellen allgemeinen linearen Gruppe} verstehen wir eine \hyperref[def:Gruppe]{Gruppe} $(\textrm{GL}(n,\mathbb{R}),\times)$ bezüglich der \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation} mit der Menge $$\textrm{GL}(n,\mathbb{R}) = \{A \in \mathbb{R}^{n\times n} | A \textrm{ ist \hyperref[def:invertierbareMatrix]{invertierbar}} \}$$
+		Analog dazu definieren wir eine \textbf{komplexe allgemeine lineare Gruppe} mit $\textrm{GL}(n, \mathbb{C})$. 
 	\end{definition}
 	
 \end{document}
