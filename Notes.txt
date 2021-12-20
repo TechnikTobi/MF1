@@ -1,0 +1,19 @@
+# Links für später...
+
+## Allgemein
+http://devlinsangle.blogspot.com/2015/04/the-importance-of-mathematics-courses.html
+
+## Mengenlehre
+https://de.wikipedia.org/wiki/Zermelo-Fraenkel-Mengenlehre
+https://de.wikipedia.org/wiki/Grelling-Nelson-Antinomie
+https://de.wikipedia.org/wiki/Klasse_(Mengenlehre)
+
+## Ordnungsrelationen
+https://de.wikipedia.org/wiki/Ordnungsrelation#Halbordnung
+
+## Algebraische Strukturen
+https://av.tib.eu/media/19807
+
+## Lineare Algebra
+https://de.wikipedia.org/wiki/Matrix_(Mathematik)
+
