@@ -45,6 +45,7 @@
 	\end{definition}
 
 	\begin{definition}[Verketten von linearen Abbildungen]
+		\label{def:VerkettenLinearerAbbildungen}
 		Es seien $f_1,f_2$ \hyperref[def:LineareAbbildung]{lineare Abbildungen}. Beim \textbf{Verketten der beiden linearen Abbildungen} $f_1$ und $f_2$ erhalten wir ebenfalls wieder eine \hyperref[def:LineareAbbildung]{lineare Abbildung} und bezeichnen diese Verkettung als $f_1 \circ f_2$, wobei \textit{zuerst} $f_2$ und \textit{danach} $f_1$ ausgeführt wird: $f_1(f_2(x))$.
 	\end{definition}
 
@@ -88,10 +89,10 @@
 
 	\begin{definition}[Basis]
 		\label{def:Basis}
-		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum}. Eine \hyperref[def:Teilmenge]{Teilmenge} $W$ von $V$, welche die Eigenschaften
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum}. Eine \hyperref[def:Teilmenge]{Teilmenge} $B$ von $V$, welche die Eigenschaften
 		\begin{itemize}
-			\item $\textrm{span}(W) = V$\sidenote{Wir sagen: \\ ''$B$ \textit{erzeugt} $V$''}
-			\item Die \hyperref[def:Menge]{Menge} $W$ ist \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängig}
+			\item $\textrm{span}(B) = V$\sidenote{Wir sagen: \\ ''$B$ \textit{erzeugt} $V$''}
+			\item Die \hyperref[def:Menge]{Menge} $B$ ist \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängig}
 		\end{itemize}
 		erfüllt, nennen wir \textbf{Basis} von $V$. 
 	\end{definition}
@@ -102,7 +103,7 @@
 
 	\begin{definition}[Dimension]
 		\label{def:Dimension}
-		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $W = \{w_1,...,w_n\}$ eine (endliche) \hyperref[def:Basis]{Basis} von $V$. Dann sagen wir dass $n$ ($n=|W|$) die \textbf{Dimension} von $V$ ist: $\textrm{dim}(V)=n$. Der \textit{Nullraum} $\{0\}$ hat Dimension 0. 
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $B = \{b_1,...,b_n\}$ eine (endliche) \hyperref[def:Basis]{Basis} von $V$. Dann sagen wir dass $n$ ($n=|W|$) die \textbf{Dimension} von $V$ ist: $\textrm{dim}(V)=n$. Der \textit{Nullraum} $\{0\}$ hat Dimension 0. 
 	\end{definition}
 
 	\begin{theorem}
@@ -114,11 +115,11 @@
 	\end{theorem}
 
 	\begin{theorem}
-		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $W \subseteq V$ ein \hyperref[def:Untervektorraum]{Untervektorraum}. Folgende Aussagen sind dann äquivalent:\sidenote{Natürlich folgt aus $W \subseteq V$ \textit{nicht} dass $W$ eine Basis von $V$ ist, es gilt lediglich, dass entweder alle oder keine der Aussagen wahr sind}
+		Sei $V$ ein \hyperref[def:Vektorraum]{Vektorraum} und $B \subseteq V$ ein \hyperref[def:Untervektorraum]{Untervektorraum}. Folgende Aussagen sind dann äquivalent:\sidenote{Natürlich folgt aus $B \subseteq V$ \textit{nicht} dass $B$ eine Basis von $V$ ist, es gilt lediglich, dass entweder alle oder keine der Aussagen wahr sind}
 		\begin{itemize}
-			\item $W$ ist eine \hyperref[def:Basis]{Basis} von $V$
-			\item $W$ ist eine maximale \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige} \hyperref[def:Teilmenge]{Teilmenge} von $V$ (gibt es eine \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige}\hyperref[def:Teilmenge]{Teilmenge} $X \subseteq V$ und gilt $W \subseteq X$, so folgt: $W = X$)
-			\item $W$ ist eine \textit{minimale Spannmenge} von $V$ (gibt es eine \hyperref[def:Teilmenge]{Teilmenge} $X\subseteq V$ sodass $\textrm{span}(X)=V$ und gilt $X \subseteq W$, so folgt: $W = X$)
+			\item $B$ ist eine \hyperref[def:Basis]{Basis} von $V$
+			\item $B$ ist eine maximale \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige} \hyperref[def:Teilmenge]{Teilmenge} von $V$ (gibt es eine \hyperref[def:LineareUnabhängigkeitMenge]{linear unabhängige}\hyperref[def:Teilmenge]{Teilmenge} $X \subseteq V$ und gilt $B \subseteq X$, so folgt: $B = X$)
+			\item $B$ ist eine \textit{minimale Spannmenge} von $V$ (gibt es eine \hyperref[def:Teilmenge]{Teilmenge} $X\subseteq V$ sodass $\textrm{span}(X)=V$ und gilt $X \subseteq B$, so folgt: $B = X$)
 		\end{itemize}
 	\end{theorem}
 
