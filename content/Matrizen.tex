@@ -111,6 +111,8 @@
 		\end{pmatrix}
 		$$
 		
+		Ist $n=1$ (folglich $A \in K^{1 \times m}$) bzw. $o=1$ (folglich $B \in K^{m \times 1}$), so handelt es sich um eine Multiplikation zwischen einem Zeilenvektor und einer Matrix bzw. einer Matrix und einem Spaltenvektor.
+		
 	\end{definition}
 	
 	\begin{definition}[Multiplikation einer Matrix mit einem Skalar]
@@ -220,5 +222,39 @@
 		Unter einer \textbf{reellen allgemeinen linearen Gruppe} verstehen wir eine \hyperref[def:Gruppe]{Gruppe} $(\textrm{GL}(n,\mathbb{R}),\times)$ bezüglich der \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation} mit der Menge $$\textrm{GL}(n,\mathbb{R}) = \{A \in \mathbb{R}^{n\times n} | A \textrm{ ist \hyperref[def:invertierbareMatrix]{invertierbar}} \}$$
 		Analog dazu definieren wir eine \textbf{komplexe allgemeine lineare Gruppe} mit $\textrm{GL}(n, \mathbb{C})$. 
 	\end{definition}
+
+	\newpage
+	\section{Matrizen als Lineare Abbildungen}
+	
+%	\begin{theorem}
+%		Es seien $V$, $W$ \hyperref[def:Vektorraum]{Vektorräume} über einen \hyperref[def:Körper]{Körper} $(K,+,\cdot)$. Des Weiteren sei $B = \{b_1,...,b_n\}$ eine \hyperref[def:Basis]{Basis} von $W$ und $v_1, ..., v_n \in V$. Es folgt, dass es genau eine \hyperref[def:LineareAbbildung]{lineare Abbildung} $f: W \rightarrow V$ gibt sodass gilt: 
+%		$$
+%			f(b_i) = v_i \hspace*{1cm}\forall i=1,...,n
+%		$$
+%	\end{theorem}
+
+	\begin{theorem}
+		\label{theorem:MatrizenAlsLineareAbbildungen}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und $f: K^n \rightarrow K^m$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung}. So gibt es für jede solche lineare Abbildung genau eine \hyperref[def:Matrix]{Matrix} $A \in K^{m \times n}$ sodass gilt: 
+		$$
+		f(v) = A \times v \hspace*{1cm} \forall v \in K^n
+		$$
+		Des Weiteren gilt dass jede Matrix $A \in K^{m \times n}$ eine lineare Abbildung $f: K^n \rightarrow K^m$ definiert, sodass 
+		$$
+		A \times v = f(v) \hspace*{1cm} \forall v \in K^n
+		$$
+	\end{theorem}
+
+	\begin{definition}[Koeffizientenmatrix einer linearen Abbildung]
+		\label{def:KoeffizientenmatrixEinerLinearenAbbildung}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper}, $f: K^n \rightarrow K^m$ eine \hyperref[def:LineareAbbildung]{lineare Abbildung} und $A \in K^{m \times n}$ die laut Satz \ref{theorem:MatrizenAlsLineareAbbildungen} zu $f$ dazugehörige Matrix. Wir nennen $A$ nun die \textbf{Koeffizientenmatrix der linearen Abbildung} $f$. 
+	\end{definition}
+
+	\begin{theorem}
+		Es seien $f_1$, $f_2$ \hyperref[def:LineareAbbildung]{lineare Abbildungen} und $A_1$ bzw. $A_2$ die \hyperref[def:KoeffizientenmatrixEinerLinearenAbbildung]{Koeffizientenmatrix} von $f_1$ bzw. $f_2$. Bereits aus Definition \ref{def:VerkettenLinearerAbbildungen} kennen wir die \hyperref[def:VerkettenLinearerAbbildungen]{Verkettung von linearen Abbildungen}. Diese lässt sich nun durch die \hyperref[def:Matrixmultiplikation]{Matrixmultiplikation} der beiden Koeffizientenmatrizen ausdrücken: 
+		$$
+			(f_1 \circ f_2)(x) = f_1(f_2(x)) = A_1 \times (A_2 \times x) = (A_1 \times A_2) \times x
+		$$
+	\end{theorem}
 	
 \end{document}
