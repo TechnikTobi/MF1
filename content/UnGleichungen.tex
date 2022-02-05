@@ -1,0 +1,61 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	
+	\chapter{(Un-)Gleichungen}
+	
+	\section{Allgemeines}
+	
+	\begin{definition}[(mathematischer) Term]
+		\label{def:MathematischerTerm}
+		Unter einem \textbf{(mathematischen) Term} verstehen wir in weiterer Folge eine Aneinanderreihung von Symbolen welche \hyperref[def:Element]{Elemente}, Platzhalter für Elemente, \hyperref[def:Operation]{Operationen} auf diesen und Klammern. Diese Verkettungen müssen gewisse syntaktische Regeln der Mathematik befolgen \sidenote{Ja, welche den?} um als Terme bezeichnet werden zu können.	
+	\end{definition}
+
+	\section{Gleichungen}
+	
+	\begin{definition}[Gleichung, Identitätsgleichung, Bestimmungsgleichung, Definitionsgleichung]
+		\label{def:Gleichung}
+		Werden zwei oder mehr \hyperref[def:MathematischerTerm]{(mathematische) Terme} durch die ''$=$''-\hyperref[def:Relation]{Relation} miteinander verknüpft, so sprechen wir von einer \textbf{Gleichung}. Gleichungen können wir prinzipiell einen \hyperref[def:Wahrheitswert]{Wahrheitswert} zuordnen\sidenote{bspw. ist $1+1=2$ wahr und $2+2=5$ falsch} und in verschiedene Arten unterteilen:
+		\begin{itemize}
+			\item \textbf{Identitätsgleichungen} sind für jede beliebige Wahl von \hyperref[def:Element]{Elementen} einer \hyperref[def:Menge]{Menge} wahr. Beispielsweise ist 
+			$$
+			g_1 * (g_2 * g_3) = (g_1 * g_2) * g_3
+			$$
+			für $g_1,g_2,g_3 \in G$ beliebig für jede beliebige \hyperref[def:Gruppe]{Gruppe} $(G,*)$ (aufgrund der \hyperref[def:assoziativ]{Assoziativität} welche eine Gruppe erfüllen muss) wahr.
+
+			\item \textbf{Bestimmungsgleichungen} enthalten Platzhalter für Werte (''Variablen'') welche zunächst unbekannt sind. Für diese Platzhalter können durch \hyperref[def:LösenEinerGleichung]{Lösen der Gleichung} konkrete \hyperref[def:Element]{Elemente} bestimmt werden.
+			
+			\item \textbf{Definitionsgleichungen} dienen dazu, ein Symbol (neu) zu definieren. Beispielsweise haben wir in Definition \ref{def:GanzeZahlen} die Bedeutung von ''$\mathbb{Z}$'' als Menge der \hyperref[def:GanzeZahlen]{ganzen Zahlen} über eine solche Gleichung festgelegt. Das Zuordnen von Wahrheitswerten zu Gleichungen dieser Art ist nicht sinnvoll, da es sich um Definitionen und nicht um \hyperref[def:Aussage]{Aussagen} im allgemeineren Sinn handelt.\sidenote{Für diese Art von Gleichungen wird auch ''$:=$'' statt ''$=$'' verwendet}
+ 		\end{itemize}
+ 		Im Weiteren Verlauf wird jedoch der Überbegriff ''Gleichung'' verwendet. 
+	\end{definition}
+
+	\begin{definition}[Äquivalenzumformung]
+		\label{def:Äquivalenzumformung}
+		Unter einer \textbf{Äquivalenzumformung} verstehen wir das Verknüpfen eines \hyperref[def:MathematischerTerm]{(mathematischen) Terms} über eine \hyperref[def:Operation]{Operation} mit allen Termen einer \hyperref[def:Gleichung]{Gleichung} ohne die ''$=$''-\hyperref[def:Äquivalenzrelation]{Äquivalenzrelation} zwischen den Paaren von Termen zu verletzen.
+	\end{definition}
+
+	\begin{theorem}
+		Betrachten wir die \hyperref[def:Gleichung]{Gleichung} $\textrm{Term}_1 = \textrm{Term}_2$ so sind die folgenden Äquivalenzumformungen erlaubt\sidenote{Dabei handelt es sich (nach aktuellem Stand) \textit{nicht} um eine erschöpfende Liste}, dabei müssen diese gleichzeitig sowohl auf $\textrm{Term}_1$ als auch auf $\textrm{Term}_2$ ausgeführt werden. 
+		
+		\begin{itemize}
+			\item Addition/Subtraktion eines \hyperref[def:MathematischerTerm]{(mathematischen) Terms}
+			\item Multiplikation mit/Division durch einen \hyperref[def:MathematischerTerm]{(mathematischen) Terms} ungleich dem \hyperref[def:neutralesElement]{neutralen Element} (''ungleich Null'')
+			\item Anwenden einer \hyperref[def:Bijektiv]{bijektiven} \hyperref[def:Abbildung]{Abbildung} auf die Terme der Gleichung
+		\end{itemize}
+	
+		Die Erweiterung auf Gleichungen mit $n>2$ Termen ist an diesem Punkt trivial.
+	\end{theorem}
+	
+	\begin{definition}[Lösen einer Gleichung]
+		\label{def:LösenEinerGleichung}
+		Beim \textbf{Lösen einer \hyperref[def:Gleichung]{Gleichung}}
+	\end{definition}
+	
+	\section{Ungleichungen}
+	
+	\begin{definition}[Ungleichung]
+		\label{def:Ungleichung}
+	\end{definition}
+	
+\end{document}
