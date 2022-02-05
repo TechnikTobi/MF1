@@ -145,8 +145,28 @@
 		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und seien $A_1,...,A_n$ beliebige \hyperref[def:Matrix]{Matrizen} passender Größe über $K$. Es gilt: $$(A_1 \times ... \times A_n)^\top = A_n^\top \times ... \times A_1^\top$$
 	\end{theorem}
 
-	\section{Spezielle Matrizen und ihre Eigenschaften}
+	\begin{definition}[Rang einer Matrix]
+		\label{def:RangMatrix}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Als \textbf{Rang der Matrix} \textrm{rang}(A) bezeichnen wir die maximale Anzahl linear unabhängiger Zeilen- bzw. Spaltenvektoren.
+	\end{definition}
 	
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der ''Zeilenrang'' von $A$ ist \textit{immer} gleich dem ''Spaltenrang'' von $A$. Es folgt: $$\textrm{rang}(A) = \textrm{rang}(A^\top)$$
+	\end{theorem}
+	
+	\begin{theorem}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der \hyperref[def:RangMatrix]{Rang} von $A$ kann maximal dem Minimum von Zeilen- und Spaltenanzahl sein: $$\textrm{rang}(A) \leq \textrm{min}(n,m)$$
+	\end{theorem}
+	
+	\begin{definition}[Reguläre/Singuläre Matrix, voller Rang]
+		\label{def:reguläreMatrix}
+		\label{def:singuläreMatrix}
+		\label{def:vollerRang}
+		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times n}$ eine beliebige \hyperref[def:QuadratischeMatrix]{quadratische Matrix}. Ist der \hyperref[def:RangMatrix]{Rang} von $A$ gleich ihrer \hyperref[def:DimensionMatrix]{Zeilen- bzw. Spaltendimension} ($\textrm{rang}(A)=n$), so sagen wir $A$ hat \textbf{vollen Rang} und bezeichnen $A$ als eine \textbf{reguläre Matrix}. \hyperref[def:Matrix]{Matrizen} welche nicht vollen Rang haben, nennen wir \textbf{singulär}. 
+	\end{definition}
+
+
+	\section{Spezielle Matrizen und ihre Eigenschaften}	
 	
 	\begin{definition}[Symmetrische Matrix]
 		\label{def:SymmetrischeMatrix}
@@ -161,26 +181,6 @@
 	\begin{theorem}
 		Seien $A_1,...,A_n$ beliebige \hyperref[def:HermitescheMatrix]{hermitesche Matrizen} passender Größe über $\mathbb{C}$. Es gilt: $$(\overline{A_1 \times ... \times A_n})^\top = \overline{A_n}^\top \times ... \times \overline{A_1}^\top$$
 	\end{theorem}
-
-	\begin{definition}[Rang einer Matrix]
-		\label{def:RangMatrix}
-		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Als \textbf{Rang der Matrix} \textrm{rang}(A) bezeichnen wir die maximale Anzahl linear unabhängiger Zeilen- bzw. Spaltenvektoren.
-	\end{definition}
-
-	\begin{theorem}
-		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der ''Zeilenrang'' von $A$ ist \textit{immer} gleich dem ''Spaltenrang'' von $A$. Es folgt: $$\textrm{rang}(A) = \textrm{rang}(A^\top)$$
-	\end{theorem}
-
-	\begin{theorem}
-		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times m}$ eine beliebige \hyperref[def:Matrix]{Matrix}. Es gilt: Der \hyperref[def:RangMatrix]{Rang} von $A$ kann maximal dem Minimum von Zeilen- und Spaltenanzahl sein: $$\textrm{rang}(A) \leq \textrm{min}(n,m)$$
-	\end{theorem}
-
-	\begin{definition}[Reguläre/Singuläre Matrix, voller Rang]
-		\label{def:reguläreMatrix}
-		\label{def:singuläreMatrix}
-		\label{def:vollerRang}
-		Sei $(K,+,\cdot)$ ein \hyperref[def:Körper]{Körper} und sei $A\in K^{n \times n}$ eine beliebige \hyperref[def:QuadratischeMatrix]{quadratische Matrix}. Ist der \hyperref[def:RangMatrix]{Rang} von $A$ gleich ihrer \hyperref[def:DimensionMatrix]{Zeilen- bzw. Spaltendimension} ($\textrm{rang}(A)=n$), so sagen wir $A$ hat \textbf{vollen Rang} und bezeichnen $A$ als eine \textbf{reguläre Matrix}. \hyperref[def:Matrix]{Matrizen} welche nicht vollen Rang haben, nennen wir \textbf{singulär}. 
-	\end{definition}
 
 	\begin{definition}[Diagonalmatrix]
 		\label{def:Diagonalmatrix}
@@ -255,6 +255,33 @@
 		$$
 			(f_1 \circ f_2)(x) = f_1(f_2(x)) = A_1 \times (A_2 \times x) = (A_1 \times A_2) \times x
 		$$
+	\end{theorem}
+	
+	
+	
+	\section{Matrizen als Gleichungssysteme}
+	
+	
+	
+	
+	\section{Weitere Eigenschaften von Matrizen}
+	
+	\begin{theorem}
+		Sei $A$ eine \hyperref[def:Matrix]{Matrix} über einem \hyperref[def:Körper]{Körper} $(K,+,\cdot)$ und $f$ jene \hyperref[def:LineareAbbildung]{lineare Abbildung} für die $A$ die entsprechende \hyperref[def:KoeffizientenmatrixEinerLinearenAbbildung]{Koeffizientenmatrix} ist. So sind die folgenden Aussagen äquivalent (d.h. gilt eine, so gelten \textit{alle}):
+		\begin{multicols}{2}
+			\begin{itemize}
+				\item $A$ ist \hyperref[def:invertierbareMatrix]{invertierbar}
+				\item $A$ hat \hyperref[def:vollerRang]{vollen Rang}
+				\item $A$ ist eine \hyperref[def:reguläreMatrix]{reguläre Matrix}
+				\item $\textrm{det}(A) \not= 0$
+				\item $Ax = b$ ist eindeutig lösbar
+				\item $\textrm{dim}(\{x | Ax=b\})=0$
+				\item $Ax = \mathbf{0} \implies x = \mathbf{0}$
+				\item $\textrm{dim}(\textrm{Ker}(f))=0$
+				\item $\textrm{Ker}(f)=\{0\}$
+				\item $f$ ist \hyperref[def:Bijektiv]{bijektiv}
+			\end{itemize}
+		\end{multicols}
 	\end{theorem}
 	
 \end{document}
