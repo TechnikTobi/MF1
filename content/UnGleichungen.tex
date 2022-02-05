@@ -23,7 +23,7 @@
 			$$
 			für $g_1,g_2,g_3 \in G$ beliebig für jede beliebige \hyperref[def:Gruppe]{Gruppe} $(G,*)$ (aufgrund der \hyperref[def:assoziativ]{Assoziativität} welche eine Gruppe erfüllen muss) wahr.
 
-			\item \textbf{Bestimmungsgleichungen} enthalten Platzhalter für Werte (''Variablen'') welche zunächst unbekannt sind. Für diese Platzhalter können durch \hyperref[def:LösenEinerGleichung]{Lösen der Gleichung} konkrete \hyperref[def:Element]{Elemente} bestimmt werden.
+			\item \textbf{Bestimmungsgleichungen} enthalten Platzhalter (''Variablen'') für Werte welche zunächst unbekannt sind. Für diese Platzhalter können durch \hyperref[def:LösenEinerGleichung]{Lösen der Gleichung} konkrete \hyperref[def:Element]{Elemente} bestimmt werden.
 			
 			\item \textbf{Definitionsgleichungen} dienen dazu, ein Symbol (neu) zu definieren. Beispielsweise haben wir in Definition \ref{def:GanzeZahlen} die Bedeutung von ''$\mathbb{Z}$'' als Menge der \hyperref[def:GanzeZahlen]{ganzen Zahlen} über eine solche Gleichung festgelegt. Das Zuordnen von Wahrheitswerten zu Gleichungen dieser Art ist nicht sinnvoll, da es sich um Definitionen und nicht um \hyperref[def:Aussage]{Aussagen} im allgemeineren Sinn handelt.\sidenote{Für diese Art von Gleichungen wird auch ''$:=$'' statt ''$=$'' verwendet}
  		\end{itemize}
@@ -47,9 +47,15 @@
 		Die Erweiterung auf Gleichungen mit $n>2$ Termen ist an diesem Punkt trivial.
 	\end{theorem}
 	
-	\begin{definition}[Lösen einer Gleichung]
+	\begin{definition}[Lösen einer Gleichung, Lösung, Lösungsmenge]
 		\label{def:LösenEinerGleichung}
-		Beim \textbf{Lösen einer \hyperref[def:Gleichung]{Gleichung}}
+		Beim \textbf{Lösen einer \hyperref[def:Gleichung]{Gleichung}} werden in den \hyperref[def:MathematischerTerm]{(mathematischen) Termen} der Gleichung enthaltene Platzhaltern, deren Werte zunächst unbekannt sind, durch konkrete \hyperref[def:Elemente]{Elemente} (welche die \textbf{Lösungsmenge} $L$ mit allen \textbf{Lösungen} der Gleichung bilden) ersetzt sodass der ursprünglichen Gleichung der Wahrheitswert ''wahr'' zugeordnet werden kann. Dabei gibt es verschiedene Fälle für Ergebnisse: 
+		\begin{itemize}
+			\item Es gibt keine Lösung, die Lösungsmenge ist leer: $L=\emptyset$
+			\item Es gibt genau eine Lösung, sodass gilt: $|L|=1$
+			\item Es gibt mehrere, endlich viele Lösungen, also $1 < |L| < \aleph_0$
+			\item Es gibt unendlich viele Lösungen, sprich: $|L| \geq \aleph_0$
+		\end{itemize}
 	\end{definition}
 	
 	\section{Ungleichungen}
